@@ -1,0 +1,44 @@
+.myproject-container {
+  width: 90%;
+  margin: 2rem auto;
+}
+.myproject-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.myproject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.myproject-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+  transition: box-shadow 0.2s;
+}
+.myproject-card:hover {
+  box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+}
+.myproject-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.myproject-time {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 1rem;
+  display: block;
+}
+.myproject-desc {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.myproject-link {
+  color: #1976d2;
+  text-decoration: underline;
+  font-weight: 500;
+}
