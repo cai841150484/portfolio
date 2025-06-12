@@ -1,210 +1,210 @@
-# 个人作品集网站 🚀
+# Personal Portfolio Website 🚀
 
-这是我的个人作品集网站，使用React构建的现代化、响应式的开发者作品集。
+This is my personal portfolio website, a modern and responsive developer portfolio built with React.
 
-## 🌟 在线预览
+## 🌟 Live Preview
 
-访问我的作品集：[https://cai841150484.github.io/portfolio](https://cai841150484.github.io/portfolio)
+Visit my portfolio: [https://cai841150484.github.io/portfolio](https://cai841150484.github.io/portfolio)
 
-## 📸 网站截图
+## 📸 Website Screenshot
 
 ![Portfolio Preview](https://user-images.githubusercontent.com/53429438/106779355-e9cd9e80-666c-11eb-9417-8a4b54441bc6.gif)
 
-## ✨ 特性
+## ✨ Features
 
-- 📱 **完全响应式设计** - 适配所有设备
-- 🎨 **现代化UI** - 简洁美观的用户界面
-- ⚡ **快速加载** - 优化的性能表现
-- 🌙 **主题切换** - 支持亮色/暗色主题
-- 📊 **GitHub集成** - 自动展示GitHub项目和统计
-- 🎯 **SEO优化** - 搜索引擎友好
-- 🚀 **自动部署** - GitHub Actions自动化部署
+- 📱 **Fully Responsive Design** - Adapts to all devices
+- 🎨 **Modern UI** - Clean and beautiful user interface  
+- ⚡ **Fast Loading** - Optimized performance
+- 🌙 **Theme Toggle** - Support for light/dark themes
+- 📊 **GitHub Integration** - Automatically display GitHub projects and statistics
+- 🎯 **SEO Optimized** - Search engine friendly
+- 🚀 **Auto Deployment** - GitHub Actions automated deployment
 
-## 📋 包含的部分
+## 📋 Sections Included
 
-✅ 个人简介和关于我  
-✅ 技能展示  
-✅ 教育背景  
-✅ 工作经验  
-✅ 项目展示（连接GitHub）  
-✅ 成就和认证  
-✅ 联系方式  
-✅ GitHub个人资料  
+✅ About Me and Introduction  
+✅ Skills Showcase  
+✅ Education Background  
+✅ Work Experience  
+✅ Projects Display (Connected to GitHub)  
+✅ Achievements and Certifications  
+✅ Contact Information  
+✅ GitHub Profile  
 
-## 🛠️ 技术栈
+## 🛠️ Tech Stack
 
-- **前端框架**: React 16+
-- **样式**: SASS/SCSS
-- **图标**: React Icons
-- **动画**: Lottie React
-- **部署**: GitHub Pages
+- **Frontend Framework**: React 16+
+- **Styling**: SASS/SCSS
+- **Icons**: React Icons
+- **Animation**: Lottie React
+- **Deployment**: GitHub Pages
 - **CI/CD**: GitHub Actions
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 环境要求
+### Requirements
 
 ```bash
-node@v16.0.0 或更高版本
-npm@8.0.0 或更高版本
-git@2.17.1 或更高版本
+node@v16.0.0 or higher
+npm@8.0.0 or higher
+git@2.17.1 or higher
 ```
 
-### 本地运行
+### Local Development
 
-1. **克隆项目**
+1. **Clone the project**
 ```bash
 git clone https://github.com/cai841150484/portfolio.git
 cd portfolio
 ```
 
-2. **安装依赖**
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. **启动开发服务器**
+3. **Start development server**
 ```bash
 npm start
 ```
 
-4. **在浏览器中访问**
+4. **Visit in browser**
 ```
 http://localhost:3000
 ```
 
-## ⚙️ 自定义配置
+## ⚙️ Customization
 
-### 个人信息配置
+### Personal Information Setup
 
-编辑 `src/portfolio.js` 文件来自定义你的个人信息：
+Edit the `src/portfolio.js` file to customize your personal information:
 
 ```javascript
 const greeting = {
-  title: "你的名字",
-  subTitle: "你的职业描述",
-  resumeLink: "你的简历链接"
+  title: "Your Name",
+  subTitle: "Your Job Description",
+  resumeLink: "Your Resume Link"
 };
 
 const socialMediaLinks = {
-  github: "https://github.com/你的用户名",
-  linkedin: "https://www.linkedin.com/in/你的用户名/",
-  gmail: "你的邮箱@gmail.com",
-  // 更多社交媒体链接...
+  github: "https://github.com/your-username",
+  linkedin: "https://www.linkedin.com/in/your-username/",
+  gmail: "your-email@gmail.com",
+  // More social media links...
 };
 ```
 
-### GitHub集成配置
+### GitHub Integration Setup
 
-1. **创建 `.env` 文件**（如果还没有的话）
+1. **Create `.env` file** (if you haven't already)
 ```bash
 cp env.example .env
 ```
 
-2. **配置环境变量**
+2. **Configure environment variables**
 ```env
-REACT_APP_GITHUB_TOKEN=你的GitHub令牌
-GITHUB_USERNAME=你的GitHub用户名
+REACT_APP_GITHUB_TOKEN=your-github-token
+GITHUB_USERNAME=your-github-username
 USE_GITHUB_DATA=true
 ```
 
-### 主题自定义
+### Theme Customization
 
-修改 `src/_globalColor.scss` 文件来自定义颜色主题：
+Modify the `src/_globalColor.scss` file to customize color themes:
 
 ```scss
-// 主要颜色
-$primaryColor: #你的主色;
-$secondaryColor: #你的辅助色;
+// Primary colors
+$primaryColor: #your-primary-color;
+$secondaryColor: #your-secondary-color;
 ```
 
-### 简历上传
+### Resume Upload
 
-将你的简历PDF文件放置在 `src/containers/greeting/` 目录下，并重命名为 `resume.pdf`。
+Place your resume PDF file in the `src/containers/greeting/` directory and rename it to `resume.pdf`.
 
-## 📦 构建和部署
+## 📦 Build and Deploy
 
-### 构建项目
+### Build Project
 
 ```bash
 npm run build
 ```
 
-### 手动部署到GitHub Pages
+### Manual Deploy to GitHub Pages
 
 ```bash
 npm run deploy
 ```
 
-### 自动部署
+### Auto Deploy
 
-项目已配置GitHub Actions，当你推送代码到`main`分支时会自动部署：
+The project is configured with GitHub Actions. It will automatically deploy when you push code to the `main` branch:
 
 ```bash
 git add .
-git commit -m "更新内容"
+git commit -m "Update content"
 git push origin main
 ```
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 src/
-├── components/          # 可复用组件
-├── containers/          # 页面容器组件
-├── assets/             # 静态资源
-│   ├── images/         # 图片文件
-│   ├── lottie/         # Lottie动画文件
-│   └── fonts/          # 字体文件
+├── components/          # Reusable components
+├── containers/          # Page container components
+├── assets/             # Static resources
+│   ├── images/         # Image files
+│   ├── lottie/         # Lottie animation files
+│   └── fonts/          # Font files
 ├── contexts/           # React Context
-├── hooks/              # 自定义Hooks
-├── portfolio.js        # 主要配置文件
-└── App.js             # 主应用组件
+├── hooks/              # Custom Hooks
+├── portfolio.js        # Main configuration file
+└── App.js             # Main application component
 ```
 
-## 🎯 性能优化
+## 🎯 Performance Optimization
 
-- ✅ 代码分割和懒加载
-- ✅ 图片优化和压缩
-- ✅ CSS优化
-- ✅ Bundle分析和优化
+- ✅ Code splitting and lazy loading
+- ✅ Image optimization and compression
+- ✅ CSS optimization
+- ✅ Bundle analysis and optimization
 
-## 🔧 开发工具
+## 🔧 Development Tools
 
-- **代码格式化**: Prettier
-- **代码检查**: ESLint
+- **Code Formatting**: Prettier
+- **Code Linting**: ESLint
 - **Git Hooks**: Pre-commit
 - **CI/CD**: GitHub Actions
 
-## 📱 浏览器支持
+## 📱 Browser Support
 
-- Chrome (推荐)
+- Chrome (Recommended)
 - Firefox
 - Safari
 - Edge
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交Issue和Pull Request来帮助改进这个项目！
+Welcome to submit Issues and Pull Requests to help improve this project!
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 联系我
+## 📞 Contact Me
 
-- 📧 Email: [你的邮箱]
-- 💼 LinkedIn: [你的LinkedIn]
-- 🐱 GitHub: [你的GitHub]
+- 📧 Email: jhoncai811@gmail.com
+- 💼 LinkedIn: [https://www.linkedin.com/in/hao-cai-ux/](https://www.linkedin.com/in/hao-cai-ux/)
+- 🐱 GitHub: [https://github.com/cai841150484](https://github.com/cai841150484)
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- 感谢 [developerFolio](https://github.com/saadpasta/developerFolio) 项目提供的模板基础
-- 感谢所有开源贡献者
+- Thanks to [developerFolio](https://github.com/saadpasta/developerFolio) project for providing the template foundation
+- Thanks to all open source contributors
 
 ---
 
-⭐ 如果这个项目对你有帮助，请给它一个星星！
+⭐ If this project helps you, please give it a star!
 
-<!-- 最后更新: 2024年12月 -->
+<!-- Last updated: December 2024 -->
 ---

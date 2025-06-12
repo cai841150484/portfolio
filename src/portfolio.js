@@ -25,14 +25,14 @@ const greeting = {
   subTitle: emoji(
     "Creative and detail-oriented UI/UX Designer with a passion for crafting intuitive digital experiences. Skilled in user research, wireframing, prototyping, and visual design. Experienced in collaborating with cross-functional teams to deliver impactful solutions. Always eager to learn, explore new design trends, and turn complex problems into elegant interfaces."
   ),
-  resumeLink: "https://caidesign.co/resume.pdf", // 请替换为你的实际简历链接
+  resumeLink: "https://caidesign.co/resume.pdf", // Replace with your actual resume link
   displayGreeting: true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  linkedin: "https://www.linkedin.com/in/hao-cai-ux/", // 请替换为你的 LinkedIn
+  linkedin: "https://www.linkedin.com/in/hao-cai-ux/", // Replace with your LinkedIn
   gmail: "jhoncai811@gmail.com",
   display: true
 };
@@ -80,14 +80,14 @@ const educationInfo = {
   schools: [
     {
       schoolName: "The Pennsylvania State University",
-      logo: require("./assets/images/harvardLogo.png"), // 可替换为 PSU 校徽
+      logo: require("./assets/images/harvardLogo.png"), // Can be replaced with PSU logo
       subHeader: "Master of Science in Informatics",
       duration: "Aug 2023 – Aug 2025",
       desc: "Focusing on user experience, human-computer interaction, and digital product design."
     },
     {
       schoolName: "California State University, Fullerton",
-      logo: require("./assets/images/stanfordLogo.png"), // 可替换为 CSUF 校徽
+      logo: require("./assets/images/stanfordLogo.png"), // Can be replaced with CSUF logo
       subHeader: "Bachelor of Fine Art in Graphic And Interactive Design",
       duration: "Aug 2020 – May 2023",
       desc: "Developed a strong foundation in visual communication, branding, and interactive media."
