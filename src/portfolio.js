@@ -43,24 +43,32 @@ const skillsSection = {
   title: "Skills & Languages",
   subTitle: "Empowering ideas through design and technology.",
   skills: [
-    emoji("🎨 UI/UX Design for web and mobile platforms, from concept to delivery"),
-    emoji("🧩 Proficient in Figma, Adobe Creative Suite (Illustrator, Photoshop, XD, AfterEffect, Lightroom, InDesign), TouchDesigner, Processing"),
-    emoji("💡 Strong visual storytelling, wireframing, prototyping, and user research skills"),
+    emoji(
+      "🎨 UI/UX Design for web and mobile platforms, from concept to delivery"
+    ),
+    emoji(
+      "🧩 Proficient in Figma, Adobe Creative Suite (Illustrator, Photoshop, XD, AfterEffect, Lightroom, InDesign), TouchDesigner, Processing"
+    ),
+    emoji(
+      "💡 Strong visual storytelling, wireframing, prototyping, and user research skills"
+    ),
     emoji("🌐 Front-end basics: HTML5, CSS3"),
-    emoji("🌏 Multilingual: Chinese (Native), English (Advanced), Cantonese (Intermediate)")
+    emoji(
+      "🌏 Multilingual: Chinese (Native), English (Advanced), Cantonese (Intermediate)"
+    )
   ],
   softwareSkills: [
-    { skillName: "Figma", fontAwesomeClassname: "fab fa-figma" },
-    { skillName: "Adobe Illustrator", fontAwesomeClassname: "fab fa-adobe" },
-    { skillName: "Adobe Photoshop", fontAwesomeClassname: "fab fa-adobe" },
-    { skillName: "Adobe XD", fontAwesomeClassname: "fab fa-adobe" },
-    { skillName: "AfterEffect", fontAwesomeClassname: "fab fa-adobe" },
-    { skillName: "Lightroom", fontAwesomeClassname: "fab fa-adobe" },
-    { skillName: "InDesign", fontAwesomeClassname: "fab fa-adobe" },
-    { skillName: "TouchDesigner", fontAwesomeClassname: "fas fa-cube" },
-    { skillName: "Processing", fontAwesomeClassname: "fas fa-code" },
-    { skillName: "HTML5", fontAwesomeClassname: "fab fa-html5" },
-    { skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt" }
+    {skillName: "Figma", fontAwesomeClassname: "fab fa-figma"},
+    {skillName: "Adobe Illustrator", fontAwesomeClassname: "fab fa-adobe"},
+    {skillName: "Adobe Photoshop", fontAwesomeClassname: "fab fa-adobe"},
+    {skillName: "Adobe XD", fontAwesomeClassname: "fab fa-adobe"},
+    {skillName: "AfterEffect", fontAwesomeClassname: "fab fa-adobe"},
+    {skillName: "Lightroom", fontAwesomeClassname: "fab fa-adobe"},
+    {skillName: "InDesign", fontAwesomeClassname: "fab fa-adobe"},
+    {skillName: "TouchDesigner", fontAwesomeClassname: "fas fa-cube"},
+    {skillName: "Processing", fontAwesomeClassname: "fas fa-code"},
+    {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5"},
+    {skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt"}
   ],
   display: true
 };
@@ -200,7 +208,8 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle: "Let’s connect! Whether you want to discuss a project, collaborate, or just say hi, my inbox is always open.",
+  subtitle:
+    "Let’s connect! Whether you want to discuss a project, collaborate, or just say hi, my inbox is always open.",
   number: "9096822704",
   email_address: "jhoncai811@gmail.com"
 };
