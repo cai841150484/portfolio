@@ -1,9 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.ec28aced.css",
-    "main.js": "/portfolio/static/js/main.1fa171dd.js",
-    "static/css/487.bb36206c.chunk.css": "/portfolio/static/css/487.bb36206c.chunk.css",
-    "static/js/487.2ed0bf94.chunk.js": "/portfolio/static/js/487.2ed0bf94.chunk.js",
+    "main.css": "/portfolio/static/css/main.3e3a0c38.css",
+    "main.js": "/portfolio/static/js/main.3cfb9e46.js",
     "static/css/990.c6a7ee28.chunk.css": "/portfolio/static/css/990.c6a7ee28.chunk.css",
     "static/js/990.9bdcab81.chunk.js": "/portfolio/static/js/990.9bdcab81.chunk.js",
     "static/media/stanfordLogo.png": "/portfolio/static/media/stanfordLogo.5a8e3a0a00949c93a9b8.png",
@@ -16,17 +14,15 @@
     "static/media/skill.svg": "/portfolio/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
     "static/media/resume.pdf": "/portfolio/static/media/resume.f0f733dd3cd732b39262.pdf",
     "static/media/saayaHealthLogo.webp": "/portfolio/static/media/saayaHealthLogo.60b27d1f184fadfce43a.webp",
-    "static/media/nextuLogo.webp": "/portfolio/static/media/nextuLogo.e033dbfa4c58c0a906aa.webp",
     "index.html": "/portfolio/index.html",
-    "main.ec28aced.css.map": "/portfolio/static/css/main.ec28aced.css.map",
-    "main.1fa171dd.js.map": "/portfolio/static/js/main.1fa171dd.js.map",
-    "487.bb36206c.chunk.css.map": "/portfolio/static/css/487.bb36206c.chunk.css.map",
-    "487.2ed0bf94.chunk.js.map": "/portfolio/static/js/487.2ed0bf94.chunk.js.map",
+    "static/media/nextuLogo.webp": "/portfolio/static/media/nextuLogo.e033dbfa4c58c0a906aa.webp",
+    "main.3e3a0c38.css.map": "/portfolio/static/css/main.3e3a0c38.css.map",
+    "main.3cfb9e46.js.map": "/portfolio/static/js/main.3cfb9e46.js.map",
     "990.c6a7ee28.chunk.css.map": "/portfolio/static/css/990.c6a7ee28.chunk.css.map",
     "990.9bdcab81.chunk.js.map": "/portfolio/static/js/990.9bdcab81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec28aced.css",
-    "static/js/main.1fa171dd.js"
+    "static/css/main.3e3a0c38.css",
+    "static/js/main.3cfb9e46.js"
   ]
 }
