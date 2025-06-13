@@ -50,6 +50,15 @@
   background-color: $headerHoverBG;
 }
 
+/* React Router Link styles */
+.header li a[href],
+.header li a[data-link] {
+  display: block;
+  padding: 15px 20px;
+  color: $textColor;
+  text-decoration: none;
+}
+
 .header .logo {
   display: block;
   flex: none;
@@ -58,6 +67,7 @@
   text-decoration: none;
   margin-top: 10px;
   line-height: normal;
+  color: $textColor;
 }
 
 .header .logo-name {

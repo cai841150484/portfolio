@@ -3,37 +3,56 @@ import "./MyProject.scss";
 
 const myProjects = [
   {
-    title: "Portfolio Website Redesign",
+    title: "Personal Portfolio Website",
     time: "2024",
     description:
-      "A complete redesign of my personal portfolio website, focusing on minimalism, accessibility, and smooth user experience. Built with React and SCSS, featuring custom animations and responsive layouts.",
-    link: "https://caidesign.co/"
+      "A modern, responsive portfolio website showcasing my design philosophy and work. Features smooth animations, dark mode toggle, and optimized performance. Built with React and SCSS with custom design components.",
+    link: "https://caidesign.co/",
+    type: "Web Design & Development"
   },
   {
-    title: "Mobile App UI Kit",
+    title: "Creative Brand Identity Suite",
     time: "2023",
     description:
-      "Designed a comprehensive UI kit for a cross-platform mobile app, including iconography, color system, and reusable components. The kit accelerated the development process and ensured design consistency.",
-    link: "#"
+      "Complete brand identity design for a creative agency including logo design, color system, typography guidelines, and brand applications. Emphasized modern minimalism with vibrant accent colors.",
+    link: "#",
+    type: "Brand Identity"
   },
   {
-    title: "Brand Identity for Local Startup",
+    title: "Mobile UI Design System",
+    time: "2023",
+    description:
+      "Comprehensive UI kit for cross-platform mobile applications featuring 200+ components, design tokens, and interaction patterns. Focused on accessibility and consistency across iOS and Android.",
+    link: "#",
+    type: "UI/UX Design"
+  },
+  {
+    title: "Digital Art Collection",
     time: "2022",
     description:
-      "Created a full brand identity (logo, color palette, typography, and guidelines) for a local tech startup, helping them establish a strong and memorable visual presence.",
-    link: "#"
+      "Series of digital illustrations and graphics exploring themes of technology and human connection. Created using Adobe Creative Suite with focus on color theory and visual storytelling.",
+    link: "#",
+    type: "Digital Art"
   }
 ];
 
 export default function MyProject() {
   return (
     <div className="myproject-container" id="myproject">
-      <h1 className="myproject-heading">My Projects</h1>
+      <h1 className="myproject-heading">Creative Portfolio</h1>
+      <p className="myproject-subheading">
+        Personal creative works and design explorations
+      </p>
       <div className="myproject-list">
         {myProjects.map((proj, idx) => (
           <div className="myproject-card" key={idx}>
-            <h2 className="myproject-title">{proj.title}</h2>
-            <span className="myproject-time">{proj.time}</span>
+            <div className="myproject-header">
+              <h2 className="myproject-title">{proj.title}</h2>
+              <div className="myproject-meta">
+                <span className="myproject-type">{proj.type}</span>
+                <span className="myproject-time">{proj.time}</span>
+              </div>
+            </div>
             <p className="myproject-desc">{proj.description}</p>
             {proj.link && proj.link !== "#" && (
               <a
