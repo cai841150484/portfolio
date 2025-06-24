@@ -5,7 +5,7 @@ export default function MouseTrail() {
   const [trails, setTrails] = useState([]);
   const trailIdCounter = useRef(0); // 使用 useRef 确保计数器持久化
 
-  useEffect(() => {
+  useEffect(() => { // eslint-disable-next-line react-hooks/exhaustive-deps
     const colors = ["#FF5733", "#33FF57", "#3357FF", "#F033FF"];
 
     const handleMouseMove = e => {

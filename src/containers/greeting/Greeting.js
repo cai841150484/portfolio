@@ -27,12 +27,13 @@ export default function Greeting() {
               className={isDark ? "dark-mode greeting-text" : "greeting-text"}
             >
               <Typewriter
-                text={greeting.title}
+                text={greeting.title || ""}
                 delay={100}
                 cursorColor={isDark ? "#FFFFFF" : "#000000"}
                 typeSpeed={50}
                 deleteSpeed={10}
                 hideCursorAfterText={false}
+                key={isDark ? "dark" : "light"}
               />
               <span className="wave-emoji">{emoji("👋")}</span>
             </h1>
@@ -50,6 +51,7 @@ export default function Greeting() {
                 typeSpeed={30}
                 deleteSpeed={10}
                 hideCursorAfterText={true}
+                key={isDark ? "dark-sub" : "light-sub"}
               />
             </div>
             <div id="resume" className="empty-div"></div>
