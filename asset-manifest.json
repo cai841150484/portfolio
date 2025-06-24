@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.0eac0b90.css",
-    "main.js": "/portfolio/static/js/main.a996ba0c.js",
+    "main.js": "/portfolio/static/js/main.83fbab9a.js",
     "static/css/290.87ca3138.chunk.css": "/portfolio/static/css/290.87ca3138.chunk.css",
     "static/js/290.b22cbde9.chunk.js": "/portfolio/static/js/290.b22cbde9.chunk.js",
     "static/media/stanfordLogo.png": "/portfolio/static/media/stanfordLogo.5a8e3a0a00949c93a9b8.png",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.0eac0b90.css",
-    "static/js/main.a996ba0c.js"
+    "static/js/main.83fbab9a.js"
   ]
 }
