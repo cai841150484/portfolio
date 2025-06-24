@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3e3a0c38.css",
-    "main.js": "/portfolio/static/js/main.3cfb9e46.js",
-    "static/css/990.c6a7ee28.chunk.css": "/portfolio/static/css/990.c6a7ee28.chunk.css",
-    "static/js/990.9bdcab81.chunk.js": "/portfolio/static/js/990.9bdcab81.chunk.js",
+    "main.css": "/portfolio/static/css/main.0eac0b90.css",
+    "main.js": "/portfolio/static/js/main.a996ba0c.js",
+    "static/css/290.87ca3138.chunk.css": "/portfolio/static/css/290.87ca3138.chunk.css",
+    "static/js/290.b22cbde9.chunk.js": "/portfolio/static/js/290.b22cbde9.chunk.js",
     "static/media/stanfordLogo.png": "/portfolio/static/media/stanfordLogo.5a8e3a0a00949c93a9b8.png",
     "static/media/harvardLogo.png": "/portfolio/static/media/harvardLogo.542dab89bfb35b7f5c0d.png",
     "static/media/Montserrat-Regular.ttf": "/portfolio/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
@@ -13,16 +13,10 @@
     "static/media/developerActivity.svg": "/portfolio/static/media/developerActivity.2c0445cae86f4243433a2f5a22b2c031.svg",
     "static/media/skill.svg": "/portfolio/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
     "static/media/resume.pdf": "/portfolio/static/media/resume.f0f733dd3cd732b39262.pdf",
-    "static/media/saayaHealthLogo.webp": "/portfolio/static/media/saayaHealthLogo.60b27d1f184fadfce43a.webp",
-    "index.html": "/portfolio/index.html",
-    "static/media/nextuLogo.webp": "/portfolio/static/media/nextuLogo.e033dbfa4c58c0a906aa.webp",
-    "main.3e3a0c38.css.map": "/portfolio/static/css/main.3e3a0c38.css.map",
-    "main.3cfb9e46.js.map": "/portfolio/static/js/main.3cfb9e46.js.map",
-    "990.c6a7ee28.chunk.css.map": "/portfolio/static/css/990.c6a7ee28.chunk.css.map",
-    "990.9bdcab81.chunk.js.map": "/portfolio/static/js/990.9bdcab81.chunk.js.map"
+    "index.html": "/portfolio/index.html"
   },
   "entrypoints": [
-    "static/css/main.3e3a0c38.css",
-    "static/js/main.3cfb9e46.js"
+    "static/css/main.0eac0b90.css",
+    "static/js/main.a996ba0c.js"
   ]
 }
