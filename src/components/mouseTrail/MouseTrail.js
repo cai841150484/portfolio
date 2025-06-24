@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import "./MouseTrail.scss";
 
 export default function MouseTrail() {
   const [trails, setTrails] = useState([]);
+  const trailIdCounter = useRef(0); // 使用 useRef 确保计数器持久化
 
   useEffect(() => {
     const colors = ["#FF5733", "#33FF57", "#3357FF", "#F033FF"];
 
     const handleMouseMove = e => {
       const newTrail = {
-        id: Date.now(),
+        id: `${Date.now()}-${++trailIdCounter.current}`, // 组合时间戳和计数器
         x: e.clientX,
         y: e.clientY,
         color: colors[Math.floor(Math.random() * colors.length)],

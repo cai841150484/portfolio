@@ -36,7 +36,7 @@ export default function Greeting() {
               />
               <span className="wave-emoji">{emoji("👋")}</span>
             </h1>
-            <p
+            <div
               className={
                 isDark
                   ? "dark-mode greeting-text-p"
@@ -44,14 +44,14 @@ export default function Greeting() {
               }
             >
               <Typewriter
-                text={greeting.subTitle}
+                text={greeting.subTitleText || "Welcome to my portfolio"}
                 delay={1200}
                 cursorColor={isDark ? "#FFFFFF" : "#000000"}
                 typeSpeed={30}
                 deleteSpeed={10}
                 hideCursorAfterText={true}
               />
-            </p>
+            </div>
             <div id="resume" className="empty-div"></div>
             <SocialMedia />
             <div className="button-greeting-div">
@@ -60,9 +60,9 @@ export default function Greeting() {
                 <a
                   href={require("./resume.pdf")}
                   download="Resume.pdf"
-                  className="download-link-button"
+                  className="download-link-button main-button"
                 >
-                  <Button text="Download my resume" />
+                  Download my resume
                 </a>
               )}
             </div>
