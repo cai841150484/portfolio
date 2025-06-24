@@ -5,6 +5,8 @@ import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
+import MouseTrail from "../../components/mouseTrail/MouseTrail";
+import ParticlesBackground from "../../components/particles/ParticlesBackground";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -15,14 +17,23 @@ export default function Greeting() {
   }
   return (
     <div className="greet-main" id="greeting">
+      <ParticlesBackground />
+      <MouseTrail />
       <div className="greeting-main">
         <div className="greeting-text-div">
           <div>
             <h1
               className={isDark ? "dark-mode greeting-text" : "greeting-text"}
             >
-              {" "}
-              {greeting.title} <span className="wave-emoji">{emoji("👋")}</span>
+              <Typewriter
+                text={greeting.title}
+                delay={100}
+                cursorColor={isDark ? "#FFFFFF" : "#000000"}
+                typeSpeed={50}
+                deleteSpeed={10}
+                hideCursorAfterText={false}
+              />
+              <span className="wave-emoji">{emoji("👋")}</span>
             </h1>
             <p
               className={
@@ -31,7 +42,14 @@ export default function Greeting() {
                   : "greeting-text-p subTitle"
               }
             >
-              {greeting.subTitle}
+              <Typewriter
+                text={greeting.subTitle}
+                delay={1200}
+                cursorColor={isDark ? "#FFFFFF" : "#000000"}
+                typeSpeed={30}
+                deleteSpeed={10}
+                hideCursorAfterText={true}
+              />
             </p>
             <div id="resume" className="empty-div"></div>
             <SocialMedia />

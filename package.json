@@ -14,7 +14,9 @@
     "react-headroom": "^3.0.0",
     "react-router-dom": "^7.6.2",
     "react-scripts": "^5.0.1",
-    "sass": "^1.32.8"
+    "react-typewriter-effect": "^1.1.0",
+    "sass": "^1.32.8",
+    "tsparticles": "^3.8.1"
   },
   "scripts": {
     "predeploy": "npm run build",
