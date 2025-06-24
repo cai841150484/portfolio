@@ -1,5 +1,5 @@
 import React from "react";
-import {Particles} from "tsparticles-engine";
+import Particles from "@tsparticles/react";
 import {loadFull} from "tsparticles";
 import "./ParticlesBackground.scss";
 

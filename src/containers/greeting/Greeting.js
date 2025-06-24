@@ -1,12 +1,13 @@
 import React, {useContext} from "react";
 import emoji from "react-easy-emoji";
+import Typewriter from "react-typewriter-effect";
 import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import MouseTrail from "../../components/mouseTrail/MouseTrail";
-import ParticlesBackground from "../../components/particles/ParticlesBackground";
+// import ParticlesBackground from "../../components/particles/ParticlesBackground";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -17,7 +18,7 @@ export default function Greeting() {
   }
   return (
     <div className="greet-main" id="greeting">
-      <ParticlesBackground />
+      {/* <ParticlesBackground /> */}
       <MouseTrail />
       <div className="greeting-main">
         <div className="greeting-text-div">
