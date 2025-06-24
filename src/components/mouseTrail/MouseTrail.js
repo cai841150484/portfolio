@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import "./MouseTrail.scss";
 
 export default function MouseTrail() {
   const [trails, setTrails] = useState([]);
   const colors = ["#FF5733", "#33FF57", "#3357FF", "#F033FF"];
-  
+
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = e => {
       const newTrail = {
         id: Date.now(),
         x: e.clientX,
@@ -14,11 +14,11 @@ export default function MouseTrail() {
         color: colors[Math.floor(Math.random() * colors.length)],
         size: Math.random() * 10 + 5
       };
-      
-      setTrails((prev) => [...prev.slice(-10), newTrail]);
-      
+
+      setTrails(prev => [...prev.slice(-10), newTrail]);
+
       setTimeout(() => {
-        setTrails((prev) => prev.filter(t => t.id !== newTrail.id));
+        setTrails(prev => prev.filter(t => t.id !== newTrail.id));
       }, 1000);
     };
 
@@ -28,7 +28,7 @@ export default function MouseTrail() {
 
   return (
     <div className="mouse-trails">
-      {trails.map((trail) => (
+      {trails.map(trail => (
         <div
           key={trail.id}
           className="trail-dot"
