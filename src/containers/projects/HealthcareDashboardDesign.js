@@ -1,10 +1,10 @@
 import React from 'react';
-import './Project1.scss';
+import './HealthcareDashboardDesign.scss';
 
-const Project1 = () => {
+const HealthcareDashboardDesign = () => {
   return (
     <div className="project-container">
-      <h1>Project1</h1>
+      <h1>Healthcare Dashboard Design</h1>
       <div className="image-grid">
         {[...Array(10)].map((_, i) => (
           <div key={i} className="image-placeholder">
@@ -16,4 +16,4 @@ const Project1 = () => {
   );
 };
 
-export default Project1;
+export default HealthcareDashboardDesign;

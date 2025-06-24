@@ -1,15 +1,28 @@
 import React, {useContext} from "react";
+import {useNavigate} from "react-router-dom";
 import "./StartupProjects.scss";
 import {bigProjects} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function StartupProject() {
-  function openUrlInNewTab(url) {
+  const navigate = useNavigate();
+
+  function openUrlInNewTab(url, isInternal) {
     if (!url) {
       return;
     }
-    var win = window.open(url, "_blank");
-    win.focus();
+    if (isInternal) {
+      console.log("[DEBUG] Attempting internal navigation to:", url);
+      navigate(url);
+    } else {
+      console.log("[DEBUG] Opening external link:", url);
+      var win = window.open(url, "_blank");
+      win.focus();
+    }
+  }
+
+  function handleNavigation(url, isInternal) {
+    openUrlInNewTab(url, isInternal);
   }
 
   const {isDark} = useContext(StyleContext);
@@ -70,7 +83,39 @@ export default function StartupProject() {
                             className={
                               isDark ? "dark-mode project-tag" : "project-tag"
                             }
-                            onClick={() => openUrlInNewTab(link.url)}
+                            onClick={() => {
+                              console.log("[BASIC] Button clicked");
+                              console.log("[DEBUG] Project data:", project);
+                              console.log("[DEBUG] Link data:", link);
+                              
+                              // Check if it's a "View Case Study" link
+                              if (link.name.toLowerCase().includes("case study") || 
+                                  link.name.toLowerCase().includes("详情") ||
+                                  link.name.toLowerCase().includes("view project")) {
+                                // Navigate to project detail page
+                                let projectPath = '';
+                                switch (project.projectName) {
+                                  case 'SHEIN Heuristic Evaluation':
+                                    projectPath = '/projects/shein-heuristic-evaluation';
+                                    break;
+                                  case 'PetDesk User Experience Research':
+                                    projectPath = '/projects/petdesk-user-experience-research';
+                                    break;
+                                  case 'Ecommerce Mobile App Redesign':
+                                    projectPath = '/projects/ecommerce-mobile-app-redesign';
+                                    break;
+                                  case 'Healthcare Dashboard Design':
+                                    projectPath = '/projects/healthcare-dashboard-design';
+                                    break;
+                                  default:
+                                    projectPath = '/projects';
+                                }
+                                handleNavigation(projectPath, true);
+                              } else {
+                                // External link
+                                handleNavigation(link.url, false);
+                              }
+                            }}
                           >
                             {link.name}
                           </span>

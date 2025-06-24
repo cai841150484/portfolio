@@ -1,10 +1,10 @@
 import React from 'react';
-import './Project4.scss';
+import './EcommerceMobileAppRedesign.scss';
 
-const Project4 = () => {
+const EcommerceMobileAppRedesign = () => {
   return (
     <div className="project-container">
-      <h1>Project4</h1>
+      <h1>E-commerce Mobile App Redesign</h1>
       <div className="image-grid">
         {[...Array(10)].map((_, i) => (
           <div key={i} className="image-placeholder">
@@ -16,4 +16,4 @@ const Project4 = () => {
   );
 };
 
-export default Project4;
+export default EcommerceMobileAppRedesign;

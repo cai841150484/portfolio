@@ -1,10 +1,10 @@
 import React from 'react';
-import './Project2.scss';
+import './PetDeskUserExperienceResearch.scss';
 
-const Project2 = () => {
+const PetDeskUserExperienceResearch = () => {
   return (
     <div className="project-container">
-      <h1>Project2</h1>
+      <h1>PetDesk User Experience Research</h1>
       <div className="image-grid">
         {[...Array(10)].map((_, i) => (
           <div key={i} className="image-placeholder">
@@ -16,4 +16,4 @@ const Project2 = () => {
   );
 };
 
-export default Project2;
+export default PetDeskUserExperienceResearch;

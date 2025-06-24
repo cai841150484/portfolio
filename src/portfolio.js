@@ -172,25 +172,58 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: "https://via.placeholder.com/350x200?text=SHEIN+Case+Study",
+      projectName: "SHEIN Heuristic Evaluation",
+      projectDesc: "Conducted a comprehensive heuristic evaluation of SHEIN.com, a leading e-commerce platform specializing in fast fashion. Assessed usability, discoverability, and overall user experience through Nielsen's Ten Usability Heuristics.",
+      category: "UX Research",
+      tools: ["Figma", "Miro", "Google Analytics"],
+      duration: "3 weeks",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
+          name: "View Case Study",
+          url: "/projects/shein-heuristic-evaluation"
         }
-        //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: "https://via.placeholder.com/350x200?text=PetDesk+Research",
+      projectName: "PetDesk User Experience Research",
+      projectDesc: "Evaluated user experience on the PetDesk app for new and returning users to identify strengths and challenges in interface and usability. Conducted user interviews and usability testing.",
+      category: "UX Research",
+      tools: ["Figma", "UserTesting", "Maze"],
+      duration: "4 weeks",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://nextu.se/"
+          name: "View Case Study",
+          url: "/projects/petdesk-user-experience-research"
+        }
+      ]
+    },
+    {
+      image: "https://via.placeholder.com/350x200?text=Mobile+App+Redesign",
+      projectName: "E-commerce Mobile App Redesign",
+      projectDesc: "Complete redesign of a mobile shopping app focusing on improving conversion rates and user engagement. Implemented new navigation patterns and streamlined checkout process.",
+      category: "UI/UX Design",
+      tools: ["Figma", "Principle", "InVision"],
+      duration: "6 weeks",
+      footerLink: [
+        {
+          name: "View Case Study",
+          url: "/projects/ecommerce-mobile-app-redesign"
+        }
+      ]
+    },
+    {
+      image: "https://via.placeholder.com/350x200?text=Healthcare+Dashboard",
+      projectName: "Healthcare Dashboard Design",
+      projectDesc: "Designed an intuitive dashboard for healthcare professionals to manage patient data and appointments. Focused on accessibility and quick information retrieval.",
+      category: "UI Design",
+      tools: ["Figma", "Adobe Illustrator", "Zeplin"],
+      duration: "5 weeks",
+      footerLink: [
+        {
+          name: "View Case Study",
+          url: "/projects/healthcare-dashboard-design"
         }
       ]
     }

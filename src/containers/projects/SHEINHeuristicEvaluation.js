@@ -1,10 +1,10 @@
 import React from 'react';
-import './Project3.scss';
+import './SHEINHeuristicEvaluation.scss';
 
-const Project3 = () => {
+const SHEINHeuristicEvaluation = () => {
   return (
     <div className="project-container">
-      <h1>Project3</h1>
+      <h1>SHEIN Heuristic Evaluation</h1>
       <div className="image-grid">
         {[...Array(10)].map((_, i) => (
           <div key={i} className="image-placeholder">
@@ -16,4 +16,4 @@ const Project3 = () => {
   );
 };
 
-export default Project3;
+export default SHEINHeuristicEvaluation;

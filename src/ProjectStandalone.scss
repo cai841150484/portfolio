@@ -1,4 +1,12 @@
+@import "./_globalColor";
+
 .project-standalone-wrapper {
   min-height: 100vh;
   background: #f7f8fa;
+  transition: 0.1s;
+}
+
+.dark-mode.project-standalone-wrapper {
+  background-color: $darkBackground;
+  color: white;
 }

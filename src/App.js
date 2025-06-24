@@ -6,11 +6,12 @@ import ProjectStandalone from "./ProjectStandalone";
 
 function App() {
   return (
-    <Router basename="/portfolio">
+    <Router>
       <div>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<ProjectStandalone />} />
+          <Route path="/projects/:projectName" element={<ProjectStandalone />} />
         </Routes>
       </div>
     </Router>

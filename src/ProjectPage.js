@@ -1,50 +1,81 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import "./ProjectPage.scss";
-
-const caseStudies = [
-  {
-    title: "SHEIN.com - Heuristic Evaluation",
-    category: "UX Research",
-    description:
-      "Conducted a comprehensive heuristic evaluation of SHEIN.com, a leading e-commerce platform specializing in fast fashion. Assessed usability, discoverability, and overall user experience through Nielsen's Ten Usability Heuristics.",
-    image: "https://via.placeholder.com/350x200?text=SHEIN+Case+Study",
-    tools: ["Figma", "Miro", "Google Analytics"],
-    duration: "3 weeks",
-    link: "#"
-  },
-  {
-    title: "PetDesk - User Experience Research",
-    category: "UX Research",
-    description:
-      "Evaluated user experience on the PetDesk app for new and returning users to identify strengths and challenges in interface and usability. Conducted user interviews and usability testing.",
-    image: "https://via.placeholder.com/350x200?text=PetDesk+Research",
-    tools: ["Figma", "UserTesting", "Maze"],
-    duration: "4 weeks",
-    link: "#"
-  },
-  {
-    title: "E-commerce Mobile App Redesign",
-    category: "UI/UX Design",
-    description:
-      "Complete redesign of a mobile shopping app focusing on improving conversion rates and user engagement. Implemented new navigation patterns and streamlined checkout process.",
-    image: "https://via.placeholder.com/350x200?text=Mobile+App+Redesign",
-    tools: ["Figma", "Principle", "InVision"],
-    duration: "6 weeks",
-    link: "#"
-  },
-  {
-    title: "Healthcare Dashboard Design",
-    category: "UI Design",
-    description:
-      "Designed an intuitive dashboard for healthcare professionals to manage patient data and appointments. Focused on accessibility and quick information retrieval.",
-    image: "https://via.placeholder.com/350x200?text=Healthcare+Dashboard",
-    tools: ["Figma", "Adobe Illustrator", "Zeplin"],
-    duration: "5 weeks",
-    link: "#"
-  }
-];
+import { bigProjects } from "./portfolio";
 
 function ProjectPage() {
+  const { projectName } = useParams();
+  
+  // If a specific project is requested, try to find it
+  if (projectName) {
+    const project = bigProjects.projects.find(p => 
+      p.projectName.toLowerCase().replace(/\s+/g, '-') === projectName
+    );
+    
+    if (project) {
+      return (
+        <div className="project-page-container">
+          <div className="project-hero">
+            <h1 className="project-main-title">{project.projectName}</h1>
+            <p className="project-subtitle">{project.projectDesc}</p>
+          </div>
+          
+          <div className="project-detail-content">
+            {project.image && (
+              <div className="project-image-container">
+                <img
+                  className="project-image"
+                  src={project.image}
+                  alt={project.projectName}
+                />
+              </div>
+            )}
+            
+            <div className="project-info">
+              <h2>Project Overview</h2>
+              <p>{project.projectDesc}</p>
+              
+              {project.category && (
+                <div className="project-meta">
+                  <div className="project-category">
+                    <strong>Category:</strong> {project.category}
+                  </div>
+                  {project.tools && (
+                    <div className="project-tools">
+                      <strong>Tools:</strong> {project.tools.join(", ")}
+                    </div>
+                  )}
+                  {project.duration && (
+                    <div className="project-duration">
+                      <strong>Duration:</strong> {project.duration}
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {project.footerLink && (
+                <div className="project-links">
+                  {project.footerLink.map((link, i) => (
+                    <a
+                      key={i}
+                      className="project-link"
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  
+  // Default: show all projects
   return (
     <div className="project-page-container">
       <div className="project-hero">
@@ -58,37 +89,47 @@ function ProjectPage() {
       </div>
 
       <div className="project-list">
-        {caseStudies.map((project, idx) => (
+        {bigProjects.projects.map((project, idx) => (
           <div className="project-card" key={idx}>
             <div className="project-image-container">
               <img
                 className="project-image"
                 src={project.image}
-                alt={project.title}
+                alt={project.projectName}
               />
-              <div className="project-category">{project.category}</div>
+              {project.category && (
+                <div className="project-category">{project.category}</div>
+              )}
             </div>
             <div className="project-info">
-              <h2 className="project-card-title">{project.title}</h2>
-              <p className="project-description">{project.description}</p>
+              <h2 className="project-card-title">{project.projectName}</h2>
+              <p className="project-description">{project.projectDesc}</p>
 
               <div className="project-meta">
-                <div className="project-tools">
-                  <strong>Tools:</strong> {project.tools.join(", ")}
-                </div>
-                <div className="project-duration">
-                  <strong>Duration:</strong> {project.duration}
-                </div>
+                {project.tools && (
+                  <div className="project-tools">
+                    <strong>Tools:</strong> {project.tools.join(", ")}
+                  </div>
+                )}
+                {project.duration && (
+                  <div className="project-duration">
+                    <strong>Duration:</strong> {project.duration}
+                  </div>
+                )}
               </div>
 
-              <a
-                className="project-link"
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Case Study
-              </a>
+              {project.footerLink && project.footerLink.map((link, i) => (
+                <a
+                  key={i}
+                  className="project-link"
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ marginRight: i < project.footerLink.length - 1 ? '10px' : '0' }}
+                >
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
         ))}

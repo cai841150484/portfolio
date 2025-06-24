@@ -101,11 +101,27 @@
 }
 
 .project-meta {
-  margin-bottom: 24px;
-  padding: 16px;
+  margin: 20px 0;
+  padding: 20px;
   background: #f8f9fa;
-  border-radius: 12px;
-  border-left: 4px solid #667eea;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+
+  .project-category,
+  .project-tools,
+  .project-duration {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+  }
 }
 
 .project-tools,
@@ -144,6 +160,130 @@
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
   color: white;
   text-decoration: none;
+}
+
+// Project Detail Page Styles
+.project-detail-content {
+  max-width: 800px;
+  margin: 0 auto;
+
+  .project-image-container {
+    margin-bottom: 40px;
+    text-align: center;
+
+    .project-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .project-info {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 30px;
+    }
+  }
+
+  .project-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    .project-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      }
+    }
+  }
+}
+
+// Dark mode styles for project detail
+.dark-mode {
+  .project-card {
+    background: #2c3e50;
+    border-color: #34495e;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .project-card-title {
+    color: #ecf0f1;
+  }
+
+  .project-description {
+    color: #bdc3c7;
+  }
+
+  .project-tools,
+  .project-duration {
+    color: #95a5a6;
+  }
+
+  .project-detail-content {
+    .project-info {
+      background: #2c3e50;
+
+      h2 {
+        color: #ecf0f1;
+        border-bottom-color: #3498db;
+      }
+
+      p {
+        color: #bdc3c7;
+      }
+    }
+  }
+
+  .project-main-title {
+    color: #ecf0f1;
+  }
+
+  .project-subtitle {
+    color: #95a5a6;
+  }
+
+  .project-meta {
+    background: #34495e;
+    border-left-color: #3498db;
+
+    .project-category,
+    .project-tools,
+    .project-duration {
+      strong {
+        color: #ecf0f1;
+      }
+    }
+  }
 }
 
 // 响应式设计

@@ -1,18 +1,18 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./Project.scss";
-import Project1 from "./Project1";
-import Project2 from "./Project2";
-import Project3 from "./Project3";
-import Project4 from "./Project4";
+import SHEINHeuristicEvaluation from "./SHEINHeuristicEvaluation";
+import PetDeskUserExperienceResearch from "./PetDeskUserExperienceResearch";
+import EcommerceMobileAppRedesign from "./EcommerceMobileAppRedesign";
+import HealthcareDashboardDesign from "./HealthcareDashboardDesign";
 
 export default function Projects() {
   return (
     <Routes>
-      <Route path="/projects/project1" element={<Project1 />} />
-      <Route path="/projects/project2" element={<Project2 />} />
-      <Route path="/projects/project3" element={<Project3 />} />
-      <Route path="/projects/project4" element={<Project4 />} />
+      <Route path="/projects/shein-heuristic-evaluation" element={<SHEINHeuristicEvaluation />} />
+      <Route path="/projects/petdesk-user-experience-research" element={<PetDeskUserExperienceResearch />} />
+      <Route path="/projects/ecommerce-mobile-app-redesign" element={<EcommerceMobileAppRedesign />} />
+      <Route path="/projects/healthcare-dashboard-design" element={<HealthcareDashboardDesign />} />
     </Routes>
   );
 }
