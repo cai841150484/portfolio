@@ -1,17 +1,17 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import "./ProjectPage.scss";
-import { bigProjects } from "./portfolio";
+import {bigProjects} from "./portfolio";
 
 function ProjectPage() {
-  const { projectName } = useParams();
-  
+  const {projectName} = useParams();
+
   // If a specific project is requested, try to find it
   if (projectName) {
-    const project = bigProjects.projects.find(p => 
-      p.projectName.toLowerCase().replace(/\s+/g, '-') === projectName
+    const project = bigProjects.projects.find(
+      p => p.projectName.toLowerCase().replace(/\s+/g, "-") === projectName
     );
-    
+
     if (project) {
       return (
         <div className="project-page-container">
@@ -19,7 +19,7 @@ function ProjectPage() {
             <h1 className="project-main-title">{project.projectName}</h1>
             <p className="project-subtitle">{project.projectDesc}</p>
           </div>
-          
+
           <div className="project-detail-content">
             {project.image && (
               <div className="project-image-container">
@@ -30,11 +30,11 @@ function ProjectPage() {
                 />
               </div>
             )}
-            
+
             <div className="project-info">
               <h2>Project Overview</h2>
               <p>{project.projectDesc}</p>
-              
+
               {project.category && (
                 <div className="project-meta">
                   <div className="project-category">
@@ -52,7 +52,7 @@ function ProjectPage() {
                   )}
                 </div>
               )}
-              
+
               {project.footerLink && (
                 <div className="project-links">
                   {project.footerLink.map((link, i) => (
@@ -74,7 +74,7 @@ function ProjectPage() {
       );
     }
   }
-  
+
   // Default: show all projects
   return (
     <div className="project-page-container">
@@ -118,18 +118,22 @@ function ProjectPage() {
                 )}
               </div>
 
-              {project.footerLink && project.footerLink.map((link, i) => (
-                <a
-                  key={i}
-                  className="project-link"
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ marginRight: i < project.footerLink.length - 1 ? '10px' : '0' }}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {project.footerLink &&
+                project.footerLink.map((link, i) => (
+                  <a
+                    key={i}
+                    className="project-link"
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      marginRight:
+                        i < project.footerLink.length - 1 ? "10px" : "0"
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                ))}
             </div>
           </div>
         ))}

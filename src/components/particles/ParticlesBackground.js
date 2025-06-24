@@ -1,11 +1,11 @@
 import React from "react";
 import Particles from "@tsparticles/react";
-import {loadFull} from "tsparticles";
+import {loadSlim} from "@tsparticles/slim";
 import "./ParticlesBackground.scss";
 
 export default function ParticlesBackground() {
   const particlesInit = async engine => {
-    await loadFull(engine);
+    await loadSlim(engine);
   };
 
   return (

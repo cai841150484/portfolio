@@ -1,5 +1,5 @@
-import React from 'react';
-import './SHEINHeuristicEvaluation.scss';
+import React from "react";
+import "./SHEINHeuristicEvaluation.scss";
 
 const SHEINHeuristicEvaluation = () => {
   return (

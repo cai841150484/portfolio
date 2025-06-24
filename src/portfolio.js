@@ -174,7 +174,8 @@ const bigProjects = {
     {
       image: "https://via.placeholder.com/350x200?text=SHEIN+Case+Study",
       projectName: "SHEIN Heuristic Evaluation",
-      projectDesc: "Conducted a comprehensive heuristic evaluation of SHEIN.com, a leading e-commerce platform specializing in fast fashion. Assessed usability, discoverability, and overall user experience through Nielsen's Ten Usability Heuristics.",
+      projectDesc:
+        "Conducted a comprehensive heuristic evaluation of SHEIN.com, a leading e-commerce platform specializing in fast fashion. Assessed usability, discoverability, and overall user experience through Nielsen's Ten Usability Heuristics.",
       category: "UX Research",
       tools: ["Figma", "Miro", "Google Analytics"],
       duration: "3 weeks",
@@ -188,7 +189,8 @@ const bigProjects = {
     {
       image: "https://via.placeholder.com/350x200?text=PetDesk+Research",
       projectName: "PetDesk User Experience Research",
-      projectDesc: "Evaluated user experience on the PetDesk app for new and returning users to identify strengths and challenges in interface and usability. Conducted user interviews and usability testing.",
+      projectDesc:
+        "Evaluated user experience on the PetDesk app for new and returning users to identify strengths and challenges in interface and usability. Conducted user interviews and usability testing.",
       category: "UX Research",
       tools: ["Figma", "UserTesting", "Maze"],
       duration: "4 weeks",
@@ -202,7 +204,8 @@ const bigProjects = {
     {
       image: "https://via.placeholder.com/350x200?text=Mobile+App+Redesign",
       projectName: "E-commerce Mobile App Redesign",
-      projectDesc: "Complete redesign of a mobile shopping app focusing on improving conversion rates and user engagement. Implemented new navigation patterns and streamlined checkout process.",
+      projectDesc:
+        "Complete redesign of a mobile shopping app focusing on improving conversion rates and user engagement. Implemented new navigation patterns and streamlined checkout process.",
       category: "UI/UX Design",
       tools: ["Figma", "Principle", "InVision"],
       duration: "6 weeks",
@@ -216,7 +219,8 @@ const bigProjects = {
     {
       image: "https://via.placeholder.com/350x200?text=Healthcare+Dashboard",
       projectName: "Healthcare Dashboard Design",
-      projectDesc: "Designed an intuitive dashboard for healthcare professionals to manage patient data and appointments. Focused on accessibility and quick information retrieval.",
+      projectDesc:
+        "Designed an intuitive dashboard for healthcare professionals to manage patient data and appointments. Focused on accessibility and quick information retrieval.",
       category: "UI Design",
       tools: ["Figma", "Adobe Illustrator", "Zeplin"],
       duration: "5 weeks",

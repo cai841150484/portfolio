@@ -1,5 +1,5 @@
-import React from 'react';
-import './PetDeskUserExperienceResearch.scss';
+import React from "react";
+import "./PetDeskUserExperienceResearch.scss";
 
 const PetDeskUserExperienceResearch = () => {
   return (

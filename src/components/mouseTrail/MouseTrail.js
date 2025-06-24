@@ -3,9 +3,10 @@ import "./MouseTrail.scss";
 
 export default function MouseTrail() {
   const [trails, setTrails] = useState([]);
-  const colors = ["#FF5733", "#33FF57", "#3357FF", "#F033FF"];
 
   useEffect(() => {
+    const colors = ["#FF5733", "#33FF57", "#3357FF", "#F033FF"];
+
     const handleMouseMove = e => {
       const newTrail = {
         id: Date.now(),

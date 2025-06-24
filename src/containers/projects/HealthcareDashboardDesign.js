@@ -1,5 +1,5 @@
-import React from 'react';
-import './HealthcareDashboardDesign.scss';
+import React from "react";
+import "./HealthcareDashboardDesign.scss";
 
 const HealthcareDashboardDesign = () => {
   return (

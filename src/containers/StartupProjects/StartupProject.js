@@ -87,28 +87,36 @@ export default function StartupProject() {
                               console.log("[BASIC] Button clicked");
                               console.log("[DEBUG] Project data:", project);
                               console.log("[DEBUG] Link data:", link);
-                              
+
                               // Check if it's a "View Case Study" link
-                              if (link.name.toLowerCase().includes("case study") || 
-                                  link.name.toLowerCase().includes("详情") ||
-                                  link.name.toLowerCase().includes("view project")) {
+                              if (
+                                link.name
+                                  .toLowerCase()
+                                  .includes("case study") ||
+                                link.name.toLowerCase().includes("详情") ||
+                                link.name.toLowerCase().includes("view project")
+                              ) {
                                 // Navigate to project detail page
-                                let projectPath = '';
+                                let projectPath = "";
                                 switch (project.projectName) {
-                                  case 'SHEIN Heuristic Evaluation':
-                                    projectPath = '/projects/shein-heuristic-evaluation';
+                                  case "SHEIN Heuristic Evaluation":
+                                    projectPath =
+                                      "/projects/shein-heuristic-evaluation";
                                     break;
-                                  case 'PetDesk User Experience Research':
-                                    projectPath = '/projects/petdesk-user-experience-research';
+                                  case "PetDesk User Experience Research":
+                                    projectPath =
+                                      "/projects/petdesk-user-experience-research";
                                     break;
-                                  case 'Ecommerce Mobile App Redesign':
-                                    projectPath = '/projects/ecommerce-mobile-app-redesign';
+                                  case "Ecommerce Mobile App Redesign":
+                                    projectPath =
+                                      "/projects/ecommerce-mobile-app-redesign";
                                     break;
-                                  case 'Healthcare Dashboard Design':
-                                    projectPath = '/projects/healthcare-dashboard-design';
+                                  case "Healthcare Dashboard Design":
+                                    projectPath =
+                                      "/projects/healthcare-dashboard-design";
                                     break;
                                   default:
-                                    projectPath = '/projects';
+                                    projectPath = "/projects";
                                 }
                                 handleNavigation(projectPath, true);
                               } else {

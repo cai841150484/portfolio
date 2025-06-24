@@ -1,5 +1,5 @@
-import React from 'react';
-import './EcommerceMobileAppRedesign.scss';
+import React from "react";
+import "./EcommerceMobileAppRedesign.scss";
 
 const EcommerceMobileAppRedesign = () => {
   return (
