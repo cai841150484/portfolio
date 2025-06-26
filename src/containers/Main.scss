@@ -25,21 +25,24 @@ body {
 
 // 移动端容器优化
 @media (max-width: 768px) {
-  .main, .greet-main {
+  .main,
+  .greet-main {
     width: 95%;
     padding: 15px 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .main, .greet-main {
+  .main,
+  .greet-main {
     width: 98%;
     padding: 12px 6px;
   }
 }
 
 @media (max-width: 320px) {
-  .main, .greet-main {
+  .main,
+  .greet-main {
     width: 100%;
     padding: 10px 4px;
   }

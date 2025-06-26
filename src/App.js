@@ -1,14 +1,19 @@
 import React from "react";
-import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 import "./App.scss";
 import Main from "./containers/Main";
 import ProjectStandalone from "./ProjectStandalone";
 
 function App() {
   // 检测是否在 GitHub Pages 环境
-  const isGitHubPages = window.location.hostname.includes('github.io');
-  const basename = isGitHubPages ? '/portfolio' : '';
-  
+  const isGitHubPages = window.location.hostname.includes("github.io");
+  const basename = isGitHubPages ? "/portfolio" : "";
+
   return (
     <Router basename={basename}>
       <div>

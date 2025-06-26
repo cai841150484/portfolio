@@ -25,7 +25,8 @@ const greeting = {
   subTitle: emoji(
     "Creative and detail-oriented UI/UX Designer with a passion for crafting intuitive digital experiences. Skilled in user research, wireframing, prototyping, and visual design. Experienced in collaborating with cross-functional teams to deliver impactful solutions. Always eager to learn, explore new design trends, and turn complex problems into elegant interfaces."
   ),
-  subTitleText: "Creative and detail-oriented UI/UX Designer with a passion for crafting intuitive digital experiences. Skilled in user research, wireframing, prototyping, and visual design. Experienced in collaborating with cross-functional teams to deliver impactful solutions. Always eager to learn, explore new design trends, and turn complex problems into elegant interfaces.",
+  subTitleText:
+    "Creative and detail-oriented UI/UX Designer with a passion for crafting intuitive digital experiences. Skilled in user research, wireframing, prototyping, and visual design. Experienced in collaborating with cross-functional teams to deliver impactful solutions. Always eager to learn, explore new design trends, and turn complex problems into elegant interfaces.",
   resumeLink:
     "https://drive.google.com/file/d/1NRj9mOcYJQXW8fuS-KWnRYwy0maLkJe0/view?usp=drive_link", // Replace with your actual resume link
   displayGreeting: true
