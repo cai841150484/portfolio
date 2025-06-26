@@ -15,9 +15,7 @@ export default defineConfig({
   },
   server: {
     historyApiFallback: {
-      rewrites: [
-        { from: /^\/portfolio\/.*$/, to: '/portfolio/index.html' }
-      ]
+      rewrites: [{from: /^\/portfolio\/.*$/, to: "/portfolio/index.html"}]
     }
   }
 });

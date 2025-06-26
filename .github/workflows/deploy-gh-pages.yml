@@ -5,7 +5,7 @@ env:
   USE_GITHUB_DATA: "false"
 
 on:
-  workflow_dispatch:  # Manual trigger only
+  workflow_dispatch: # Manual trigger only
 
 jobs:
   build-and-deploy:

@@ -13,7 +13,7 @@ Visit my portfolio: [https://cai841150484.github.io/portfolio](https://cai841150
 ## ✨ Features
 
 - 📱 **Fully Responsive Design** - Adapts to all devices
-- 🎨 **Modern UI** - Clean and beautiful user interface  
+- 🎨 **Modern UI** - Clean and beautiful user interface
 - ⚡ **Fast Loading** - Optimized performance
 - 🌙 **Theme Toggle** - Support for light/dark themes
 - 📊 **GitHub Integration** - Automatically display GitHub projects and statistics
@@ -29,7 +29,7 @@ Visit my portfolio: [https://cai841150484.github.io/portfolio](https://cai841150
 ✅ Projects Display (Connected to GitHub)  
 ✅ Achievements and Certifications  
 ✅ Contact Information  
-✅ GitHub Profile  
+✅ GitHub Profile
 
 ## 🛠️ Tech Stack
 
@@ -53,22 +53,26 @@ git@2.17.1 or higher
 ### Local Development
 
 1. **Clone the project**
+
 ```bash
 git clone https://github.com/cai841150484/portfolio.git
 cd portfolio
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Start development server**
+
 ```bash
 npm start
 ```
 
 4. **Visit in browser**
+
 ```
 http://localhost:3000
 ```
@@ -89,7 +93,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/your-username",
   linkedin: "https://www.linkedin.com/in/your-username/",
-  gmail: "your-email@gmail.com",
+  gmail: "your-email@gmail.com"
   // More social media links...
 };
 ```
@@ -97,11 +101,13 @@ const socialMediaLinks = {
 ### GitHub Integration Setup
 
 1. **Create `.env` file** (if you haven't already)
+
 ```bash
 cp env.example .env
 ```
 
 2. **Configure environment variables**
+
 ```env
 REACT_APP_GITHUB_TOKEN=your-github-token
 GITHUB_USERNAME=your-github-username
@@ -206,5 +212,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ⭐ If this project helps you, please give it a star!
 
-<!-- Last updated: December 2024 -->
----
+## <!-- Last updated: December 2024 -->
