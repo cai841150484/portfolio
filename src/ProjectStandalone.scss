@@ -4,9 +4,31 @@
   min-height: 100vh;
   background: #f7f8fa;
   transition: 0.1s;
+  // 添加移动端优化
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .dark-mode.project-standalone-wrapper {
   background-color: $darkBackground;
   color: white;
+}
+
+// 移动端优化
+@media (max-width: 768px) {
+  .project-standalone-wrapper {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-standalone-wrapper {
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 320px) {
+  .project-standalone-wrapper {
+    padding: 0 2px;
+  }
 }

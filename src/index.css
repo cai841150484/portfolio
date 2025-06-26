@@ -6,31 +6,98 @@
     url("./assets/fonts/Agustina.woff") format("woff");
   font-display: swap;
 }
+
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
     url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
   font-display: swap;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 html,
 body {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   font: 19px / 23px Montserrat, "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 移动端优化 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
 }
+
+/* 全局移动端样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* 改善移动端触摸目标 */
+a,
+button,
+input,
+textarea,
+select {
+  min-height: 44px;
+}
+
+/* 图片响应式 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Media Query */
 @media (max-width: 1380px) {
   html,
   body {
-    font-size: rem;
+    font-size: 1rem;
     line-height: normal;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    font: 18px / 22px Montserrat, "Montserrat", sans-serif;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font: 16px / 20px Montserrat, "Montserrat", sans-serif;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font: 15px / 19px Montserrat, "Montserrat", sans-serif;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font: 14px / 18px Montserrat, "Montserrat", sans-serif;
+  }
+}
+
+/* 横屏模式优化 */
+@media (max-height: 600px) and (orientation: landscape) {
+  body {
+    font-size: 14px;
+    line-height: 18px;
   }
 }

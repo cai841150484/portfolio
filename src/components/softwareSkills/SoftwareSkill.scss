@@ -7,25 +7,103 @@
   margin-bottom: 0px;
   margin-top: 0px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .software-skill-inline {
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  // 改善移动端触摸体验
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.software-skill-inline:hover {
+  transform: translateY(-5px);
 }
 
 .software-skill-inline > i {
   color: $subTitle;
+  transition: color 0.3s ease;
 }
 
 .software-skill-inline > i:hover {
   color: $skillsColor;
 }
+
 .software-skill-inline > p {
   color: $subTitle;
   font-size: 10px;
+  margin-top: 5px;
+  transition: color 0.3s ease;
 }
+
 .software-skill-inline > i:hover ~ p {
   color: $skillsColor;
+}
+
+// 移动端优化
+@media (max-width: 768px) {
+  .dev-icons {
+    font-size: 2.5rem;
+    gap: 8px;
+    padding: 0 10px;
+  }
+  
+  .software-skill-inline {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    min-width: 60px;
+  }
+  
+  .software-skill-inline > p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-icons {
+    font-size: 2rem;
+    gap: 6px;
+    padding: 0 8px;
+  }
+  
+  .software-skill-inline {
+    margin-right: 12px;
+    margin-bottom: 12px;
+    min-width: 50px;
+  }
+  
+  .software-skill-inline > p {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .dev-icons {
+    font-size: 1.8rem;
+    gap: 4px;
+    padding: 0 5px;
+  }
+  
+  .software-skill-inline {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    min-width: 45px;
+  }
+  
+  .software-skill-inline > p {
+    font-size: 7px;
+  }
 }

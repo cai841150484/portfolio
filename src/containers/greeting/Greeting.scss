@@ -43,14 +43,16 @@
 }
 
 .greeting-text {
-  font-size: 70px;
-  line-height: 1.1;
+  font-size: 50px;
+  line-height: 1.2;
   color: $textColor !important;
 }
 
 .greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 22px;
+  line-height: 35px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .greeting-image-div > img {
@@ -99,29 +101,132 @@
     font-size: 20px;
   }
 }
-@media (max-width: 768px) {
-  .button-greeting-div {
-    justify-content: space-around;
+
+// 优化平板设备显示
+@media (max-width: 1024px) {
+  .main, .greet-main {
+    width: 95%;
+    padding: 15px 8px;
+    margin-top: 3rem;
   }
+  
   .greeting-text {
-    font-size: 30px;
-    text-align: center;
+    font-size: 40px;
   }
+  
+  .greeting-text-p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .button-greeting-div {
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main, .greet-main {
+    width: 95%;
+    padding: 10px 5px;
+    margin-top: 2rem;
+  }
+  
+  .button-greeting-div {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .greeting-text {
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
   .greeting-text-p {
     font-size: 16px;
-    line-height: normal;
+    line-height: 1.6;
     text-align: center;
+    padding: 0 10px;
   }
+  
   .greeting-main {
     display: block;
   }
+  
   .greeting-image-div {
     height: 256px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .greeting-image-div > img {
+    max-height: 240px;
+    width: auto;
+  }
+}
+
+// 优化小屏手机显示
+@media (max-width: 480px) {
+  .main, .greet-main {
+    width: 98%;
+    padding: 8px 4px;
+    margin-top: 1.5rem;
+  }
+  
+  .greeting-text {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  
+  .greeting-text-p {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0 5px;
+  }
+  
+  .greeting-image-div {
+    height: 200px;
+  }
+  
+  .greeting-image-div > img {
+    max-height: 180px;
+  }
+  
+  .button-greeting-div {
+    margin-top: 25px;
+    gap: 12px;
+  }
+  
+  .empty-div {
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 320px) {
   .main {
     width: auto;
+    padding: 5px 2px;
+  }
+  
+  .greeting-text {
+    font-size: 20px;
+  }
+  
+  .greeting-text-p {
+    font-size: 14px;
+  }
+  
+  .greeting-image-div {
+    height: 160px;
+  }
+  
+  .greeting-image-div > img {
+    max-height: 140px;
   }
 }
