@@ -1,0 +1,283 @@
+// 全局可访问性样式
+@import "./_globalColor";
+
+// 屏幕阅读器专用文本
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// 跳转到主内容链接
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: $buttonColor;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  font-weight: bold;
+  
+  &:focus {
+    top: 6px;
+  }
+}
+
+// 改进焦点指示器
+*:focus {
+  outline: 2px solid $buttonColor;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid $buttonColor;
+  outline-offset: 2px;
+}
+
+// 链接样式改进
+a {
+  color: $buttonColor;
+  text-decoration: underline;
+  
+  &:hover {
+    text-decoration: none;
+  }
+  
+  &:focus {
+    background-color: rgba(85, 25, 139, 0.1);
+    border-radius: 2px;
+  }
+}
+
+// 按钮和交互元素的最小触摸目标
+button, 
+[role="button"], 
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"],
+a {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  // 移动端触摸优化
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+// 表单元素改进
+input, 
+textarea, 
+select {
+  &:focus {
+    outline: 2px solid $buttonColor;
+    outline-offset: 2px;
+    border-color: $buttonColor;
+  }
+  
+  &:invalid {
+    border-color: #e74c3c;
+    
+    &:focus {
+      outline-color: #e74c3c;
+    }
+  }
+}
+
+// 错误消息样式
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  
+  &::before {
+    content: "⚠️";
+    margin-right: 4px;
+  }
+}
+
+// 成功消息样式
+.success-message {
+  color: #27ae60;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  
+  &::before {
+    content: "✅";
+    margin-right: 4px;
+  }
+}
+
+// 高对比度模式支持
+@media (prefers-contrast: high) {
+  * {
+    border-color: currentColor !important;
+  }
+  
+  .main-button {
+    border: 2px solid currentColor !important;
+  }
+}
+
+// 减少动画偏好支持
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// 暗色模式可访问性改进
+.dark-mode {
+  // 确保暗色模式下的对比度
+  color: #ffffff;
+  
+  a {
+    color: #9b59b6;
+    
+    &:focus {
+      background-color: rgba(155, 89, 182, 0.2);
+    }
+  }
+  
+  *:focus {
+    outline-color: #9b59b6;
+  }
+  
+  *:focus-visible {
+    outline-color: #9b59b6;
+  }
+  
+  input, 
+  textarea, 
+  select {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border-color: #4a6741;
+    
+    &:focus {
+      outline-color: #9b59b6;
+      border-color: #9b59b6;
+    }
+  }
+}
+
+// 移动端可访问性改进
+@media (max-width: 768px) {
+  // 增加移动端的触摸目标大小
+  button, 
+  [role="button"], 
+  input[type="button"], 
+  input[type="submit"], 
+  input[type="reset"],
+  a {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px;
+  }
+  
+  // 移动端字体大小最小16px，防止iOS缩放
+  input, 
+  textarea, 
+  select {
+    font-size: 16px !important;
+  }
+}
+
+// 键盘导航改进
+.keyboard-navigation {
+  *:focus {
+    outline: 3px solid $buttonColor;
+    outline-offset: 2px;
+  }
+}
+
+// 为屏幕阅读器添加更多上下文
+.visually-hidden {
+  @extend .sr-only;
+}
+
+// 改进列表的可访问性
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+// 改进表格的可访问性
+table {
+  border-collapse: collapse;
+  width: 100%;
+  
+  th {
+    text-align: left;
+    font-weight: bold;
+    background-color: rgba(85, 25, 139, 0.1);
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  caption {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+}
+
+// 改进模态框的可访问性
+.modal {
+  &[aria-hidden="true"] {
+    display: none;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+// 改进工具提示的可访问性
+.tooltip {
+  position: relative;
+  
+  &:hover::after,
+  &:focus::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    z-index: 1000;
+  }
+}
