@@ -1,8 +1,49 @@
+@use "./_globalColor" as *;
+
 .project-page-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
 }
+
+// 空状态样式
+.no-projects-found {
+  text-align: center;
+  padding: 60px 20px;
+  color: $subTitle;
+
+  .dark-mode & {
+    color: #bdc3c7;
+  }
+}
+
+.no-projects-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.no-projects-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $titleColor;
+  margin-bottom: 12px;
+
+  .dark-mode & {
+    color: $textColorDark;
+  }
+}
+
+.no-projects-message {
+// removed reset-filters-button with ProjectFilter feature
+  line-height: 1.5;
+  margin-bottom: 24px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 .project-hero {
   text-align: center;

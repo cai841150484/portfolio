@@ -1,10 +1,24 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useParams} from "react-router-dom";
 import "./ProjectPage.scss";
 import {bigProjects} from "./portfolio";
+import LazyImage from "./components/lazyImage/LazyImage";
+import {ProjectCardSkeleton, useLoadingState} from "./components/loading/LoadingSpinner";
 
 function ProjectPage() {
   const {projectName} = useParams();
+  const {isLoading, startLoading, stopLoading} = useLoadingState(true);
+
+  // 模拟加载状态
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      stopLoading();
+    }, 1500); // 模拟1.5秒加载时间
+
+    return () => clearTimeout(timer);
+  }, [stopLoading]);
+
+  // 该页面已移除项目筛选功能，直接展示所有项目
 
   // If a specific project is requested, try to find it
   if (projectName) {
@@ -23,10 +37,12 @@ function ProjectPage() {
           <div className="project-detail-content">
             {project.image && (
               <div className="project-image-container">
-                <img
+                <LazyImage
                   className="project-image"
                   src={project.image}
+                  webpSrc={project.webpImage}
                   alt={project.projectName}
+                  placeholder="/api/placeholder/800/400"
                 />
               </div>
             )}
@@ -89,13 +105,21 @@ function ProjectPage() {
       </div>
 
       <div className="project-list">
-        {bigProjects.projects.map((project, idx) => (
+        {isLoading ? (
+          // 显示骨架屏
+          Array.from({length: 4}).map((_, idx) => (
+            <ProjectCardSkeleton key={idx} />
+          ))
+        ) : bigProjects.projects.length > 0 ? (
+          bigProjects.projects.map((project, idx) => (
           <div className="project-card" key={idx}>
             <div className="project-image-container">
-              <img
+              <LazyImage
                 className="project-image"
                 src={project.image}
+                webpSrc={project.webpImage}
                 alt={project.projectName}
+                placeholder="/api/placeholder/350/220"
               />
               {project.category && (
                 <div className="project-category">{project.category}</div>
@@ -136,7 +160,10 @@ function ProjectPage() {
                 ))}
             </div>
           </div>
-        ))}
+          ))
+        ) : (
+          <div className="no-projects-found">No projects found.</div>
+        )}
       </div>
     </div>
   );
