@@ -36,8 +36,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
+      - name: Build project (Vite)
+        run: npm run build:vite
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

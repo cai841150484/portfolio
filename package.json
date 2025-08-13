@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
     "ajv": "^8.17.1",
     "colorthief": "^2.3.0",
     "gh-pages": "^6.3.0",
@@ -15,16 +17,17 @@
     "react-router-dom": "^7.6.2",
     "react-scripts": "^5.0.1",
     "react-typewriter-effect": "^1.1.0",
-    "sass": "^1.77.8",
-    "@tsparticles/slim": "^3.8.1",
-    "@tsparticles/react": "^3.0.0"
+    "sass": "^1.77.8"
   },
   "scripts": {
-  "predeploy": "npm run build",
-  "start": "craco start",
-  "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "start": "craco start",
+    "build": "craco build",
     "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+  "eject": "react-scripts eject",
+  "dev": "vite",
+  "build:vite": "vite build",
+  "preview": "vite preview --port 3000 --strictPort"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,8 +51,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@craco/craco": "^7.1.0",
     "@vitejs/plugin-react": "^4.5.2",
-  "vite": "^6.3.5",
-  "@craco/craco": "^7.1.0"
+    "vite": "^6.3.5"
   }
 }
