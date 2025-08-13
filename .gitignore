@@ -25,3 +25,32 @@ yarn-error.log*
 #user generated content
 public/profile.json
 public/blogs.json
+
+# --- Editor & IDE ---
+.vscode/
+.idea/
+.history/
+*.swp
+*.swo
+*.orig
+
+# --- Caches ---
+.eslintcache
+.cache/
+
+# --- OS cruft ---
+.AppleDouble
+.LSOverride
+Icon?
+.Spotlight-V100
+.Trashes
+.Trash-*
+._*
+Thumbs.db
+ehthumbs.db
+
+# --- Build outputs (Vite uses build/, but cover dist/ too) ---
+/dist
+
+# --- Package manager logs (in addition to existing patterns) ---
+pnpm-debug.log*
