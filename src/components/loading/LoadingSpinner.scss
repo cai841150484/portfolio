@@ -1,0 +1,289 @@
+@use "../../_globalColor" as *;
+
+// 基础加载器样式
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &--fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+    
+    .dark-mode & {
+      background: rgba(44, 62, 80, 0.9);
+    }
+  }
+  
+  &--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 100;
+    
+    .dark-mode & {
+      background: rgba(44, 62, 80, 0.8);
+    }
+  }
+}
+
+.loading-spinner__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loading-spinner__circle {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  
+  // 尺寸变体
+  .loading-spinner--small & {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .loading-spinner--medium & {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .loading-spinner--large & {
+    width: 60px;
+    height: 60px;
+  }
+  
+  // 颜色变体
+  .loading-spinner--primary & {
+    border: 3px solid rgba(85, 25, 139, 0.2);
+    border-top-color: $buttonColor;
+  }
+  
+  .loading-spinner--secondary & {
+    border: 3px solid rgba(140, 67, 206, 0.2);
+    border-top-color: $buttonHover;
+  }
+  
+  .loading-spinner--white & {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+  }
+  
+  .loading-spinner--dark & {
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #333;
+  }
+}
+
+.loading-spinner__inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner__text {
+  font-size: 0.9rem;
+  color: $subTitle;
+  font-weight: 500;
+  text-align: center;
+  
+  .dark-mode & {
+    color: #bdc3c7;
+  }
+  
+  .loading-spinner--small & {
+    font-size: 0.8rem;
+  }
+  
+  .loading-spinner--large & {
+    font-size: 1rem;
+  }
+}
+
+// 旋转动画
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// 骨架屏样式
+.skeleton-loader {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  
+  .dark-mode & {
+    background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// 卡片骨架屏
+.card-skeleton {
+  padding: 16px;
+  border-radius: 12px;
+  background: $lightBackground1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  
+  .dark-mode & {
+    background: $darkBackground;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.card-skeleton__content {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-skeleton__title {
+  margin-bottom: 4px;
+}
+
+.card-skeleton__line {
+  margin-bottom: 8px;
+}
+
+// 项目卡片骨架屏
+.project-card-skeleton {
+  background: $lightBackground1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  
+  .dark-mode & {
+    background: $darkBackground;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.project-skeleton__content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-skeleton__category {
+  margin-bottom: 8px;
+}
+
+.project-skeleton__title {
+  margin-bottom: 12px;
+}
+
+.project-skeleton__desc {
+  margin-bottom: 6px;
+}
+
+.project-skeleton__meta {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .loading-spinner__text {
+    font-size: 0.85rem;
+  }
+  
+  .card-skeleton {
+    padding: 12px;
+  }
+  
+  .project-skeleton__content {
+    padding: 16px;
+    gap: 10px;
+  }
+  
+  .project-skeleton__meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-spinner__container {
+    gap: 12px;
+  }
+  
+  .loading-spinner__circle {
+    .loading-spinner--medium & {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .loading-spinner--large & {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  
+  .loading-spinner__text {
+    font-size: 0.8rem;
+  }
+}
+
+// 减少动画偏好支持
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner__inner {
+    animation: none;
+  }
+  
+  .skeleton-loader {
+    animation: none;
+    background: #f0f0f0;
+    
+    .dark-mode & {
+      background: #2a2a2a;
+    }
+  }
+}
+
+// 高对比度模式支持
+@media (prefers-contrast: high) {
+  .loading-spinner__circle {
+    .loading-spinner--primary & {
+      border-color: transparent;
+      border-top-color: $buttonColor;
+      border-width: 4px;
+    }
+  }
+  
+  .skeleton-loader {
+    background: #ddd;
+    
+    .dark-mode & {
+      background: #444;
+    }
+  }
+}
