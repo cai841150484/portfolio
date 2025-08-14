@@ -6,6 +6,7 @@ import {StyleProvider} from "./contexts/StyleContext";
 import {useLocalStorage} from "./hooks/useLocalStorage";
 import "./ProjectStandalone.scss";
 
+
 function ProjectStandalone() {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);

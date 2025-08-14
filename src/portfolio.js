@@ -28,7 +28,7 @@ const splashScreen = {
 // Summary And Greeting Section
 
 const illustration = {
-  animated: true // Set to false to use static SVG
+  animated: true 
 };
 
 const greeting = {
@@ -47,7 +47,7 @@ const greeting = {
 // Social Media Links
 
 const socialMediaLinks = {
-  linkedin: "https://www.linkedin.com/in/hao-cai-6328351b4/", // Replace with your LinkedIn
+  linkedin: "https://www.linkedin.com/in/hao-cai-6328351b4/", 
   gmail: "jhoncai811@gmail.com",
   display: true
 };
