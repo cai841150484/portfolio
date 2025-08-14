@@ -10,6 +10,8 @@ import MouseTrail from "../../components/mouseTrail/MouseTrail";
 // import ParticlesBackground from "../../components/particles/ParticlesBackground";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import resumePdf from "./resume.pdf";
+import manOnTable from "../../assets/images/manOnTable.svg";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -58,9 +60,9 @@ export default function Greeting() {
             <SocialMedia />
             <div className="button-greeting-div">
               <Button text="Contact me" href="#contact" />
-              {greeting.resumeLink && (
+        {greeting.resumeLink && (
                 <a
-                  href={require("./resume.pdf")}
+          href={resumePdf}
                   download="Resume.pdf"
                   className="download-link-button main-button"
                 >
@@ -74,10 +76,7 @@ export default function Greeting() {
           {illustration.animated ? (
             <DisplayLottie animationData={landingPerson} />
           ) : (
-            <img
-              alt="man sitting on table"
-              src={require("../../assets/images/manOnTable.svg")}
-            ></img>
+            <img alt="man sitting on table" src={manOnTable}></img>
           )}
         </div>
       </div>

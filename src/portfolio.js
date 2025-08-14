@@ -4,6 +4,9 @@
 
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation.json"; // Rename to your file name for custom animation
+import harvardLogo from "./assets/images/harvardLogo.png";
+import stanfordLogo from "./assets/images/stanfordLogo.png";
+import placeholder350x200 from "./assets/images/placeholder-350x200.svg";
 
 // Splash Screen
 
@@ -83,14 +86,14 @@ const educationInfo = {
   schools: [
     {
       schoolName: "The Pennsylvania State University",
-      logo: require("./assets/images/harvardLogo.png"), // Can be replaced with PSU logo
+  logo: harvardLogo, // Can be replaced with PSU logo
       subHeader: "Master of Science in Informatics",
       duration: "Aug 2023 – Aug 2025",
       desc: "Focusing on user experience, human-computer interaction, and digital product design."
     },
     {
       schoolName: "California State University, Fullerton",
-      logo: require("./assets/images/stanfordLogo.png"), // Can be replaced with CSUF logo
+  logo: stanfordLogo, // Can be replaced with CSUF logo
       subHeader: "Bachelor of Fine Art in Graphic And Interactive Design",
       duration: "Aug 2020 – May 2023",
       desc: "Developed a strong foundation in visual communication, branding, and interactive media."
@@ -174,7 +177,7 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: "https://via.placeholder.com/350x200?text=SHEIN+Case+Study",
+  image: placeholder350x200,
       projectName: "SHEIN Heuristic Evaluation",
       projectDesc:
         "Conducted a comprehensive heuristic evaluation of SHEIN.com, a leading e-commerce platform specializing in fast fashion. Assessed usability, discoverability, and overall user experience through Nielsen's Ten Usability Heuristics.",
@@ -189,7 +192,7 @@ const bigProjects = {
       ]
     },
     {
-      image: "https://via.placeholder.com/350x200?text=PetDesk+Research",
+  image: placeholder350x200,
       projectName: "PetDesk User Experience Research",
       projectDesc:
         "Evaluated user experience on the PetDesk app for new and returning users to identify strengths and challenges in interface and usability. Conducted user interviews and usability testing.",
@@ -204,7 +207,7 @@ const bigProjects = {
       ]
     },
     {
-      image: "https://via.placeholder.com/350x200?text=Mobile+App+Redesign",
+  image: placeholder350x200,
       projectName: "E-commerce Mobile App Redesign",
       projectDesc:
         "Complete redesign of a mobile shopping app focusing on improving conversion rates and user engagement. Implemented new navigation patterns and streamlined checkout process.",
@@ -219,7 +222,7 @@ const bigProjects = {
       ]
     },
     {
-      image: "https://via.placeholder.com/350x200?text=Healthcare+Dashboard",
+  image: placeholder350x200,
       projectName: "Healthcare Dashboard Design",
       projectDesc:
         "Designed an intuitive dashboard for healthcare professionals to manage patient data and appointments. Focused on accessibility and quick information retrieval.",

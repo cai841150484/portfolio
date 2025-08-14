@@ -5,6 +5,7 @@ import {illustration, skillsSection} from "../../portfolio";
 import codingPerson from "../../assets/lottie/codingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
+import developerActivity from "../../assets/images/developerActivity.svg";
 
 export default function Skills() {
   const {isDark} = useContext(StyleContext);
@@ -18,10 +19,7 @@ export default function Skills() {
           {illustration.animated ? (
             <DisplayLottie animationData={codingPerson} />
           ) : (
-            <img
-              alt="Man Working"
-              src={require("../../assets/images/developerActivity.svg")}
-            ></img>
+            <img alt="Man Working" src={developerActivity}></img>
           )}
         </div>
         <div className="skills-text-div">
