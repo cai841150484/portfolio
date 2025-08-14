@@ -7,6 +7,15 @@ import splashAnimation from "./assets/lottie/splashAnimation.json"; // Rename to
 import pennstateLogo from "./assets/images/pennstateLogo.jpg";
 import calstateLogo from "./assets/images/calstateLogo.png";
 import placeholder350x200 from "./assets/images/placeholder-350x200.svg";
+// Project images
+import imgShein from "./assets/images/projects/shein.png";
+import imgPetdesk from "./assets/images/projects/evaluatingandimprovingtheuserexperienceofthepetdeskapp.png";
+import imgZenflow from "./assets/images/projects/zenflow.png";
+import imgPetsify from "./assets/images/projects/petsify.png";
+import imgMiltons from "./assets/images/projects/miltonsphilosophy.png";
+import imgPosterPack from "./assets/images/projects/posterandpackingdesign.png";
+import imgSandboxie from "./assets/images/projects/sandboxie.png";
+import imgAboveCarmen from "./assets/images/projects/abovethecarmenline.png";
 
 // Splash Screen
 
@@ -174,66 +183,220 @@ const openSource = {
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  subtitle: "Selected case studies & design works",
   projects: [
     {
-  image: placeholder350x200,
+      imageKey: "shein",
+      image: imgShein,
       projectName: "SHEIN Heuristic Evaluation",
       projectDesc:
-        "Conducted a comprehensive heuristic evaluation of SHEIN.com, a leading e-commerce platform specializing in fast fashion. Assessed usability, discoverability, and overall user experience through Nielsen's Ten Usability Heuristics.",
-      category: "UX Research",
-      tools: ["Figma", "Miro", "Google Analytics"],
-      duration: "3 weeks",
-      footerLink: [
+        "Heuristic evaluation of SHEIN.com focusing on navigation, product discovery, and checkout using Nielsen’s Ten Heuristics.",
+      category: "UX Audit · Heuristic Evaluation",
+      tools: ["Nielsen Heuristics", "Figma", "Miro"],
+      duration: "2024 Q3 · 3 weeks",
+      sections: [
         {
-          name: "View Case Study",
-          url: "/projects/shein-heuristic-evaluation"
+          title: "Overview",
+          paragraphs: [
+            "Evaluated the e-commerce flow across home, PLP/PDP, cart, and checkout for usability gaps and cognitive load issues."
+          ]
+        },
+        {
+          title: "Goals",
+          bullets: [
+            "Identify critical usability violations across key flows",
+            "Prioritize issues with severity ratings and impact",
+            "Provide actionable UI/UX recommendations"
+          ]
+        },
+        {
+          title: "Methods",
+          paragraphs: [
+            "Applied Nielsen’s 10 Heuristics with severity scoring (0–4). Benchmarked common e‑commerce patterns for best practices."
+          ]
+        },
+        {
+          title: "Outcomes",
+          paragraphs: [
+            "Produced prioritized issue list with design suggestions targeting discoverability, feedback, and error prevention."
+          ]
         }
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/shein-heuristic-evaluation" }
       ]
     },
     {
-  image: placeholder350x200,
+      imageKey: "evaluatingandimprovingtheuserexperienceofthepetdeskapp",
+      image: imgPetdesk,
       projectName: "PetDesk User Experience Research",
       projectDesc:
-        "Evaluated user experience on the PetDesk app for new and returning users to identify strengths and challenges in interface and usability. Conducted user interviews and usability testing.",
-      category: "UX Research",
-      tools: ["Figma", "UserTesting", "Maze"],
-      duration: "4 weeks",
-      footerLink: [
+        "Mixed‑methods study of onboarding and key task flows for new/returning users on the PetDesk app.",
+      category: "User Research · Usability Testing",
+      tools: ["Interview Guide", "Usability Test (moderated)", "Figma", "Maze"],
+      duration: "2024 Q2 · 4 weeks",
+      sections: [
         {
-          name: "View Case Study",
-          url: "/projects/petdesk-user-experience-research"
+          title: "Overview",
+          paragraphs: [
+            "Explored mental models and friction points from onboarding to appointment management to inform redesign priorities."
+          ]
+        },
+        {
+          title: "Goals",
+          bullets: [
+            "Understand first‑time setup challenges",
+            "Measure task completion and error patterns",
+            "Reveal content and IA gaps"
+          ]
+        },
+        {
+          title: "Methods",
+          paragraphs: [
+            "Semi‑structured interviews and moderated task‑based tests; affinity mapping of findings; severity tagging."
+          ]
+        },
+        {
+          title: "Outcomes",
+          paragraphs: [
+            "Prioritized issues around navigation clarity and terminology; provided wireframe concepts for onboarding improvements."
+          ]
         }
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/petdesk-user-experience-research" }
       ]
     },
     {
-  image: placeholder350x200,
-      projectName: "E-commerce Mobile App Redesign",
+      imageKey: "zenflow",
+      image: imgZenflow,
+      projectName: "ZenFlow Mobile App",
       projectDesc:
-        "Complete redesign of a mobile shopping app focusing on improving conversion rates and user engagement. Implemented new navigation patterns and streamlined checkout process.",
-      category: "UI/UX Design",
-      tools: ["Figma", "Principle", "InVision"],
-      duration: "6 weeks",
-      footerLink: [
+        "Concept app for mindful routines with breathing guidance and a calm visual language that reduces cognitive load.",
+      category: "Product Design · Mobile UI",
+      tools: ["Figma", "Prototyping", "After Effects"],
+      duration: "Concept · 4 weeks",
+      sections: [
         {
-          name: "View Case Study",
-          url: "/projects/ecommerce-mobile-app-redesign"
+          title: "Overview",
+          paragraphs: [
+            "Designed a minimal, distraction‑free flow to support daily breathing and focus routines."
+          ]
+        },
+        {
+          title: "Goals",
+          bullets: [
+            "Lower cognitive load during routine setup",
+            "Create a calming motion/visual system",
+            "Enable quick access to most‑used actions"
+          ]
+        },
+        {
+          title: "Design",
+          paragraphs: [
+            "Neutral palette, soft gradients, and subtle motion. Emphasis on large tappable targets and predictable navigation."
+          ]
+        },
+        {
+          title: "Outcomes",
+          paragraphs: [
+            "High‑fidelity prototype demonstrating core flows; ready for usability testing iterations."
+          ]
         }
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/zenflow-mobile-app" }
       ]
     },
     {
-  image: placeholder350x200,
-      projectName: "Healthcare Dashboard Design",
+      imageKey: "petsify",
+      image: imgPetsify,
+      projectName: "Petsify E-commerce Experience",
       projectDesc:
-        "Designed an intuitive dashboard for healthcare professionals to manage patient data and appointments. Focused on accessibility and quick information retrieval.",
-      category: "UI Design",
-      tools: ["Figma", "Adobe Illustrator", "Zeplin"],
-      duration: "5 weeks",
+        "End-to-end e-commerce UX for pet products — from navigation and product discovery to cart and checkout optimizations.",
+      category: "E‑commerce UX · IA / Navigation",
+      tools: ["Figma", "IA Mapping", "User Flows", "Illustrator"],
+      duration: "2023 · 5 weeks",
+      sections: [
+        { title: "Overview", paragraphs: ["End‑to‑end IA and flow design for product discovery, comparison, cart, and checkout."]},
+        { title: "Goals", bullets: ["Improve discovery and comparison", "Reduce checkout drop‑off", "Clarify promotions and shipping"]},
+        { title: "Design", paragraphs: ["Introduced clearer category taxonomy, filters, and progressive disclosure in checkout."]},
+        { title: "Outcomes", paragraphs: ["Defined UX patterns and annotated wireframes ready for usability validation."]}
+      ],
       footerLink: [
-        {
-          name: "View Case Study",
-          url: "/projects/healthcare-dashboard-design"
-        }
+        { name: "View Case Study", url: "/projects/petsify-e-commerce-experience" }
+      ]
+    },
+    {
+      imageKey: "miltonsphilosophy",
+      image: imgMiltons,
+      projectName: "Miltons Philosophy",
+      projectDesc:
+        "Editorial and interaction experiment translating philosophical themes into typographic hierarchy and visual rhythm.",
+      category: "Editorial Design · Interactive Typography",
+      tools: ["InDesign", "Photoshop", "Motion Principles"],
+      duration: "Studio · 2 weeks",
+      sections: [
+        { title: "Overview", paragraphs: ["Explored expressive type, rhythm, and grid to convey philosophical content."]},
+        { title: "Design", paragraphs: ["Used hierarchy, whitespace, and pacing to guide reading flow; experimented with typographic motion."]},
+        { title: "Outcomes", paragraphs: ["Delivered a cohesive editorial narrative with micro‑interaction studies."]}
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/miltons-philosophy" }
+      ]
+    },
+    {
+      imageKey: "posterandpackingdesign",
+      image: imgPosterPack,
+      projectName: "Poster and Packing Design",
+      projectDesc:
+        "Posters and packaging with strong brand story, color systems, and print‑ready layouts.",
+      category: "Visual Identity · Packaging",
+      tools: ["Brand System", "Color Tokens", "Illustrator", "Photoshop"],
+      duration: "2023 · 3 weeks",
+      sections: [
+        { title: "Overview", paragraphs: ["Developed a consistent visual system across posters and package surfaces."]},
+        { title: "Goals", bullets: ["Cohesive brand voice", "Print‑ready fidelity", "Shelf impact"]},
+        { title: "Outcomes", paragraphs: ["Delivered dielines, color specs, and production‑ready exports."]}
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/poster-and-packing-design" }
+      ]
+    },
+    {
+      imageKey: "sandboxie",
+      image: imgSandboxie,
+      projectName: "Sandboxie UI Refresh",
+      projectDesc:
+        "Conceptual refresh with clearer affordances, modern visual system, and better information density.",
+      category: "UI Design · Visual Refresh",
+      tools: ["Figma", "Design Tokens", "Iconography"],
+      duration: "Concept · 2 weeks",
+      sections: [
+        { title: "Overview", paragraphs: ["Audited existing UI; proposed a refreshed visual system and layout density adjustments."]},
+        { title: "Design", paragraphs: ["Introduced tokenized color/typography, clearer affordances, and tighter information grouping."]},
+        { title: "Outcomes", paragraphs: ["Component proposals and annotated screens for stakeholder review."]}
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/sandboxie-ui-refresh" }
+      ]
+    },
+    {
+      imageKey: "abovethecarmenline",
+      image: imgAboveCarmen,
+      projectName: "Above the Carmen Line",
+      projectDesc:
+        "Interaction concept inspired by near‑space narratives; minimalist layout with bold typographic rhythm.",
+      category: "Interaction · Visual Design",
+      tools: ["Figma", "After Effects", "Typography"],
+      duration: "Concept · 2 weeks",
+      sections: [
+        { title: "Overview", paragraphs: ["Explored cosmic themes using typographic scale, contrast, and spatial rhythm."]},
+        { title: "Design", paragraphs: ["Minimal grid, bold type, and motion hints to convey altitude and silence."]},
+        { title: "Outcomes", paragraphs: ["Art‑direction frames and motion cues for further prototyping."]}
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/above-the-carmen-line" }
       ]
     }
   ],

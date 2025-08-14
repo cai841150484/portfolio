@@ -1,13 +1,21 @@
 import React, {useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import "./ProjectPage.scss";
 import {bigProjects} from "./portfolio";
 import LazyImage from "./components/lazyImage/LazyImage";
 import {ProjectCardSkeleton, useLoadingState} from "./components/loading/LoadingSpinner";
 
+const slugify = s =>
+  s
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+
 function ProjectPage() {
   const {projectName} = useParams();
-  const {isLoading, startLoading, stopLoading} = useLoadingState(true);
+  const {isLoading, stopLoading} = useLoadingState(true);
+  // keep simple loading skeleton; no runtime manifest
 
   // 模拟加载状态
   useEffect(() => {
@@ -23,7 +31,7 @@ function ProjectPage() {
   // If a specific project is requested, try to find it
   if (projectName) {
     const project = bigProjects.projects.find(
-      p => p.projectName.toLowerCase().replace(/\s+/g, "-") === projectName
+      p => slugify(p.projectName) === projectName
     );
 
     if (project) {
@@ -34,13 +42,18 @@ function ProjectPage() {
             <p className="project-subtitle">{project.projectDesc}</p>
           </div>
 
+          <nav className="project-breadcrumb">
+            <Link to="/projects">Projects</Link>
+            <span className="sep">/</span>
+            <span>{project.projectName}</span>
+          </nav>
+
           <div className="project-detail-content">
             {project.image && (
               <div className="project-image-container">
                 <LazyImage
                   className="project-image"
                   src={project.image}
-                  webpSrc={project.webpImage}
                   alt={project.projectName}
                   placeholder="/api/placeholder/800/400"
                 />
@@ -66,6 +79,33 @@ function ProjectPage() {
                       <strong>Duration:</strong> {project.duration}
                     </div>
                   )}
+                </div>
+              )}
+
+              {project.sections && project.sections.length > 0 && (
+                <div className="case-study-sections">
+                  {project.sections.map((sec, idx) => (
+                    <section key={idx} className="case-section">
+                      <h3 className="case-section-title">{sec.title}</h3>
+                      {sec.paragraphs && sec.paragraphs.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                      {sec.bullets && sec.bullets.length > 0 && (
+                        <ul>
+                          {sec.bullets.map((b, i) => (
+                            <li key={i}>{b}</li>
+                          ))}
+                        </ul>
+                      )}
+                      {sec.images && sec.images.length > 0 && (
+                        <div className="case-gallery">
+                          {sec.images.map((img, i) => (
+                            <LazyImage key={i} className="case-img" src={img.src} alt={img.alt || project.projectName} />
+                          ))}
+                        </div>
+                      )}
+                    </section>
+                  ))}
                 </div>
               )}
 
@@ -111,56 +151,67 @@ function ProjectPage() {
             <ProjectCardSkeleton key={idx} />
           ))
         ) : bigProjects.projects.length > 0 ? (
-          bigProjects.projects.map((project, idx) => (
-          <div className="project-card" key={idx}>
-            <div className="project-image-container">
-              <LazyImage
-                className="project-image"
-                src={project.image}
-                webpSrc={project.webpImage}
-                alt={project.projectName}
-                placeholder="/api/placeholder/350/220"
-              />
-              {project.category && (
-                <div className="project-category">{project.category}</div>
-              )}
-            </div>
-            <div className="project-info">
-              <h2 className="project-card-title">{project.projectName}</h2>
-              <p className="project-description">{project.projectDesc}</p>
+          bigProjects.projects.map((project, idx) => {
+            const slug = project.footerLink?.[0]?.url || `/projects/${slugify(project.projectName)}`;
+            return (
+              <div className="project-card clickable" key={idx}>
+                <Link to={slug} className="project-image-container">
+                  <LazyImage
+                    className="project-image"
+                    src={project.image}
+                    alt={project.projectName}
+                    placeholder="/api/placeholder/350/220"
+                  />
+                  {project.category && (
+                    <div className="project-category">{project.category}</div>
+                  )}
+                </Link>
+                <div className="project-info">
+                  <h2 className="project-card-title">
+                    <Link to={slug}>{project.projectName}</Link>
+                  </h2>
+                  <p className="project-description">{project.projectDesc}</p>
 
-              <div className="project-meta">
-                {project.tools && (
-                  <div className="project-tools">
-                    <strong>Tools:</strong> {project.tools.join(", ")}
+                  <div className="project-meta">
+                    {project.tools && (
+                      <div className="project-tools">
+                        <strong>Tools:</strong> {project.tools.join(", ")}
+                      </div>
+                    )}
+                    {project.duration && (
+                      <div className="project-duration">
+                        <strong>Duration:</strong> {project.duration}
+                      </div>
+                    )}
                   </div>
-                )}
-                {project.duration && (
-                  <div className="project-duration">
-                    <strong>Duration:</strong> {project.duration}
-                  </div>
-                )}
+
+                  {project.footerLink &&
+                    project.footerLink.map((link, i) => {
+                      const isInternal = link.url && link.url.startsWith("/projects/");
+                      const marginStyle = {
+                        marginRight: i < project.footerLink.length - 1 ? "10px" : "0"
+                      };
+                      return isInternal ? (
+                        <Link key={i} className="project-link" to={link.url} style={marginStyle}>
+                          {link.name}
+                        </Link>
+                      ) : (
+                        <a
+                          key={i}
+                          className="project-link"
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={marginStyle}
+                        >
+                          {link.name}
+                        </a>
+                      );
+                    })}
+                </div>
               </div>
-
-              {project.footerLink &&
-                project.footerLink.map((link, i) => (
-                  <a
-                    key={i}
-                    className="project-link"
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      marginRight:
-                        i < project.footerLink.length - 1 ? "10px" : "0"
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                ))}
-            </div>
-          </div>
-          ))
+            );
+          })
         ) : (
           <div className="no-projects-found">No projects found.</div>
         )}

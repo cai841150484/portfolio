@@ -7,7 +7,11 @@ const LazyImage = ({
   alt,
   className = "",
   placeholder = "/api/placeholder/350/200",
+  // keep only PNG/JPG display per request; leave props for future but unused
   webpSrc = null,
+  avifSrc = null,
+  srcSet = null,
+  sizes = undefined,
   loading = "lazy",
   ...props
 }) => {
@@ -38,14 +42,6 @@ const LazyImage = ({
     return () => observer.disconnect();
   }, []);
 
-  // Check WebP support
-  const supportsWebP = () => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 1;
-    canvas.height = 1;
-    return canvas.toDataURL("image/webp").indexOf("data:image/webp") === 0;
-  };
-
   const handleLoad = () => {
     setIsLoaded(true);
   };
@@ -55,35 +51,40 @@ const LazyImage = ({
     setIsLoaded(true);
   };
 
-  // Determine which image source to use
-  const getImageSrc = () => {
-    if (hasError) return placeholder;
-    if (!isInView) return placeholder;
-    
-    // Use WebP if supported and available
-    if (webpSrc && supportsWebP()) {
-      return webpSrc;
-    }
-    
-    return src;
-  };
+  const showPlaceholder = hasError || !isInView;
 
   return (
-    <div 
+    <div
       ref={imgRef}
       className={`lazy-image-container ${className}`}
       {...props}
     >
-      <img
-        src={getImageSrc()}
-        alt={alt}
-        className={`lazy-image ${isLoaded ? "loaded" : "loading"} ${
-          hasError ? "error" : ""
-        }`}
-        onLoad={handleLoad}
-        onError={handleError}
-        loading={loading}
-      />
+      {showPlaceholder ? (
+        <img
+          src={placeholder}
+          alt={alt}
+          className={`lazy-image loading ${hasError ? "error" : ""}`}
+          loading={loading}
+        />
+      ) : (
+        <picture>
+          {avifSrc && <source srcSet={avifSrc} type="image/avif" />}
+          {webpSrc && <source srcSet={webpSrc} type="image/webp" />}
+          <img
+            src={src}
+            srcSet={undefined}
+            sizes={undefined}
+            alt={alt}
+            className={`lazy-image ${isLoaded ? "loaded" : "loading"} ${
+              hasError ? "error" : ""
+            }`}
+            onLoad={handleLoad}
+            onError={handleError}
+            loading={loading}
+          />
+        </picture>
+      )}
+
       {!isLoaded && !hasError && (
         <div className="lazy-image-placeholder">
           <SmallSpinner color="primary" text="Loading image..." />

@@ -1,9 +1,31 @@
 @use "./_globalColor" as *;
 
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
 .project-page-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
+}
+
+.fade-in {
+  animation: fadeIn 320ms $ease-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.breadcrumb, .project-breadcrumb {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  a { color: #667eea; text-decoration: none; }
+  a:focus-visible { outline: 2px solid #667eea; outline-offset: 3px; border-radius: 8px; }
+  .sep { opacity: .5; }
 }
 
 // 空状态样式
@@ -82,11 +104,26 @@
   flex-direction: column;
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+}
+
+.project-card, .project-link, .case-section, .project-image {
+  transition-timing-function: $ease-out;
+}
+
+.project-card a:focus-visible,
+.project-link:focus-visible,
+.project-image-container:focus-visible,
+.project-card-title a:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 3px;
+  border-radius: 12px;
 }
 
 .project-image-container {
@@ -240,6 +277,24 @@
       color: #555;
       margin-bottom: 30px;
     }
+
+    .case-study-sections {
+      margin-top: 24px;
+      .case-section {
+        margin: 20px 0 28px;
+        animation: fadeIn 260ms ease-out both;
+        .case-section-title { font-size: 1.3rem; margin-bottom: 10px; color: #2c3e50; }
+        ul { padding-left: 18px; }
+        li { margin: 6px 0; }
+        .case-gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 12px;
+          margin-top: 12px;
+          .case-img { width: 100%; border-radius: 10px; }
+        }
+      }
+    }
   }
 
   .project-links {
@@ -275,6 +330,8 @@
     &:hover {
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     }
+
+    a:focus-visible { outline-color: #9aa8ff; }
   }
 
   .project-card-title {
@@ -521,6 +578,11 @@
       margin-bottom: 24px;
     }
   }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
 @media (max-width: 320px) {
