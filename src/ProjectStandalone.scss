@@ -1,4 +1,4 @@
-@import "./_globalColor";
+@use "./_globalColor" as *;
 
 .project-standalone-wrapper {
   min-height: 100vh;

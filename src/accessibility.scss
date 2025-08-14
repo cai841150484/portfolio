@@ -1,5 +1,5 @@
 // 全局可访问性样式
-@import "./_globalColor";
+@use "./_globalColor" as *;
 
 // 屏幕阅读器专用文本
 .sr-only {
