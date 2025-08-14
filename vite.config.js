@@ -42,8 +42,8 @@ export default defineConfig(({ command }) => ({
   server: {
   // Bind to all interfaces to avoid IPv6 (::1) vs IPv4 (127.0.0.1) localhost issues
   host: true,
-  // Use a stable port to avoid confusion when 3000-3003 are taken
-  port: 3004,
+  // Use standard React dev port
+  port: 3000,
   strictPort: true,
   open: false,
   },

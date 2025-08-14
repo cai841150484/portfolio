@@ -10,7 +10,7 @@ import MouseTrail from "../../components/mouseTrail/MouseTrail";
 // import ParticlesBackground from "../../components/particles/ParticlesBackground";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
-import resumePdf from "./resume.pdf";
+
 import manOnTable from "../../assets/images/manOnTable.svg";
 
 export default function Greeting() {
@@ -62,8 +62,9 @@ export default function Greeting() {
               <Button text="Contact me" href="#contact" />
         {greeting.resumeLink && (
                 <a
-          href={resumePdf}
-                  download="Resume.pdf"
+          href={greeting.resumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="download-link-button main-button"
                 >
                   Download my resume

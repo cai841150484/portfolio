@@ -4,8 +4,8 @@
 
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation.json"; // Rename to your file name for custom animation
-import harvardLogo from "./assets/images/harvardLogo.png";
-import stanfordLogo from "./assets/images/stanfordLogo.png";
+import pennstateLogo from "./assets/images/pennstateLogo.jpg";
+import calstateLogo from "./assets/images/calstateLogo.png";
 import placeholder350x200 from "./assets/images/placeholder-350x200.svg";
 
 // Splash Screen
@@ -31,7 +31,7 @@ const greeting = {
   subTitleText:
     "Creative and detail-oriented UI/UX Designer with a passion for crafting intuitive digital experiences. Skilled in user research, wireframing, prototyping, and visual design. Experienced in collaborating with cross-functional teams to deliver impactful solutions. Always eager to learn, explore new design trends, and turn complex problems into elegant interfaces.",
   resumeLink:
-    "https://drive.google.com/file/d/1NRj9mOcYJQXW8fuS-KWnRYwy0maLkJe0/view?usp=drive_link", // Replace with your actual resume link
+    "https://drive.google.com/file/d/1rcpwgvxRR3mSJxWO0F18UbKA8vkAFI_H/view?usp=sharing", // Replace with your actual resume link
   displayGreeting: true
 };
 
@@ -86,14 +86,14 @@ const educationInfo = {
   schools: [
     {
       schoolName: "The Pennsylvania State University",
-  logo: harvardLogo, // Can be replaced with PSU logo
+  logo: pennstateLogo, // PSU logo
       subHeader: "Master of Science in Informatics",
       duration: "Aug 2023 – Aug 2025",
       desc: "Focusing on user experience, human-computer interaction, and digital product design."
     },
     {
       schoolName: "California State University, Fullerton",
-  logo: stanfordLogo, // Can be replaced with CSUF logo
+  logo: calstateLogo, // CSUF logo
       subHeader: "Bachelor of Fine Art in Graphic And Interactive Design",
       duration: "Aug 2020 – May 2023",
       desc: "Developed a strong foundation in visual communication, branding, and interactive media."
