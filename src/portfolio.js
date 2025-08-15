@@ -92,7 +92,9 @@ const skillsSection = {
     // Coding
     {skillName: "Processing", iconSrc: "/icons/processing-mono.svg"},
     {skillName: "HTML5", iconSrc: "/icons/html5-mono.svg"},
-    {skillName: "CSS3", iconSrc: "/icons/css3-mono.svg"}
+    {skillName: "CSS3", iconSrc: "/icons/css3-mono.svg"},
+    {skillName: "JavaScript"},
+    {skillName: "Python"}
   ],
   display: true
 };
