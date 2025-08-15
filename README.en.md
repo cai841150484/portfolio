@@ -1,4 +1,4 @@
-# Hao Cai – Portfolio (Vite + React)
+# Portfolio (Vite + React)
 
 Live site: https://cai841150484.github.io/portfolio/
 
