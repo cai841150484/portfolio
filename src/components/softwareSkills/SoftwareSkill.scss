@@ -34,14 +34,15 @@
 }
 
 .software-skill-inline > .skill-icon-svg {
-  fill: $subTitle;
-  width: 48px;
-  height: 48px;
-  transition: fill 0.3s ease, transform 0.3s ease;
+  color: $subTitle; // drive via currentColor
+  fill: currentColor;
+  width: 56px;
+  height: 56px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .software-skill-inline:hover > .skill-icon-svg {
-  fill: $skillsColor;
+  color: var(--si-hover, $skillsColor);
   transform: translateY(-2px);
 }
 
