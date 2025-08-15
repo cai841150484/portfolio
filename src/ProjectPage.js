@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import {useParams, Link} from "react-router-dom";
 import "./ProjectPage.scss";
 import {bigProjects} from "./portfolio";
@@ -52,10 +52,57 @@ function ProjectPage() {
             {project.image && (
               <div className="project-image-container">
                 <LazyImage
-                  className="project-image"
+                  className="project-image contain-fit"
                   src={project.image}
                   alt={project.projectName}
-                  placeholder="/api/placeholder/800/400"
+                  placeholder="/api/placeholder/1720/1080"
+                />
+              </div>
+            )}
+
+            {/* Interactive embed for ZenFlow */}
+            {project && project.projectName === "ZenFlow (Processing)" && (
+              <div className="interactive-embed" style={{margin: "30px 0"}}>
+                <iframe
+                  title="ZenFlow Interactive"
+                  src={`${import.meta.env.BASE_URL}zenflow/index.html`}
+                  loading="lazy"
+                  style={{ width: "100%", height: "720px", border: 0, borderRadius: "12px", background: "#000" }}
+                />
+                <p style={{marginTop: 10, fontSize: 14, color: "#7f8c8d"}}>
+                  Tip: move mouse; tweak left panel. 300–600 boids supported.
+                </p>
+              </div>
+            )}
+
+            {/* FlipHTML5 embed for Sandboxie page (moved above Project Overview) */}
+            {project && project.projectName === "Sandboxie UI Refresh" && (
+              <div style={{position:'relative', paddingTop:'max(60%,324px)', width:'100%', height:0, marginTop: 24}}>
+                <iframe
+                  title="Sandboxie Flipbook"
+                  style={{position:'absolute', border:'none', width:'100%', height:'100%', left:0, top:0}}
+                  src="https://online.fliphtml5.com/geigd/mqtp/"
+                  seamless="seamless"
+                  scrolling="no"
+                  frameBorder="0"
+                  allowTransparency={true}
+                  allowFullScreen={true}
+                />
+              </div>
+            )}
+
+            {/* FlipHTML5 embed for Miltons Philosophy page (above Project Overview) */}
+            {project && project.projectName === "Miltons Philosophy" && (
+              <div style={{position:'relative', paddingTop:'max(60%,324px)', width:'100%', height:0, marginTop: 24}}>
+                <iframe
+                  title="Miltons Philosophy Flipbook"
+                  style={{position:'absolute', border:'none', width:'100%', height:'100%', left:0, top:0}}
+                  src="https://online.fliphtml5.com/klnrl/nbch/"
+                  seamless="seamless"
+                  scrolling="no"
+                  frameBorder="0"
+                  allowTransparency={true}
+                  allowFullScreen={true}
                 />
               </div>
             )}
@@ -157,10 +204,10 @@ function ProjectPage() {
               <div className="project-card clickable" key={idx}>
                 <Link to={slug} className="project-image-container">
                   <LazyImage
-                    className="project-image"
-                    src={project.image}
+                    className="project-image contain-fit"
+                    src={project.thumbnail || project.image}
                     alt={project.projectName}
-                    placeholder="/api/placeholder/350/220"
+                    placeholder="/api/placeholder/1720/1080"
                   />
                   {project.category && (
                     <div className="project-category">{project.category}</div>
@@ -184,30 +231,6 @@ function ProjectPage() {
                       </div>
                     )}
                   </div>
-
-                  {project.footerLink &&
-                    project.footerLink.map((link, i) => {
-                      const isInternal = link.url && link.url.startsWith("/projects/");
-                      const marginStyle = {
-                        marginRight: i < project.footerLink.length - 1 ? "10px" : "0"
-                      };
-                      return isInternal ? (
-                        <Link key={i} className="project-link" to={link.url} style={marginStyle}>
-                          {link.name}
-                        </Link>
-                      ) : (
-                        <a
-                          key={i}
-                          className="project-link"
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={marginStyle}
-                        >
-                          {link.name}
-                        </a>
-                      );
-                    })}
                 </div>
               </div>
             );

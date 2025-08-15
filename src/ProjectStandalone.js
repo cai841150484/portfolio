@@ -1,33 +1,17 @@
-import React from "react";
 import ProjectPage from "./ProjectPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import {StyleProvider} from "./contexts/StyleContext";
-import {useLocalStorage} from "./hooks/useLocalStorage";
+import ScrollToTopButton from "./containers/topButton/Top";
 import "./ProjectStandalone.scss";
 
 
 function ProjectStandalone() {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
-
-  const changeTheme = () => {
-    setIsDark(!isDark);
-  };
-
   return (
-    <div
-      className={
-        isDark
-          ? "dark-mode project-standalone-wrapper"
-          : "project-standalone-wrapper"
-      }
-    >
-      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+    <div className="project-standalone-wrapper">
         <Header />
         <ProjectPage />
         <Footer />
-      </StyleProvider>
+        <ScrollToTopButton />
     </div>
   );
 }

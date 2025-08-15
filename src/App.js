@@ -1,4 +1,4 @@
-import React from "react";
+import { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,8 +6,10 @@ import {
   Navigate
 } from "react-router-dom";
 import "./App.scss";
-import Main from "./containers/Main";
-import ProjectStandalone from "./ProjectStandalone";
+
+// Route-level code splitting: split Home and Project pages into separate chunks
+const Main = lazy(() => import("./containers/Main"));
+const ProjectStandalone = lazy(() => import("./ProjectStandalone"));
 
 function App() {
   // 检测是否在 GitHub Pages 环境
@@ -16,7 +18,7 @@ function App() {
 
   return (
     <Router basename={basename}>
-      <div>
+      <Suspense fallback={<div />}>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<ProjectStandalone />} />
@@ -27,7 +29,7 @@ function App() {
           {/* 添加一个捕获所有未匹配路由的fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </div>
+      </Suspense>
     </Router>
   );
 }

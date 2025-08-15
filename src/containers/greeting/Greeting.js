@@ -1,60 +1,29 @@
-import React, {useContext} from "react";
 import emoji from "react-easy-emoji";
-import Typewriter from "react-typewriter-effect";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
+import landingPerson from "../../assets/lottie/landingPerson.json";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import MouseTrail from "../../components/mouseTrail/MouseTrail";
-// import ParticlesBackground from "../../components/particles/ParticlesBackground";
+// Removed MouseTrail effect per request
 import {illustration, greeting} from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
 
 import manOnTable from "../../assets/images/manOnTable.svg";
 
 export default function Greeting() {
-  const {isDark} = useContext(StyleContext);
   if (!greeting.displayGreeting) {
     return null;
   }
   return (
     <div className="greet-main" id="greeting">
-      {/* <ParticlesBackground /> */}
-      <MouseTrail />
       <div className="greeting-main">
         <div className="greeting-text-div">
           <div>
-            <h1
-              className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-            >
-              <Typewriter
-                text={greeting.title || ""}
-                delay={100}
-                cursorColor={isDark ? "#FFFFFF" : "#000000"}
-                typeSpeed={50}
-                deleteSpeed={10}
-                hideCursorAfterText={false}
-                key={isDark ? "dark" : "light"}
-              />
+            <h1 className="greeting-text">
+              {greeting.title || ""}
               <span className="wave-emoji">{emoji("👋")}</span>
             </h1>
-            <div
-              className={
-                isDark
-                  ? "dark-mode greeting-text-p"
-                  : "greeting-text-p subTitle"
-              }
-            >
-              <Typewriter
-                text={greeting.subTitleText || "Welcome to my portfolio"}
-                delay={1200}
-                cursorColor={isDark ? "#FFFFFF" : "#000000"}
-                typeSpeed={30}
-                deleteSpeed={10}
-                hideCursorAfterText={true}
-                key={isDark ? "dark-sub" : "light-sub"}
-              />
+            <div className="greeting-text-p subTitle">
+              {greeting.subTitleText || "Welcome to my portfolio"}
             </div>
             <div id="resume" className="empty-div"></div>
             <SocialMedia />

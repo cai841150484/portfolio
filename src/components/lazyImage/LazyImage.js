@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import {useState, useRef, useEffect} from "react";
 import "./LazyImage.scss";
 import {SmallSpinner} from "../loading/LoadingSpinner";
 

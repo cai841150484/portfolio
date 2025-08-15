@@ -38,6 +38,23 @@ export default defineConfig(({ command }) => ({
     // Align with existing Pages workflow artifact path
     outDir: "build",
     emptyOutDir: true,
+    // Raise chunk warning limit; we also code-split routes to reduce size
+    chunkSizeWarningLimit: 1600,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('lottie-web')) {
+              return 'vendor-lottie';
+            }
+            return 'vendor';
+          }
+        }
+      }
+    }
   },
   server: {
   // Bind to all interfaces to avoid IPv6 (::1) vs IPv4 (127.0.0.1) localhost issues

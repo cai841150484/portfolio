@@ -6,16 +6,23 @@ import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation.json"; // Rename to your file name for custom animation
 import pennstateLogo from "./assets/images/pennstateLogo.jpg";
 import calstateLogo from "./assets/images/calstateLogo.png";
-import placeholder350x200 from "./assets/images/placeholder-350x200.svg";
 // Project images
 import imgShein from "./assets/images/projects/shein.png";
+import imgSheinThumb from "./assets/images/projects/shein_thumbnail.png";
 import imgPetdesk from "./assets/images/projects/evaluatingandimprovingtheuserexperienceofthepetdeskapp.png";
+import imgPetdeskThumb from "./assets/images/projects/evaluatingandimprovingtheuserexperienceofthepetdeskapp_thumbnail.png";
 import imgZenflow from "./assets/images/projects/zenflow.png";
+import imgZenflowThumb from "./assets/images/projects/zenflow_thumbnail.png";
 import imgPetsify from "./assets/images/projects/petsify.png";
+import imgPetsifyThumb from "./assets/images/projects/petsify_thumbnail.png";
 import imgMiltons from "./assets/images/projects/miltonsphilosophy.png";
+import imgMiltonsThumb from "./assets/images/projects/miltonsphilosophy_thumbnail.png";
 import imgPosterPack from "./assets/images/projects/posterandpackingdesign.png";
+import imgPosterPackThumb from "./assets/images/projects/posterandpackingdesign_thumbnail.png";
 import imgSandboxie from "./assets/images/projects/sandboxie.png";
+import imgSandboxieThumb from "./assets/images/projects/sandboxie_thumbnail.png";
 import imgAboveCarmen from "./assets/images/projects/abovethecarmenline.png";
+import imgAboveCarmenThumb from "./assets/images/projects/abovethecarmenline_thumbnail.png";
 
 // Splash Screen
 
@@ -35,10 +42,10 @@ const greeting = {
   username: "Hao Cai",
   title: "Hi, I'm Hao Cai",
   subTitle: emoji(
-    "Creative and detail-oriented UI/UX Designer with a passion for crafting intuitive digital experiences. Skilled in user research, wireframing, prototyping, and visual design. Experienced in collaborating with cross-functional teams to deliver impactful solutions. Always eager to learn, explore new design trends, and turn complex problems into elegant interfaces."
+    "UI/UX designer crafting intuitive, elegant digital experiences. Skilled in research, wireframing, prototyping, and visual design."
   ),
   subTitleText:
-    "Creative and detail-oriented UI/UX Designer with a passion for crafting intuitive digital experiences. Skilled in user research, wireframing, prototyping, and visual design. Experienced in collaborating with cross-functional teams to deliver impactful solutions. Always eager to learn, explore new design trends, and turn complex problems into elegant interfaces.",
+    "I design intuitive, elegant digital experiences — turning research and wireframes into clear, usable interfaces.",
   resumeLink:
     "https://drive.google.com/file/d/1rcpwgvxRR3mSJxWO0F18UbKA8vkAFI_H/view?usp=sharing", // Replace with your actual resume link
   displayGreeting: true
@@ -110,26 +117,7 @@ const educationInfo = {
   ]
 };
 
-// Your top 3 proficient stacks/tech experience
-
-const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend",
-      progressPercentage: "70%"
-    },
-    {
-      Stack: "Programming",
-      progressPercentage: "60%"
-    }
-  ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
-};
+// Proficiency section removed per request
 
 // Work experience section
 
@@ -140,10 +128,10 @@ const workExperiences = {
       role: "UI Design Intern",
       company: "Sunvega",
       date: "Aug 2024 – Dec 2024",
-      desc: "Worked in a cross-functional UED team, collaborating with product managers and developers to deliver new software features and optimize existing ones. Led group reviews, improved design delivery, and drove continuous improvement through user feedback and data analysis. Built and maintained Antd component libraries, developing new UI components as needed.",
+      desc: "Worked in a cross-functional UED team, collaborating with product managers and developers to deliver new software features and optimize existing ones. Lead group reviews, improved design delivery, and drove continuous improvement through user feedback and data analysis. Built and maintained Antd component libraries, developing new UI components as needed.",
       descBullets: [
         "Cross-functional collaboration in the UED team, supporting product managers and developers.",
-        "Led group review, design optimization, and acceptance for product delivery.",
+        "Lead group reviews, design optimization, and acceptance for product delivery.",
         "Analyzed user data and feedback for continuous improvement.",
         "Developed and maintained Antd component libraries and new UI components."
       ]
@@ -171,13 +159,7 @@ const workExperiences = {
   ]
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
-
-const openSource = {
-  showGithubProfile: "false", // Changed to false to disable GitHub profile section
-  display: false // Changed to false to hide Open Source projects section
-};
+// Open source section removed
 
 // Some big projects you have worked on
 
@@ -188,6 +170,7 @@ const bigProjects = {
     {
       imageKey: "shein",
       image: imgShein,
+      thumbnail: imgSheinThumb,
       projectName: "SHEIN Heuristic Evaluation",
       projectDesc:
         "Heuristic evaluation of SHEIN.com focusing on navigation, product discovery, and checkout using Nielsen’s Ten Heuristics.",
@@ -229,6 +212,7 @@ const bigProjects = {
     {
       imageKey: "evaluatingandimprovingtheuserexperienceofthepetdeskapp",
       image: imgPetdesk,
+      thumbnail: imgPetdeskThumb,
       projectName: "PetDesk User Experience Research",
       projectDesc:
         "Mixed‑methods study of onboarding and key task flows for new/returning users on the PetDesk app.",
@@ -270,11 +254,12 @@ const bigProjects = {
     {
       imageKey: "zenflow",
       image: imgZenflow,
-      projectName: "ZenFlow Mobile App",
+      thumbnail: imgZenflowThumb,
+      projectName: "ZenFlow (Processing)",
       projectDesc:
-        "Concept app for mindful routines with breathing guidance and a calm visual language that reduces cognitive load.",
-      category: "Product Design · Mobile UI",
-      tools: ["Figma", "Prototyping", "After Effects"],
+        "A Processing-based desktop program for mindful routines with breathing guidance and a calm, generative visual language that reduces cognitive load.",
+      category: "Processing · Desktop Interaction",
+      tools: ["Processing", "Java", "Figma"],
       duration: "Concept · 4 weeks",
       sections: [
         {
@@ -294,7 +279,7 @@ const bigProjects = {
         {
           title: "Design",
           paragraphs: [
-            "Neutral palette, soft gradients, and subtle motion. Emphasis on large tappable targets and predictable navigation."
+            "Neutral palette, soft gradients, and subtle motion rendered via Processing. Focus on calm, generative visuals and predictable keyboard interactions."
           ]
         },
         {
@@ -305,12 +290,13 @@ const bigProjects = {
         }
       ],
       footerLink: [
-        { name: "View Case Study", url: "/projects/zenflow-mobile-app" }
+        { name: "View Case Study", url: "/projects/zenflow-processing" }
       ]
     },
     {
       imageKey: "petsify",
       image: imgPetsify,
+      thumbnail: imgPetsifyThumb,
       projectName: "Petsify E-commerce Experience",
       projectDesc:
         "End-to-end e-commerce UX for pet products — from navigation and product discovery to cart and checkout optimizations.",
@@ -330,6 +316,7 @@ const bigProjects = {
     {
       imageKey: "miltonsphilosophy",
       image: imgMiltons,
+      thumbnail: imgMiltonsThumb,
       projectName: "Miltons Philosophy",
       projectDesc:
         "Editorial and interaction experiment translating philosophical themes into typographic hierarchy and visual rhythm.",
@@ -348,6 +335,7 @@ const bigProjects = {
     {
       imageKey: "posterandpackingdesign",
       image: imgPosterPack,
+      thumbnail: imgPosterPackThumb,
       projectName: "Poster and Packing Design",
       projectDesc:
         "Posters and packaging with strong brand story, color systems, and print‑ready layouts.",
@@ -366,6 +354,7 @@ const bigProjects = {
     {
       imageKey: "sandboxie",
       image: imgSandboxie,
+      thumbnail: imgSandboxieThumb,
       projectName: "Sandboxie UI Refresh",
       projectDesc:
         "Conceptual refresh with clearer affordances, modern visual system, and better information density.",
@@ -384,11 +373,12 @@ const bigProjects = {
     {
       imageKey: "abovethecarmenline",
       image: imgAboveCarmen,
+      thumbnail: imgAboveCarmenThumb,
       projectName: "Above the Carmen Line",
       projectDesc:
         "Interaction concept inspired by near‑space narratives; minimalist layout with bold typographic rhythm.",
-      category: "Interaction · Visual Design",
-      tools: ["Figma", "After Effects", "Typography"],
+      category: "Data Visualization",
+      tools: ["Adobe XD"],
       duration: "Concept · 2 weeks",
       sections: [
         { title: "Overview", paragraphs: ["Explored cosmic themes using typographic scale, contrast, and spatial rhythm."]},
@@ -403,15 +393,6 @@ const bigProjects = {
   display: true // Set false to hide this section, defaults to true
 };
 
-// Resume Section
-const resumeSection = {
-  title: "Resume",
-  subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
-  display: true // Set false to hide this section, defaults to true
-};
-
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
@@ -422,12 +403,9 @@ const contactInfo = {
 
 // Twitter Section
 
-const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
-};
+// Twitter section removed
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+// isHireable removed (was only used by old GitHub profile section)
 
 export {
   illustration,
@@ -436,12 +414,7 @@ export {
   splashScreen,
   skillsSection,
   educationInfo,
-  techStack,
   workExperiences,
-  openSource,
   bigProjects,
-  contactInfo,
-  twitterDetails,
-  isHireable,
-  resumeSection
+  contactInfo
 };

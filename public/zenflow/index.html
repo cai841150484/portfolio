@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZenFlow – Boids (p5.js)</title>
+  <style>
+    :root { --panel-w: 320px; --bg: #000; --panel-bg: rgba(0,0,0,.6); --white: #fff; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--white); font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+    #sidebar {
+      position: fixed; left: 0; top: 0; width: var(--panel-w); height: 100vh;
+      background: var(--panel-bg); backdrop-filter: blur(2px);
+      display: flex; flex-direction: column; padding: 20px 16px; box-sizing: border-box; z-index: 10;
+    }
+    #brand { font-size: 28px; font-weight: 700; letter-spacing: .5px; margin: 0 0 6px; }
+    #subtitle { font-size: 12px; opacity: .8; margin: 0 0 16px; }
+    #pane { flex: 1; overflow: auto; padding-right: 4px; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <aside id="sidebar">
+    <h1 id="brand">ZenFlow</h1>
+    <p id="subtitle">Separation · Alignment · Cohesion · Mouse Avoid</p>
+    <div id="pane"></div>
+  </aside>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <!-- Use Tweakpane v3 UMD build for non-module global usage -->
+  <script src="https://cdn.jsdelivr.net/npm/tweakpane@3.1.10/dist/tweakpane.min.js"></script>
+
+  <!-- app -->
+  <script src="./boid.js"></script>
+  <script src="./sketch.js"></script>
+</body>
+</html>
+

@@ -11,7 +11,12 @@
     height: 100%;
     object-fit: cover;
     transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
-    
+
+    /* Allow per-instance override via inline class rules (e.g., project cards use contain) */
+    &.contain-fit {
+      object-fit: contain;
+    }
+
     &.loading {
       opacity: 0;
       filter: blur(5px);

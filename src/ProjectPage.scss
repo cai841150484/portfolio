@@ -126,21 +126,31 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   border-radius: 12px;
 }
 
-.project-image-container {
+.project-card .project-image-container {
   position: relative;
   overflow: hidden;
-}
-
-.project-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  aspect-ratio: 1720 / 1080; /* match new thumbnails */
   background: #f8f9fa;
-  transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-image {
-  transform: scale(1.05);
+/* The LazyImage wrapper gets class 'project-image' */
+.project-card .project-image.lazy-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure the actual <img> shows the whole 1720x1080 without cropping */
+.project-card .project-image.lazy-image-container .lazy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  background: transparent;
+  transition: none;
+}
+
+/* Remove previous hover zoom to avoid letterboxing jump */
+.project-card:hover .project-image .lazy-image {
+  transform: none;
 }
 
 .project-category {
@@ -242,7 +252,7 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
 // Project Detail Page Styles
 .project-detail-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 
   .project-image-container {

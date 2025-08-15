@@ -1,33 +1,20 @@
-import React, {useContext} from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {illustration, contactInfo} from "../../portfolio";
 import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
-import StyleContext from "../../contexts/StyleContext";
 import contactMailDark from "../../assets/images/contactMailDark.svg";
 
 export default function Contact() {
-  const {isDark} = useContext(StyleContext);
   return (
     <div className="main contact-margin-top" id="contact">
       <div className="contact-div-main">
         <div className="contact-header">
           <h1 className="heading contact-title">{contactInfo.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode contact-subtitle"
-                : "subTitle contact-subtitle"
-            }
-          >
+          <p className="subTitle contact-subtitle">
             {contactInfo.subtitle}
           </p>
-          <div
-            className={
-              isDark ? "dark-mode contact-text-div" : "contact-text-div"
-            }
-          >
+          <div className="contact-text-div">
             {contactInfo.number && (
               <>
                 <a

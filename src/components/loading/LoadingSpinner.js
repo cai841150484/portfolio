@@ -1,5 +1,6 @@
-import React from "react";
 import "./LoadingSpinner.scss";
+import {useState} from "react";
+
 
 const LoadingSpinner = ({
   size = "medium",
@@ -21,7 +22,7 @@ const LoadingSpinner = ({
 
   const SpinnerContent = () => (
     <div className="loading-spinner__container">
-      <div 
+      <div
         className="loading-spinner__circle"
         role="status"
         aria-label={text}
@@ -75,7 +76,7 @@ export const SkeletonLoader = ({
   borderRadius = "4px",
   className = ""
 }) => (
-  <div 
+  <div
     className={`skeleton-loader ${className}`}
     style={{
       width,
@@ -118,8 +119,8 @@ export const ProjectCardSkeleton = () => (
 
 // 加载状态管理Hook
 export const useLoadingState = (initialState = false) => {
-  const [isLoading, setIsLoading] = React.useState(initialState);
-  const [error, setError] = React.useState(null);
+  const [isLoading, setIsLoading] = useState(initialState);
+  const [error, setError] = useState(null);
 
   const startLoading = () => {
     setIsLoading(true);
