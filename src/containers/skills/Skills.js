@@ -1,11 +1,12 @@
 import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import {illustration, skillsSection} from "../../portfolio";
+import { usePortfolio } from "../../portfolio.index";
 import codingPerson from "../../assets/lottie/codingPerson.json";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import developerActivity from "../../assets/images/developerActivity.svg";
 
 export default function Skills() {
+  const { illustration, skillsSection } = usePortfolio();
   if (!skillsSection.display) {
     return null;
   }

@@ -6,6 +6,11 @@ import * as serviceWorker from "./serviceWorker";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<App />);
+import { LanguageProvider } from "./i18n/LanguageContext";
+root.render(
+  <LanguageProvider>
+    <App />
+  </LanguageProvider>
+);
 
 serviceWorker.unregister();

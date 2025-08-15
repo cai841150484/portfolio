@@ -5,11 +5,15 @@ import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 // Removed MouseTrail effect per request
-import {illustration, greeting} from "../../portfolio";
+import { usePortfolio } from "../../portfolio.index";
+import { useI18n } from "../../i18n/useI18n";
 
 import manOnTable from "../../assets/images/manOnTable.svg";
 
 export default function Greeting() {
+  const { t } = useI18n();
+  const { illustration, greeting } = usePortfolio();
+
   if (!greeting.displayGreeting) {
     return null;
   }
@@ -28,15 +32,15 @@ export default function Greeting() {
             <div id="resume" className="empty-div"></div>
             <SocialMedia />
             <div className="button-greeting-div">
-              <Button text="Contact me" href="#contact" />
-        {greeting.resumeLink && (
+              <Button text={t("buttons.contactMe", "Contact me")} href="#contact" />
+              {greeting.resumeLink && (
                 <a
-          href={greeting.resumeLink}
+                  href={greeting.resumeLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="download-link-button main-button"
                 >
-                  Download my resume
+                  {t("buttons.downloadResume", "Download my resume")}
                 </a>
               )}
             </div>

@@ -74,6 +74,22 @@
   transition: max-height 0.2s ease-out;
 }
 
+/* language switcher */
+.lang-switch {
+  background: transparent;
+  border: none;
+  color: $textColor;
+  padding: 15px 16px;
+  cursor: pointer;
+  font: inherit;
+}
+.lang-switch .active { font-weight: 700; }
+.lang-switch:focus { outline: 2px solid rgba(0,0,0,0.2); outline-offset: 2px; border-radius: 6px; }
+
+@media (max-width: 768px) {
+  .lang-switch { width: 100%; text-align: left; padding: 12px 16px; }
+}
+
 /* menu icon */
 
 .header .menu-icon {

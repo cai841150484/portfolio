@@ -1,7 +1,9 @@
 import {useEffect} from "react";
 import "./Top.scss";
+import { useI18n } from "../../i18n/useI18n";
 
 export default function Top() {
+  const { t } = useI18n();
   function TopEvent() {
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReduced && 'scrollBehavior' in document.documentElement.style) {
@@ -13,7 +15,6 @@ export default function Top() {
     }
   }
 
-  // When the user scrolls down 20px from the top of the document, show the button
   function scrollFunction() {
     const topButton = document.getElementById("topButton");
     if (topButton) {
@@ -41,9 +42,8 @@ export default function Top() {
     };
   }, []);
 
-  // When the user clicks on the button, scroll to the top of the document
   return (
-    <button onClick={TopEvent} id="topButton" type="button" title="Go to top" aria-label="Back to top">
+    <button onClick={TopEvent} id="topButton" type="button" title={t("topButton.title", "Go to top")} aria-label={t("topButton.aria", "Back to top")}>
       <i className="fas fa-hand-point-up" aria-hidden="true"></i>
     </button>
   );

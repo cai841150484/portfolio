@@ -1,14 +1,17 @@
 import "./WorkExperience.scss";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
-import {workExperiences} from "../../portfolio";
+import { usePortfolio } from "../../portfolio.index";
+import { useI18n } from "../../i18n/useI18n";
 
 export default function WorkExperience() {
+  const { t } = useI18n();
+  const { workExperiences } = usePortfolio();
   if (workExperiences.display) {
     return (
       <div id="experience">
         <div className="experience-container" id="workExperience">
           <div>
-            <h1 className="experience-heading">Experiences</h1>
+            <h1 className="experience-heading">{t("workExperience.title", "Experiences")}</h1>
             <div className="experience-cards-div">
               {workExperiences.experience.map((card, i) => {
                 return (
