@@ -1,4 +1,4 @@
-# 郝才（Hao Cai）个人作品集（Vite + React）
+# 个人作品集（Vite + React）
 
 线上地址：https://cai841150484.github.io/portfolio/
 
