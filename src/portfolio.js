@@ -80,17 +80,19 @@ const skillsSection = {
     )
   ],
   softwareSkills: [
-    {skillName: "Figma", fontAwesomeClassname: "fab fa-figma"},
-    {skillName: "Adobe Illustrator", fontAwesomeClassname: "fab fa-adobe"},
-    {skillName: "Adobe Photoshop", fontAwesomeClassname: "fab fa-adobe"},
-    {skillName: "Adobe XD", fontAwesomeClassname: "fab fa-adobe"},
-    {skillName: "AfterEffect", fontAwesomeClassname: "fab fa-adobe"},
-    {skillName: "Lightroom", fontAwesomeClassname: "fab fa-adobe"},
-    {skillName: "InDesign", fontAwesomeClassname: "fab fa-adobe"},
-    {skillName: "TouchDesigner", fontAwesomeClassname: "fas fa-cube"},
-    {skillName: "Processing", fontAwesomeClassname: "fas fa-code"},
-    {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5"},
-    {skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt"}
+    // Design
+    {skillName: "Figma", iconSrc: "/icons/figma-mono.svg"},
+    {skillName: "Adobe Illustrator", iconSrc: "/icons/illustrator-mono.svg"},
+    {skillName: "Adobe Photoshop", iconSrc: "/icons/photoshop-mono.svg"},
+    {skillName: "Adobe XD", iconSrc: "/icons/xd-mono.svg"},
+    {skillName: "After Effects", iconSrc: "/icons/aftereffects-mono.svg"},
+    {skillName: "Lightroom", iconSrc: "/icons/lightroom-mono.svg"},
+    {skillName: "InDesign", iconSrc: "/icons/indesign-mono.svg"},
+    {skillName: "TouchDesigner", iconSrc: "/icons/touchdesigner.svg"},
+    // Coding
+    {skillName: "Processing", iconSrc: "/icons/processing-mono.svg"},
+    {skillName: "HTML5", iconSrc: "/icons/html5-mono.svg"},
+    {skillName: "CSS3", iconSrc: "/icons/css3-mono.svg"}
   ],
   display: true
 };

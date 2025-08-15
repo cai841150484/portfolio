@@ -33,13 +33,29 @@
   transform: translateY(-5px);
 }
 
-.software-skill-inline > i {
-  color: $subTitle;
-  transition: color 0.3s ease;
+.software-skill-inline > .skill-icon-svg {
+  fill: $subTitle;
+  width: 48px;
+  height: 48px;
+  transition: fill 0.3s ease, transform 0.3s ease;
 }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
+.software-skill-inline:hover > .skill-icon-svg {
+  fill: $skillsColor;
+  transform: translateY(-2px);
+}
+
+.skill-icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: grayscale(60%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.software-skill-inline:hover .skill-icon-img {
+  filter: grayscale(0%);
+  transform: translateY(-2px);
 }
 
 .software-skill-inline > p {

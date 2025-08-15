@@ -14,7 +14,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-github"></i>
+          <img className="skill-icon-img" alt="github" src="/icons/github-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -26,7 +26,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-linkedin-in"></i>
+          <img className="skill-icon-img" alt="linkedin" src="/icons/linkedin-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -38,7 +38,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fas fa-envelope"></i>
+          <img className="skill-icon-img" alt="email" src="/icons/mail-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -50,7 +50,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-gitlab"></i>
+          <img className="skill-icon-img" alt="gitlab" src="/icons/gitlab-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -62,7 +62,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook-f"></i>
+          <img className="skill-icon-img" alt="facebook" src="/icons/facebook-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -74,7 +74,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-instagram"></i>
+          <img className="skill-icon-img" alt="instagram" src="/icons/instagram-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -86,7 +86,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-twitter"></i>
+          <img className="skill-icon-img" alt="twitter" src="/icons/twitter-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -98,7 +98,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-medium"></i>
+          <img className="skill-icon-img" alt="medium" src="/icons/medium-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -110,7 +110,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-stack-overflow"></i>
+          <img className="skill-icon-img" alt="stackoverflow" src="/icons/stackoverflow-mono.svg" />
           <span></span>
         </a>
       ) : null}
@@ -122,7 +122,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-kaggle"></i>
+          <img className="skill-icon-img" alt="kaggle" src="/icons/kaggle-mono.svg" />
           <span></span>
         </a>
       ) : null}

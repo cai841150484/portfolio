@@ -1,5 +1,6 @@
 import "./SoftwareSkill.scss";
 import {skillsSection} from "../../portfolio";
+import { iconMap } from "./simpleIconsMap";
 
 export default function SoftwareSkill() {
   return (
@@ -13,7 +14,13 @@ export default function SoftwareSkill() {
                 className="software-skill-inline"
                 name={skills.skillName}
               >
-                <i className={skills.fontAwesomeClassname}></i>
+                {skills.iconSrc ? (
+                  <img className="skill-icon-img" src={skills.iconSrc} alt={skills.skillName} />
+                ) : (
+                  <svg className="skill-icon-svg" role="img" viewBox="0 0 24 24" aria-label={skills.skillName}>
+                    <path d={(iconMap[skills.skillName] || {}).path || ""} />
+                  </svg>
+                )}
                 <p>{skills.skillName}</p>
               </li>
             );
