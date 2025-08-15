@@ -81,18 +81,18 @@ const skillsSection = {
   ],
   softwareSkills: [
     // Design
-    {skillName: "Figma", iconSrc: "/icons/figma-mono.svg"},
-    {skillName: "Adobe Illustrator", iconSrc: "/icons/illustrator-mono.svg"},
-    {skillName: "Adobe Photoshop", iconSrc: "/icons/photoshop-mono.svg"},
-    {skillName: "Adobe XD", iconSrc: "/icons/xd-mono.svg"},
-    {skillName: "After Effects", iconSrc: "/icons/aftereffects-mono.svg"},
-    {skillName: "Lightroom", iconSrc: "/icons/lightroom-mono.svg"},
-    {skillName: "InDesign", iconSrc: "/icons/indesign-mono.svg"},
+    {skillName: "Figma"},
+    {skillName: "Adobe Illustrator"},
+    {skillName: "Adobe Photoshop"},
+    {skillName: "Adobe XD"},
+    {skillName: "After Effects"},
+    {skillName: "Lightroom"},
+    {skillName: "InDesign"},
     {skillName: "TouchDesigner", iconSrc: "/icons/touchdesigner.svg"},
     // Coding
-    {skillName: "Processing", iconSrc: "/icons/processing-mono.svg"},
-    {skillName: "HTML5", iconSrc: "/icons/html5-mono.svg"},
-    {skillName: "CSS3", iconSrc: "/icons/css3-mono.svg"},
+    {skillName: "Processing"},
+    {skillName: "HTML5"},
+    {skillName: "CSS3"},
     {skillName: "JavaScript"},
     {skillName: "Python"}
   ],
