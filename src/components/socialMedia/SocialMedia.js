@@ -5,6 +5,7 @@ export default function socialMedia() {
   if (!socialMediaLinks.display) {
     return null;
   }
+  const base = import.meta.env.BASE_URL || "/";
   return (
     <div className="social-media-div">
       {socialMediaLinks.github ? (
@@ -14,7 +15,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="github" src="%BASE_URL%icons/github-mono.svg" />
+          <img className="skill-icon-img" alt="github" src={`${base}icons/github-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -26,7 +27,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="linkedin" src="%BASE_URL%icons/linkedin-mono.svg" />
+          <img className="skill-icon-img" alt="linkedin" src={`${base}icons/linkedin-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -38,7 +39,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="email" src="%BASE_URL%icons/mail-mono.svg" />
+          <img className="skill-icon-img" alt="email" src={`${base}icons/mail-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -50,7 +51,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="gitlab" src="%BASE_URL%icons/gitlab-mono.svg" />
+          <img className="skill-icon-img" alt="gitlab" src={`${base}icons/gitlab-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -62,7 +63,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="facebook" src="%BASE_URL%icons/facebook-mono.svg" />
+          <img className="skill-icon-img" alt="facebook" src={`${base}icons/facebook-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -74,7 +75,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="instagram" src="%BASE_URL%icons/instagram-mono.svg" />
+          <img className="skill-icon-img" alt="instagram" src={`${base}icons/instagram-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -86,7 +87,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="twitter" src="%BASE_URL%icons/twitter-mono.svg" />
+          <img className="skill-icon-img" alt="twitter" src={`${base}icons/twitter-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -98,7 +99,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="medium" src="%BASE_URL%icons/medium-mono.svg" />
+          <img className="skill-icon-img" alt="medium" src={`${base}icons/medium-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -110,7 +111,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="stackoverflow" src="%BASE_URL%icons/stackoverflow-mono.svg" />
+          <img className="skill-icon-img" alt="stackoverflow" src={`${base}icons/stackoverflow-mono.svg`} />
           <span></span>
         </a>
       ) : null}
@@ -122,7 +123,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="kaggle" src="%BASE_URL%icons/kaggle-mono.svg" />
+          <img className="skill-icon-img" alt="kaggle" src={`${base}icons/kaggle-mono.svg`} />
           <span></span>
         </a>
       ) : null}
