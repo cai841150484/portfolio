@@ -26,6 +26,9 @@ function Header() {
         </label>
         <ul className="menu">
           <li>
+            <Link to="/projects">{t("header.projects", "Projects")}</Link>
+          </li>
+          <li>
             {/* Language Switcher: EN | 中文 */}
             <button
               type="button"
@@ -37,9 +40,6 @@ function Header() {
               <span> | </span>
               <span className={language === "zh" ? "active" : ""}>{t("header.langZH", "中文")}</span>
             </button>
-          </li>
-          <li>
-            <Link to="/projects">{t("header.projects", "Projects")}</Link>
           </li>
         </ul>
       </header>
