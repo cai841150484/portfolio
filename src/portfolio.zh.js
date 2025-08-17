@@ -20,7 +20,8 @@ const socialMediaLinks = clone(socialMediaLinksEN);
 const splashScreen = clone(splashScreenEN);
 
 const greeting = clone(greetingEN);
-greeting.title = "你好，我是蔡昊";
+greeting.username = "蔡灏";
+greeting.title = "你好，我是蔡灏";
 greeting.subTitleText = "我专注于打造直观、优雅的数字体验——基于研究与线框，产出清晰、易用的界面。";
 
 const skillsSection = clone(skillsSectionEN);

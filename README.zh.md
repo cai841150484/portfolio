@@ -66,13 +66,6 @@ softwareSkills: [
 ]
 ```
 
-## 图标体系与新增技能
-- 优先使用 Simple Icons（src/components/softwareSkills/simpleIconsMap.js）
-- 如品牌未收录（如 TouchDesigner），在 public/icons/ 放置单色 SVG，并在 portfolio.js 里配置 iconSrc
-- 新增品牌：
-  1) 从 simple-icons/icons 导入并加入 iconMap
-  2) 或提供本地 SVG，并在数据里填 iconSrc
-
 ## 社交图标
 - 统一使用本地 SVG，在运行时以 import.meta.env.BASE_URL 拼接，避免 GitHub Pages 子路径 404
 
