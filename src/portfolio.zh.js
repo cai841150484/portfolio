@@ -92,6 +92,27 @@ bigProjects.projects = bigProjects.projects.map((p) => {
   if (n.projectName === "Above the Carmen Line") n.projectName = "Above the Carmen Line";
   if (n.category === "Data Visualization") n.category = "数据可视化";
 
+  // EnvMAMBA 专项翻译
+  if (n.projectName === "EnvMAMBA") {
+    n.category = "交互式数据可视化 · 严肃游戏 · AI 叙事";
+    n.projectDesc =
+      "在本项目中，我们开发了 EnvMAMBA——一款可视化纽约市真实环境数据的交互式严肃游戏。它结合植被、空气质量、温度等自然指标与噪音投诉等人本数据，通过交互式地理地图，用户可探索各社区的空间模式，发现环境要素之间的关系。为增强参与度，我们集成大语言模型（LLMs），让环境要素拟人化并叙述数据故事，激发好奇与共情。通过地理空间可视化、游戏化探索与 AI 驱动叙事相结合，我们的目标是让复杂的环境数据更易理解、更具关联性并更可行动。";
+
+    if (Array.isArray(n.sections)) {
+      n.sections = n.sections.map((sec) => {
+        const s2 = clone(sec);
+        if (s2.title === "Overview") {
+          s2.title = "概览";
+          s2.paragraphs = [
+            "EnvMAMBA 融合地理空间可视化、游戏化探索与 AI 驱动叙事，让环境数据更具参与性与可行动性。",
+            "用户通过交互地图浏览纽约市各社区，洞察植被、空气质量、温度与噪音投诉等要素的空间关系与模式。",
+          ];
+        }
+        return s2;
+      });
+    }
+  }
+
   // 简介与章节标题翻译（示例性翻译，确保结构一致）
   if (p.projectDesc)
     n.projectDesc = n.projectDesc
@@ -144,7 +165,15 @@ bigProjects.projects = bigProjects.projects.map((p) => {
     });
   }
   if (Array.isArray(n.footerLink)) {
-    n.footerLink = n.footerLink.map((l) => ({ ...l, name: l.name === "View Case Study" ? "查看案例" : l.name }));
+    n.footerLink = n.footerLink.map((l) => ({
+      ...l,
+      name:
+        l.name === "View Case Study"
+          ? "查看案例"
+          : l.name === "GitHub Repository"
+          ? "GitHub 仓库"
+          : l.name,
+    }));
   }
   return n;
 });

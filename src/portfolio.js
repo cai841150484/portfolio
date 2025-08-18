@@ -23,6 +23,9 @@ import imgSandboxie from "./assets/images/projects/sandboxie.png";
 import imgSandboxieThumb from "./assets/images/projects/sandboxie_thumbnail.png";
 import imgAboveCarmen from "./assets/images/projects/abovethecarmenline.png";
 import imgAboveCarmenThumb from "./assets/images/projects/abovethecarmenline_thumbnail.png";
+import imgEnvMamba from "./assets/images/projects/EnvMAMBA.png";
+import imgEnvMambaThumb from "./assets/images/projects/EnvMAMBA_thumbnail.png";
+
 
 // Splash Screen
 
@@ -35,7 +38,7 @@ const splashScreen = {
 // Summary And Greeting Section
 
 const illustration = {
-  animated: true 
+  animated: true
 };
 
 const greeting = {
@@ -54,7 +57,7 @@ const greeting = {
 // Social Media Links
 
 const socialMediaLinks = {
-  linkedin: "https://www.linkedin.com/in/hao-cai-6328351b4/", 
+  linkedin: "https://www.linkedin.com/in/hao-cai-6328351b4/",
   gmail: "jhoncai811@gmail.com",
   display: true
 };
@@ -393,6 +396,28 @@ const bigProjects = {
         { name: "View Case Study", url: "/projects/above-the-carmen-line" }
       ]
     }
+
+    , {
+      imageKey: "envmamba",
+      image: imgEnvMamba,
+      thumbnail: imgEnvMambaThumb,
+      projectName: "EnvMAMBA",
+      projectDesc: "EnvMAMBA is an interactive serious game that invites the public to play with real-world environmental data from New York City. Beyond a typical case study, it’s a curiosity-driven exploration: a map you can navigate, compare, and question. Natural indicators (vegetation, air quality, temperature) are woven with human-centered signals like noise complaints to surface neighborhood patterns in a way that feels tangible. LLMs add a narrative layer that personifies environmental elements — turning raw metrics into voices and stories — so insights become memorable, not just measurable.",
+      category: "Interactive Data Viz · Serious Game · AI Storytelling",
+      tools: ["Figma", "Geospatial Visualization", "LLMs"],
+      duration: "2025",
+      sections: [
+        { title: "Overview", paragraphs: [
+          "EnvMAMBA brings together geospatial visualization, gamified exploration, and AI-driven storytelling to make environmental data more engaging and actionable.",
+          "Users explore NYC’s neighborhoods via an interactive map to reveal spatial patterns and relationships among vegetation, air quality, temperature, and noise complaints."
+        ]}
+      ],
+      footerLink: [
+        { name: "View Case Study", url: "/projects/envmamba" },
+        { name: "GitHub Repository", url: "https://github.com/Xuyk021/DataVis" }
+      ]
+    }
+
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -404,12 +429,6 @@ const contactInfo = {
   number: "9096822704",
   email_address: "jhoncai811@gmail.com"
 };
-
-// Twitter Section
-
-// Twitter section removed
-
-// isHireable removed (was only used by old GitHub profile section)
 
 export {
   illustration,

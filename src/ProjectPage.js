@@ -13,6 +13,13 @@ const slugify = s =>
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9-]/g, "");
 
+
+const splitCategories = (s) =>
+  (s || "")
+    .split(/[\u00B7\u2022,\/|]/) // middle dot, bullet, comma, slash, pipe
+    .map(x => x.trim())
+    .filter(Boolean);
+
 function ProjectPage() {
   const { t } = useI18n();
   const { bigProjects } = usePortfolio();
@@ -34,16 +41,88 @@ function ProjectPage() {
     if (project) {
       return (
         <div className="project-page-container">
-          <div className="project-hero">
-            <h1 className="project-main-title">{project.projectName}</h1>
-            <p className="project-subtitle">{project.projectDesc}</p>
-          </div>
-
           <nav className="project-breadcrumb">
             <Link to="/projects">{t("projectPage.breadcrumbProjects", "Projects")}</Link>
             <span className="sep">/</span>
             <span>{project.projectName}</span>
           </nav>
+
+          <div className="project-text-summary">
+            <h1 className="project-title">{project.projectName}</h1>
+
+            {(project.category || project.tools || project.duration) && (
+              <div className="project-meta-slab">
+                {project.category && (
+                  <div className="meta-row meta-row--domains">
+                    {splitCategories(project.category).map((c, i) => (
+                      <span key={i} className="chip chip--domain">{c}</span>
+                    ))}
+                  </div>
+                )}
+                {(project.tools || project.duration) && (
+                  <div className="meta-row meta-row--tools">
+                    {project.tools && project.tools.map((tool, i) => (
+                      <span key={i} className="chip chip--tool">{tool}</span>
+                    ))}
+                    {project.duration && (
+                      <span className="chip chip--year" aria-label="Project duration or year">{project.duration}</span>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {project.projectDesc && <p className="project-description">{project.projectDesc}</p>}
+
+            {Array.isArray(project.footerLink) && project.footerLink.some(l => /^https?:\/\//.test(l?.url || "")) && (
+              <div className="project-links">
+                {project.footerLink
+                  .filter(l => /^https?:\/\//.test(l?.url || ""))
+                  .map((l, i) => (
+                    <a
+                      key={i}
+                      className="project-link"
+                      href={l.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {l.name}
+                    </a>
+                  ))}
+              </div>
+            )}
+
+
+            {Array.isArray(project.sections) && project.sections.filter(sec => (sec?.title || "").trim().toLowerCase() !== "overview").length > 0 && (
+              <div className="project-sections">
+                {project.sections
+                  .filter(sec => (sec?.title || "").trim().toLowerCase() !== "overview")
+                  .map((sec, idx) => (
+                    <section key={idx} className="text-section">
+                      <h3 className="section-title">{sec.title}</h3>
+                      {sec.paragraphs && sec.paragraphs.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                      {sec.bullets && sec.bullets.length > 0 && (
+                        <ul>
+                          {sec.bullets.map((b, i) => (
+                            <li key={i}>{b}</li>
+                          ))}
+                        </ul>
+                      )}
+                      {sec.images && sec.images.length > 0 && (
+                        <div className="case-gallery">
+                          {sec.images.map((img, i) => (
+                            <LazyImage key={i} className="case-img" src={img.src} alt={img.alt || project.projectName} />
+                          ))}
+                        </div>
+                      )}
+                    </section>
+                  ))}
+              </div>
+            )}
+          </div>
+
 
           <div className="project-detail-content">
             {project.image && (
@@ -77,11 +156,8 @@ function ProjectPage() {
                   title="Sandboxie Flipbook"
                   style={{position:'absolute', border:'none', width:'100%', height:'100%', left:0, top:0}}
                   src="https://online.fliphtml5.com/geigd/mqtp/"
-                  seamless="seamless"
-                  scrolling="no"
-                  frameBorder="0"
-                  allowTransparency={true}
-                  allowFullScreen={true}
+                  loading="lazy"
+                  allowFullScreen
                 />
               </div>
             )}
@@ -92,80 +168,14 @@ function ProjectPage() {
                   title="Miltons Philosophy Flipbook"
                   style={{position:'absolute', border:'none', width:'100%', height:'100%', left:0, top:0}}
                   src="https://online.fliphtml5.com/klnrl/nbch/"
-                  seamless="seamless"
-                  scrolling="no"
-                  frameBorder="0"
-                  allowTransparency={true}
-                  allowFullScreen={true}
+                  loading="lazy"
+                  allowFullScreen
                 />
               </div>
             )}
 
-            <div className="project-info">
-              <h2>{t("projectPage.overviewTitle", "Project Overview")}</h2>
-              <p>{project.projectDesc}</p>
 
-              {project.category && (
-                <div className="project-meta">
-                  <div className="project-category">
-                    <strong>{t("projectPage.category", "Category:")}</strong> {project.category}
-                  </div>
-                  {project.tools && (
-                    <div className="project-tools">
-                      <strong>{t("projectPage.tools", "Tools:")}</strong> {project.tools.join(", ")}
-                    </div>
-                  )}
-                  {project.duration && (
-                    <div className="project-duration">
-                      <strong>{t("projectPage.duration", "Duration:")}</strong> {project.duration}
-                    </div>
-                  )}
-                </div>
-              )}
 
-              {project.sections && project.sections.length > 0 && (
-                <div className="case-study-sections">
-                  {project.sections.map((sec, idx) => (
-                    <section key={idx} className="case-section">
-                      <h3 className="case-section-title">{sec.title}</h3>
-                      {sec.paragraphs && sec.paragraphs.map((p, i) => (
-                        <p key={i}>{p}</p>
-                      ))}
-                      {sec.bullets && sec.bullets.length > 0 && (
-                        <ul>
-                          {sec.bullets.map((b, i) => (
-                            <li key={i}>{b}</li>
-                          ))}
-                        </ul>
-                      )}
-                      {sec.images && sec.images.length > 0 && (
-                        <div className="case-gallery">
-                          {sec.images.map((img, i) => (
-                            <LazyImage key={i} className="case-img" src={img.src} alt={img.alt || project.projectName} />
-                          ))}
-                        </div>
-                      )}
-                    </section>
-                  ))}
-                </div>
-              )}
-
-              {project.footerLink && (
-                <div className="project-links">
-                  {project.footerLink.map((link, i) => (
-                    <a
-                      key={i}
-                      className="project-link"
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
           </div>
         </div>
       );
@@ -210,18 +220,16 @@ function ProjectPage() {
                   </h2>
                   <p className="project-description">{project.projectDesc}</p>
 
-                  <div className="project-meta">
-                    {project.tools && (
-                      <div className="project-tools">
-                        <strong>{t("projectPage.tools", "Tools:")}</strong> {project.tools.join(", ")}
-                      </div>
-                    )}
-                    {project.duration && (
-                      <div className="project-duration">
-                        <strong>{t("projectPage.duration", "Duration:")}</strong> {project.duration}
-                      </div>
-                    )}
-                  </div>
+                  {project.tools && (
+                    <div className="project-tools">
+                      <strong>{t("projectPage.tools", "Tools:")}</strong> {project.tools.join(", ")}
+                    </div>
+                  )}
+                  {project.duration && (
+                    <div className="project-duration">
+                      <strong>{t("projectPage.duration", "Duration:")}</strong> {project.duration}
+                    </div>
+                  )}
                 </div>
               </div>
             );

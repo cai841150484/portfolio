@@ -39,6 +39,59 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
+/* Unified hero layout for project detail pages */
+.project-hero {
+  max-width: 1000px;
+  margin: 40px auto 12px;
+  text-align: center;
+}
+
+.project-main-title {
+  font-size: clamp(32px, 4vw, 46px);
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.project-overview {
+  margin: 0 auto 12px;
+  background: transparent;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 6px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(52,152,219,0.18);
+}
+
+.project-subtitle {
+  max-width: 880px;
+  margin: 18px auto 8px;
+}
+
+.project-links {
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .project-meta { grid-template-columns: 1fr; }
+}
+
+
+.eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5a6c7d;
+  margin-bottom: 12px;
+}
+
+
 .no-projects-icon {
   font-size: 4rem;
   margin-bottom: 20px;
@@ -66,6 +119,129 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
+/* Unified summary card block */
+.project-summary-card {
+  max-width: 1000px;
+  margin: 28px auto 28px;
+  padding: 28px 28px 22px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.summary-title {
+  font-size: clamp(30px, 3.4vw, 44px);
+  color: #2c3e50;
+  margin: 4px 0 4px;
+}
+
+.project-summary-card .project-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 16px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid rgba(52,152,219,0.18);
+  margin: 10px auto 4px;
+}
+
+.summary-desc {
+  max-width: 820px;
+  margin: 10px auto 8px;
+  color: #5a6c7d;
+}
+
+.summary-actions { margin-top: 10px; justify-content: center; }
+.summary-sections { margin-top: 12px; text-align: left; }
+
+@media (max-width: 768px) {
+  .project-summary-card { padding: 20px 16px; }
+  .project-summary-card .project-meta { grid-template-columns: 1fr; }
+}
+
+
+/* Pure text summary layout */
+.project-text-summary {
+  max-width: 900px;
+  margin: 40px auto 20px;
+  padding: 0 8px;
+}
+
+.project-title {
+  font-size: clamp(32px, 4vw, 46px);
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.project-meta-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: center;
+  color: #5a6c7d;
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+.project-meta-text .meta-item::after { content: "•"; margin: 0 8px; color: #9aa6b2; }
+.project-meta-text .meta-item:last-child::after { content: ""; margin: 0; }
+
+.project-text-summary .project-description {
+  text-align: center;
+  color: #5a6c7d;
+  margin: 10px auto 6px;
+}
+
+.project-sections { margin-top: 14px; }
+.text-section { margin: 16px 0 22px; }
+.section-title { font-size: 1.2rem; color: #2c3e50; margin-bottom: 8px; }
+
+@media (max-width: 768px) {
+  .project-text-summary { margin: 28px auto 16px; }
+}
+
+
+/* Refined text-only header aesthetics */
+.project-text-summary { max-width: 980px; margin: 64px auto 32px; padding: 0 20px; }
+.project-title { text-align: left; font-size: clamp(36px, 4.6vw, 54px); font-weight: 700; letter-spacing: -0.02em; color: #243447; margin-bottom: 24px; }
+.project-meta-text { justify-content: flex-start; color: #677788; font-size: 0.97rem; line-height: 1.65; }
+.project-meta-text .meta-item { display: inline; }
+.project-meta-text .meta-item::after { content: "·"; margin: 0 12px; color: #98a6b3; }
+.project-meta-text .meta-item:last-child::after { content: ""; }
+.project-text-summary .project-description { text-align: left; max-width: 85ch; color: #4a5b6a; line-height: 1.85; margin: 18px 0 8px; }
+.project-sections { margin-top: 28px; }
+.section-title { font-weight: 700; color: #243447; }
+
+@media (max-width: 768px) {
+  .project-text-summary { margin: 44px auto 22px; padding: 0 16px; }
+  .project-title { text-align: center; font-size: clamp(30px, 7vw, 38px); margin-bottom: 18px; }
+  .project-meta-text { justify-content: center; text-align: center; }
+  .project-text-summary .project-description { text-align: center; margin-left: auto; margin-right: auto; line-height: 1.9; }
+}
+
+/* Scheme C: Tag-style subheader with real elements */
+.project-meta-slab { margin: 0 0 12px; }
+.meta-row { display: flex; flex-wrap: wrap; gap: 10px 12px; }
+.meta-row--domains { margin-bottom: 10px; }
+.chip {
+  display: inline-flex; align-items: center; height: 28px; padding: 0 12px;
+  border-radius: 999px; font-size: 12.5px; font-weight: 600; letter-spacing: .02em;
+}
+.chip--domain { background: #eef6ff; color: #2563eb; border: 1px solid #c7ddff; }
+.chip--tool { background: #cbd5e1; color: #0f172a; border: 1px solid #94a3b8; }
+.chip--year { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+
+@media (prefers-color-scheme: dark) {
+  .chip--domain { background: rgba(37, 99, 235, .12); color: #9cc1ff; border-color: rgba(156, 193, 255, .3); }
+  .chip--tool { background: rgba(148, 163, 184, .38); color: #f1f5f9; border-color: rgba(148, 163, 184, .8); }
+  .chip--year { background: rgba(255, 247, 237, .10); color: #fdbb74; border-color: rgba(254, 215, 170, .25); }
+}
+
+
+
 
 .project-hero {
   text-align: center;
@@ -83,10 +259,66 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 .project-subtitle {
   font-size: 1.2rem;
   color: #7f8c8d;
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
   line-height: 1.6;
 }
+
+
+/* Overview block placed under main title */
+.project-overview {
+  margin: 20px auto 10px;
+  max-width: 1000px;
+
+  h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 8px;
+  }
+
+  .project-meta { margin-top: 10px; }
+
+  p.project-subtitle {
+    margin-top: 12px;
+    max-width: 1000px;
+  }
+}
+
+/* Sections placed under main title when using Plan B */
+.project-sections-top {
+  max-width: 1000px;
+  margin: 20px auto 24px;
+
+  .case-study-sections {
+    margin-top: 16px;
+  }
+
+  .case-section {
+    margin: 20px 0 28px;
+    animation: fadeIn 260ms ease-out both;
+
+    .case-section-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    ul { padding-left: 18px; }
+    li { margin: 6px 0; }
+
+    .case-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+
+      .case-img { width: 100%; border-radius: 10px; }
+    }
+  }
+}
+
 
 .project-list {
   display: grid;
@@ -189,16 +421,16 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project-meta {
-  margin: 20px 0;
-  padding: 20px;
+  margin: 14px 0;
+  padding: 16px;
   background: #f8f9fa;
-  border-radius: 8px;
+  border-radius: 10px;
   border-left: 4px solid #3498db;
 
   .project-category,
   .project-tools,
   .project-duration {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 0.95rem;
 
     &:last-child {
