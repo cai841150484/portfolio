@@ -29,16 +29,20 @@ function Header() {
             <Link to="/projects">{t("header.projects", "Projects")}</Link>
           </li>
           <li>
-            {/* Language Switcher: EN | 中文 */}
+            {/* Language Switcher: toggle switch EN / 中文 */}
             <button
               type="button"
+              role="switch"
+              aria-checked={language === "zh"}
               aria-label={t("header.langSwitcherAria", "Switch language")}
-              className="lang-switch"
+              className={`lang-toggle ${language === "zh" ? "on" : "off"}`}
               onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
             >
-              <span className={language === "en" ? "active" : ""}>{t("header.langEN", "EN")}</span>
-              <span> | </span>
-              <span className={language === "zh" ? "active" : ""}>{t("header.langZH", "中文")}</span>
+              <span className="labels">
+                <span className={`label en ${language === "en" ? "active" : ""}`}>{t("header.langEN", "EN")}</span>
+                <span className={`label zh ${language === "zh" ? "active" : ""}`}>{t("header.langZH", "中文")}</span>
+              </span>
+              <span className="thumb" aria-hidden="true" />
             </button>
           </li>
         </ul>
