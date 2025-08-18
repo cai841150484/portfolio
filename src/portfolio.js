@@ -246,12 +246,12 @@ const bigProjects = {
       imageKey: "evaluatingandimprovingtheuserexperienceofthepetdeskapp",
       image: imgPetdesk,
       thumbnail: imgPetdeskThumb,
-      projectName: "PetDesk User Experience Research",
+      projectName: "PetDesk",
       projectDesc:
         "Mixed‑methods study of onboarding and key task flows for new/returning users on the PetDesk app.",
-      category: "User Research · Usability Testing",
+      category: "UI Design · User Research · Usability Testing",
       tools: ["Interview Guide", "Usability Test (moderated)", "Figma", "Maze"],
-      duration: "2024 Q2 · 4 weeks",
+      duration: "Summer_2022",
       sections: [
         {
           title: "Overview",
@@ -288,12 +288,12 @@ const bigProjects = {
       imageKey: "zenflow",
       image: imgZenflow,
       thumbnail: imgZenflowThumb,
-      projectName: "ZenFlow (Processing)",
+      projectName: "ZenFlow",
       projectDesc:
         "A Processing-based desktop program for mindful routines with breathing guidance and a calm, generative visual language that reduces cognitive load.",
       category: "Processing · Desktop Interaction",
       tools: ["Processing", "Java", "Figma"],
-      duration: "Concept · 4 weeks",
+      duration: "Fall_2022",
       sections: [
         {
           title: "Overview",
@@ -330,12 +330,12 @@ const bigProjects = {
       imageKey: "petsify",
       image: imgPetsify,
       thumbnail: imgPetsifyThumb,
-      projectName: "Petsify E-commerce Experience",
+      projectName: "Petsify",
       projectDesc:
         "End-to-end e-commerce UX for pet products — from navigation and product discovery to cart and checkout optimizations.",
-      category: "E‑commerce UX · IA / Navigation",
-      tools: ["Figma", "IA Mapping", "User Flows", "Illustrator"],
-      duration: "2023 · 5 weeks",
+      category: "UI/UX Design",
+      tools: ["Adobe XD", "Illustrator"],
+      duration: "Summer_2022",
       sections: [
         { title: "Overview", paragraphs: ["End‑to‑end IA and flow design for product discovery, comparison, cart, and checkout."]},
         { title: "Goals", bullets: ["Improve discovery and comparison", "Reduce checkout drop‑off", "Clarify promotions and shipping"]},
@@ -355,7 +355,7 @@ const bigProjects = {
         "Editorial and interaction experiment translating philosophical themes into typographic hierarchy and visual rhythm.",
       category: "Editorial Design · Interactive Typography",
       tools: ["InDesign", "Photoshop", "Motion Principles"],
-      duration: "Studio · 2 weeks",
+      duration: "Summer_2021",
       sections: [
         { title: "Overview", paragraphs: ["Explored expressive type, rhythm, and grid to convey philosophical content."]},
         { title: "Design", paragraphs: ["Used hierarchy, whitespace, and pacing to guide reading flow; experimented with typographic motion."]},
@@ -374,7 +374,7 @@ const bigProjects = {
         "Posters and packaging with strong brand story, color systems, and print‑ready layouts.",
       category: "Visual Identity · Packaging",
       tools: ["Brand System", "Color Tokens", "Illustrator", "Photoshop"],
-      duration: "2023 · 3 weeks",
+      duration: "2023",
       sections: [
         { title: "Overview", paragraphs: ["Developed a consistent visual system across posters and package surfaces."]},
         { title: "Goals", bullets: ["Cohesive brand voice", "Print‑ready fidelity", "Shelf impact"]},
@@ -388,12 +388,12 @@ const bigProjects = {
       imageKey: "sandboxie",
       image: imgSandboxie,
       thumbnail: imgSandboxieThumb,
-      projectName: "Sandboxie UI Refresh",
+      projectName: "Sandboxie",
       projectDesc:
         "Conceptual refresh with clearer affordances, modern visual system, and better information density.",
-      category: "UI Design · Visual Refresh",
+      category: "Magazine Design",
       tools: ["Figma", "Design Tokens", "Iconography"],
-      duration: "Concept · 2 weeks",
+      duration: "Fall_2021",
       sections: [
         { title: "Overview", paragraphs: ["Audited existing UI; proposed a refreshed visual system and layout density adjustments."]},
         { title: "Design", paragraphs: ["Introduced tokenized color/typography, clearer affordances, and tighter information grouping."]},
@@ -412,7 +412,7 @@ const bigProjects = {
         "Interaction concept inspired by near‑space narratives; minimalist layout with bold typographic rhythm.",
       category: "Data Visualization",
       tools: ["Adobe XD"],
-      duration: "Concept · 2 weeks",
+      duration: "Fall_2022",
       sections: [
         { title: "Overview", paragraphs: ["Explored cosmic themes using typographic scale, contrast, and spatial rhythm."]},
         { title: "Design", paragraphs: ["Minimal grid, bold type, and motion hints to convey altitude and silence."]},
@@ -431,7 +431,7 @@ const bigProjects = {
       projectDesc: "EnvMAMBA is an interactive serious game that invites the public to play with real-world environmental data from New York City. Beyond a typical case study, it’s a curiosity-driven exploration: a map you can navigate, compare, and question. Natural indicators (vegetation, air quality, temperature) are woven with human-centered signals like noise complaints to surface neighborhood patterns in a way that feels tangible. LLMs add a narrative layer that personifies environmental elements — turning raw metrics into voices and stories — so insights become memorable, not just measurable.",
       category: "Interactive Data Viz · Serious Game · AI Storytelling",
       tools: ["Figma", "Geospatial Visualization", "LLMs"],
-      duration: "2025",
+      duration: "2025 Spring",
       sections: [
         { title: "Overview", paragraphs: [
           "EnvMAMBA brings together geospatial visualization, gamified exploration, and AI-driven storytelling to make environmental data more engaging and actionable.",

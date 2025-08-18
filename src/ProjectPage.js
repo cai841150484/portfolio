@@ -20,6 +20,23 @@ const splitCategories = (s) =>
     .map(x => x.trim())
     .filter(Boolean);
 
+
+// Parse duration like "2025 Spring", "Fall_2022", "2024 Q3", or "2023" to a sortable score
+const parseDurationScore = (raw) => {
+  if (!raw) return -1;
+  const s = String(raw).toLowerCase().replace(/[_·]/g, ' ');
+  const yearMatches = Array.from(s.matchAll(/(20[0-9]{2})/g)).map(m => parseInt(m[1], 10));
+  const year = yearMatches.length ? Math.max(...yearMatches) : -1;
+  const seasonMap = { winter: 1, spring: 2, summer: 3, fall: 4, autumn: 4, q1: 1, q2: 2, q3: 3, q4: 4 };
+  let season = -1;
+  for (const key of Object.keys(seasonMap)) {
+    if (s.includes(key)) { season = seasonMap[key]; break; }
+  }
+  if (season === -1 && year !== -1) season = 3; // default to mid-year if only year is given
+  if (year === -1) return -1;
+  return year * 10 + season;
+};
+
 function ProjectPage() {
   const { t } = useI18n();
   const { bigProjects } = usePortfolio();
@@ -199,7 +216,9 @@ function ProjectPage() {
             <ProjectCardSkeleton key={idx} />
           ))
         ) : bigProjects.projects.length > 0 ? (
-          bigProjects.projects.map((project, idx) => {
+          [...bigProjects.projects]
+            .sort((a, b) => parseDurationScore(b.duration) - parseDurationScore(a.duration))
+            .map((project, idx) => {
             const slug = project.footerLink?.[0]?.url || `/projects/${slugify(project.projectName)}`;
             return (
               <div className="project-card clickable" key={idx}>

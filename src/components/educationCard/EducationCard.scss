@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: flex-start;
   gap: 2rem;
+  width: 100%;
 }
 
 .education-card:hover + .education-card-border {
@@ -62,7 +63,8 @@
 }
 
 .education-card-right {
-  max-width: 100%;
+  flex: 1 1 auto;
+  min-width: 0; /* allow ellipsis to work and header to stretch fully */
 }
 
 .education-text-subHeader {

@@ -37,30 +37,71 @@ skillsSection.skills = [
 // 软件技能名称一般保持英文不变
 
 const educationInfo = clone(educationInfoEN);
-educationInfo.schools = educationInfo.schools.map((s) => ({
-  ...s,
-  subHeader: s.schoolName.includes("Pennsylvania") ? "信息学理学硕士" : s.subHeader.includes("Graphic") ? "平面与交互设计美术学士" : s.subHeader,
-  desc: s.desc.includes("Focusing") ? "专注于用户体验、人机交互与数字产品设计。" : s.desc.includes("Developed") ? "夯实了视觉传达、品牌与交互媒体的基础。" : s.desc,
-}));
+educationInfo.schools = educationInfo.schools.map((s) => {
+  const n = clone(s);
+  if (s.schoolName.includes("Pennsylvania")) {
+    n.subHeader = "信息学理学硕士";
+    n.duration = "2023年8月 – 2025年12月";
+    n.courses = [
+      "人机交互",
+      "社会信息学",
+      "以人为本设计",
+      "计算机支持的协同工作",
+      "以人为本的人工智能",
+    ];
+  } else if (s.schoolName.includes("California State University")) {
+    n.subHeader = "平面与交互设计美术学士";
+    n.duration = "2020年8月 – 2023年5月";
+    n.courses = [
+      "UI/UX 设计",
+      "交互设计",
+      "网页设计",
+      "包装设计",
+      "海报设计",
+      "数据可视化",
+      "展览设计与管理",
+    ];
+  }
+  return n;
+});
 
 const workExperiences = clone(workExperiencesEN);
 workExperiences.experience = workExperiences.experience.map((e) => {
   const n = clone(e);
+  // 角色翻译
+  if (n.role === "Graduate Research Assistant") n.role = "研究生科研助理";
   if (n.role === "UI Design Intern") n.role = "UI 设计实习生";
+  if (n.role === "Graphic Design Intern") n.role = "平面设计实习生";
+  // 公司名翻译（品牌名保留英文）
+  if (n.company === "Penn State University") n.company = "宾夕法尼亚州立大学";
+  if (n.company?.includes("Chinese Academy")) n.company = "中科院软件工程中心";
   if (n.company === "CREATIVE AID") n.company = "CREATIVE AID"; // 品牌名不译
-  if (n.company === "Software Engineering Center Chinese Academy Of Sciences") n.company = "中科院软件工程中心";
+  // 日期本地化
+  if (e.company === "Penn State University") n.date = "2024年6月 – 2025年12月";
+  if (e.company === "Sunvega") n.date = "2024年8月 – 2024年12月";
+  if (e.company === "CREATIVE AID") n.date = "2022年9月 – 2022年12月";
+  if (e.company?.includes("Chinese Academy")) n.date = "2022年7月 – 2022年9月";
+  // 描述翻译
+  if (e.company === "Penn State University") n.desc = "信息学实验室聚焦植物病害检测与诊断工具。负责 Web 应用前端 UX，同时构建高质量图像数据集用于模型训练。";
   if (e.company === "Sunvega") n.desc = "参与跨职能 UED 团队，与产品与开发协作，交付新功能并优化存量。组织评审、优化交付流程，基于用户反馈与数据持续改进。建设与维护 AntD 组件库，并按需开发新组件。";
   if (e.company === "CREATIVE AID") n.desc = "支持多项品牌设计项目从概念到落地，包括社媒页面与视觉识别设计。提升了独立推进与沟通表达能力。";
   if (e.company?.includes("Chinese Academy")) n.desc = "参与 B 端网站界面设计，分析评估产品并基于反馈精准迭代，强化以用户为中心的设计与循环优化能力。";
+  // 要点翻译
   if (Array.isArray(n.descBullets)) {
     n.descBullets = n.descBullets.map((b) => {
+      if (b.includes("Curated and annotated apple")) return "整理并标注苹果叶图像（COCO 格式），覆盖多种感染阶段，提升数据集覆盖度。";
+      if (b.includes("Designed and built a browser")) return "设计并实现基于浏览器的诊断界面（HTML/CSS/JavaScript），用于可视化预测并简化标注流程。";
+      if (b.includes("Co‑authored a paper")) return "共同撰写论文，阐述系统架构、数据集与评估结果。";
+      if (b.includes("Extended the product part")) return "以兼职形式持续迭代：优化 UI 流程、响应可用性反馈，并支持论文修订与系统部署。";
       if (b.includes("Cross-functional")) return "在 UED 团队中跨职能协作，支持产品与开发";
       if (b.includes("Lead group")) return "主导组内评审、设计优化与交付验收";
       if (b.includes("Analyzed user")) return "基于用户数据与反馈持续改进";
       if (b.includes("Antd")) return "建设与维护 AntD 组件库，开发新组件";
       if (b.includes("Managed small")) return "独立端到端推进小型品牌设计项目";
+      if (b.includes("Produced social") || b.includes("Produced social media")) return "设计社媒页面与营销物料";
       if (b.includes("Designed social")) return "设计社媒页面与营销物料";
       if (b.includes("Designed and improved")) return "设计并优化 B 端网页界面";
+      if (b.includes("Designed interface patterns")) return "设计界面模式并评估功能；基于反馈持续迭代";
       if (b.includes("Analyzed user needs")) return "分析用户需求与产品反馈并进行迭代";
       return b;
     });
@@ -74,22 +115,17 @@ bigProjects.subtitle = "精选案例与设计作品";
 
 bigProjects.projects = bigProjects.projects.map((p) => {
   const n = clone(p);
-  // 名称与分类翻译
-  if (n.projectName === "SHEIN Heuristic Evaluation") n.projectName = "SHEIN 启发式评估";
+  // 仅翻译分类，不修改项目名称
   if (n.category === "UX Audit · Heuristic Evaluation") n.category = "用户体验审计 · 启发式评估";
-  if (n.projectName === "PetDesk User Experience Research") n.projectName = "PetDesk 用户体验研究";
   if (n.category === "User Research · Usability Testing") n.category = "用户研究 · 可用性测试";
-  if (n.projectName === "ZenFlow (Processing)") n.projectName = "ZenFlow（Processing）";
+  if (n.category === "UI Design · User Research · Usability Testing") n.category = "UI 设计 · 用户研究 · 可用性测试";
+  if (n.category === "UI/UX Design") n.category = "UI/UX 设计";
   if (n.category === "Processing · Desktop Interaction") n.category = "Processing · 桌面交互";
-  if (n.projectName === "Petsify E-commerce Experience") n.projectName = "Petsify 电商体验";
   if (n.category === "E‑commerce UX · IA / Navigation") n.category = "电商 UX · 信息架构/导航";
-  if (n.projectName === "Miltons Philosophy") n.projectName = "Miltons Philosophy"; // 项目名可不译
   if (n.category === "Editorial Design · Interactive Typography") n.category = "编辑设计 · 交互字体";
-  if (n.projectName === "Poster and Packing Design") n.projectName = "海报与包装设计";
   if (n.category === "Visual Identity · Packaging") n.category = "视觉识别 · 包装";
-  if (n.projectName === "Sandboxie UI Refresh") n.projectName = "Sandboxie UI 视觉焕新";
   if (n.category === "UI Design · Visual Refresh") n.category = "UI 设计 · 视觉焕新";
-  if (n.projectName === "Above the Carmen Line") n.projectName = "Above the Carmen Line";
+  if (n.category === "Magazine Design") n.category = "杂志设计";
   if (n.category === "Data Visualization") n.category = "数据可视化";
 
   // EnvMAMBA 专项翻译
