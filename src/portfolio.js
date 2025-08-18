@@ -109,17 +109,33 @@ const educationInfo = {
   schools: [
     {
       schoolName: "The Pennsylvania State University",
-  logo: pennstateLogo, // PSU logo
-      subHeader: "Master of Science in Informatics",
-      duration: "Aug 2023 – Aug 2025",
-      desc: "Focusing on user experience, human-computer interaction, and digital product design."
+      logo: pennstateLogo, // PSU logo
+      subHeader: "Master of Science – Informatics",
+      duration: "AUG 2023 – DEC 2025",
+      desc: "",
+      courses: [
+        "Human-Computer Interaction",
+        "Social Informatics",
+        "Human-Centered Design",
+        "Computer-Supported Cooperative Work",
+        "Human-Centered Artificial Intelligence"
+      ]
     },
     {
       schoolName: "California State University, Fullerton",
-  logo: calstateLogo, // CSUF logo
-      subHeader: "Bachelor of Fine Art in Graphic And Interactive Design",
-      duration: "Aug 2020 – May 2023",
-      desc: "Developed a strong foundation in visual communication, branding, and interactive media."
+      logo: calstateLogo, // CSUF logo
+      subHeader: "Bachelor of Fine Art – Graphic And Interactive Design",
+      duration: "AUG 2020 – MAY 2023",
+      desc: "",
+      courses: [
+        "UI/UX Design",
+        "Interaction Design",
+        "Web Design",
+        "Packaging Design",
+        "Poster Design",
+        "Data Visualization",
+        "Exhibition Design and Management"
+      ]
     }
   ]
 };
@@ -132,35 +148,45 @@ const workExperiences = {
   display: true,
   experience: [
     {
+      role: "Graduate Research Assistant",
+      company: "Penn State University",
+      date: "JUN 2024 – DEC 2025",
+      desc: "Informatics lab focusing on plant disease detection and diagnostic tooling. Led front‑end UX for a web app while building high‑quality image datasets for model training.",
+      descBullets: [
+        "Curated and annotated apple‑leaf imagery (COCO format) across multiple infection stages to improve dataset coverage.",
+        "Designed and built a browser‑based diagnostic interface (HTML/CSS/JavaScript) to visualize predictions and streamline labeling.",
+        "Co‑authored a paper describing the system architecture, dataset, and evaluation results.",
+        "Extended the product part‑time: refined UI flows, addressed usability feedback, and supported paper revision and system deployment."
+      ]
+    },
+    {
       role: "UI Design Intern",
       company: "Sunvega",
-      date: "Aug 2024 – Dec 2024",
-      desc: "Worked in a cross-functional UED team, collaborating with product managers and developers to deliver new software features and optimize existing ones. Lead group reviews, improved design delivery, and drove continuous improvement through user feedback and data analysis. Built and maintained Antd component libraries, developing new UI components as needed.",
+      date: "AUG 2024 – DEC 2024",
+      desc: "UI design intern embedded in a UED team, shipping enterprise features and evolving the design system.",
       descBullets: [
-        "Cross-functional collaboration in the UED team, supporting product managers and developers.",
-        "Lead group reviews, design optimization, and acceptance for product delivery.",
-        "Analyzed user data and feedback for continuous improvement.",
-        "Developed and maintained Antd component libraries and new UI components."
+        "Partnered with PMs and engineers to deliver new features and iterate on existing flows across multiple releases.",
+        "Facilitated design reviews; refined user journeys and acceptance criteria using analytics and user feedback.",
+        "Contributed to the component library (Ant Design) and authored new UI components to accelerate delivery."
       ]
     },
     {
       role: "Graphic Design Intern",
       company: "CREATIVE AID",
-      date: "Sep 2022 – Dec 2022",
-      desc: "Supported multiple brand design projects from concept to completion, including social media post design and visual identity development. Strengthened my ability to manage projects independently and communicate design ideas effectively.",
+      date: "SEP 2022 – DEC 2022",
+      desc: "Hands‑on graphic design role across branding and social content for small businesses.",
       descBullets: [
-        "Managed small brand design projects end-to-end.",
-        "Designed social media post pages and marketing materials."
+        "Owned end‑to‑end visual delivery for small brand projects — from moodboards and typography to final assets.",
+        "Produced social media layouts and marketing visuals aligned with brand guidelines."
       ]
     },
     {
       role: "UI Design Intern",
-      company: "Software Engineering Center Chinese Academy Of Sciences",
-      date: "Jul 2022 – Sep 2022",
-      desc: "Participated in B-side website interface design, analyzed and evaluated products, and made precise adjustments based on feedback. Enhanced my skills in user-centered design and iterative improvement.",
+      company: "Software Engineering Center, Chinese Academy Of Sciences",
+      date: "JUL 2022 – SEP 2022",
+      desc: "UI design intern supporting B‑side enterprise web tools; contributed wireframes and iterative improvements.",
       descBullets: [
-        "Designed and improved B-side web interfaces.",
-        "Analyzed user needs and product feedback for iterative design."
+        "Designed interface patterns and evaluated features; iterated designs based on stakeholder and user feedback."
       ]
     }
   ]

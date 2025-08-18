@@ -219,16 +219,22 @@
 /* 48em = 768px */
 
 @media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+  /* Use flex for menu so siblings (Projects link & toggle) are vertically centered */
   .header .menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     max-height: none;
+  }
+  .header li {
+    float: none; /* override float-based layout */
+    display: flex;
+    align-items: center; /* center contents vertically within each li */
   }
   .header .menu-icon {
     display: none;

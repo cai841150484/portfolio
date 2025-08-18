@@ -9,7 +9,7 @@ const zh = {
     contactMe: "联系我",
     downloadResume: "下载我的简历",
   },
-  education: { title: "教育经历" },
+  education: { title: "教育经历", coursesTitle: "相关课程" },
   workExperience: { title: "工作经历" },
   projectPage: {
     overviewTitle: "项目概览",

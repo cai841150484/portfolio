@@ -9,7 +9,7 @@ const en = {
     contactMe: "Contact me",
     downloadResume: "Download my resume",
   },
-  education: { title: "Education" },
+  education: { title: "Education", coursesTitle: "Relevant Coursework" },
   workExperience: { title: "Experiences" },
   projectPage: {
     overviewTitle: "Project Overview",
