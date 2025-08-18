@@ -1,9 +1,9 @@
 import "./SoftwareSkill.scss";
 import {skillsSection} from "../../portfolio";
 import { iconMap } from "./simpleIconsMap";
+import touchdesignerIcon from "../../assets/icons/touchdesigner.svg?url";
 
 export default function SoftwareSkill() {
-  const base = import.meta.env.BASE_URL || "/";
   return (
     <div>
       <div className="software-skills-main-div">
@@ -11,7 +11,7 @@ export default function SoftwareSkill() {
           {skillsSection.softwareSkills.map((skills, i) => {
             const icon = iconMap[skills.skillName];
             const src = skills.iconSrc
-              ? (skills.iconSrc.startsWith("/") ? `${base}${skills.iconSrc.slice(1)}` : `${base}${skills.iconSrc}`)
+              ? (skills.skillName === "TouchDesigner" ? touchdesignerIcon : null)
               : null;
             return (
               <li

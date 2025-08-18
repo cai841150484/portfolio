@@ -1,11 +1,20 @@
 import "./SocialMedia.scss";
 import {socialMediaLinks} from "../../portfolio";
+import githubIcon from "../../assets/icons/github-mono.svg?url";
+import linkedinIcon from "../../assets/icons/linkedin-mono.svg?url";
+import mailIcon from "../../assets/icons/mail-mono.svg?url";
+import gitlabIcon from "../../assets/icons/gitlab-mono.svg?url";
+import facebookIcon from "../../assets/icons/facebook-mono.svg?url";
+import instagramIcon from "../../assets/icons/instagram-mono.svg?url";
+import twitterIcon from "../../assets/icons/twitter-mono.svg?url";
+import mediumIcon from "../../assets/icons/medium-mono.svg?url";
+import stackoverflowIcon from "../../assets/icons/stackoverflow-mono.svg?url";
+import kaggleIcon from "../../assets/icons/kaggle-mono.svg?url";
 
 export default function socialMedia() {
   if (!socialMediaLinks.display) {
     return null;
   }
-  const base = import.meta.env.BASE_URL || "/";
   return (
     <div className="social-media-div">
       {socialMediaLinks.github ? (
@@ -15,7 +24,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="github" src={`${base}icons/github-mono.svg`} />
+          <img className="skill-icon-img" alt="github" src={githubIcon} />
           <span></span>
         </a>
       ) : null}
@@ -27,7 +36,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="linkedin" src={`${base}icons/linkedin-mono.svg`} />
+          <img className="skill-icon-img" alt="linkedin" src={linkedinIcon} />
           <span></span>
         </a>
       ) : null}
@@ -39,7 +48,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="email" src={`${base}icons/mail-mono.svg`} />
+          <img className="skill-icon-img" alt="email" src={mailIcon} />
           <span></span>
         </a>
       ) : null}
@@ -51,7 +60,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="gitlab" src={`${base}icons/gitlab-mono.svg`} />
+          <img className="skill-icon-img" alt="gitlab" src={gitlabIcon} />
           <span></span>
         </a>
       ) : null}
@@ -63,7 +72,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="facebook" src={`${base}icons/facebook-mono.svg`} />
+          <img className="skill-icon-img" alt="facebook" src={facebookIcon} />
           <span></span>
         </a>
       ) : null}
@@ -75,7 +84,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="instagram" src={`${base}icons/instagram-mono.svg`} />
+          <img className="skill-icon-img" alt="instagram" src={instagramIcon} />
           <span></span>
         </a>
       ) : null}
@@ -87,7 +96,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="twitter" src={`${base}icons/twitter-mono.svg`} />
+          <img className="skill-icon-img" alt="twitter" src={twitterIcon} />
           <span></span>
         </a>
       ) : null}
@@ -99,7 +108,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="medium" src={`${base}icons/medium-mono.svg`} />
+          <img className="skill-icon-img" alt="medium" src={mediumIcon} />
           <span></span>
         </a>
       ) : null}
@@ -111,7 +120,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="stackoverflow" src={`${base}icons/stackoverflow-mono.svg`} />
+          <img className="skill-icon-img" alt="stackoverflow" src={stackoverflowIcon} />
           <span></span>
         </a>
       ) : null}
@@ -123,7 +132,7 @@ export default function socialMedia() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="skill-icon-img" alt="kaggle" src={`${base}icons/kaggle-mono.svg`} />
+          <img className="skill-icon-img" alt="kaggle" src={kaggleIcon} />
           <span></span>
         </a>
       ) : null}
