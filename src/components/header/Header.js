@@ -29,7 +29,7 @@ function Header() {
             <Link to="/projects">{t("header.projects", "Projects")}</Link>
           </li>
           <li>
-            {/* Language Switcher: toggle switch EN / 中文 */}
+            {/* Language Switcher: integrated pill with labels inside */}
             <button
               type="button"
               role="switch"
@@ -38,11 +38,21 @@ function Header() {
               className={`lang-toggle ${language === "zh" ? "on" : "off"}`}
               onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
             >
-              <span className="labels">
-                <span className={`label en ${language === "en" ? "active" : ""}`}>{t("header.langEN", "EN")}</span>
-                <span className={`label zh ${language === "zh" ? "active" : ""}`}>{t("header.langZH", "中文")}</span>
+              <span className="pill" aria-hidden="true">
+                <span className="thumb" />
               </span>
-              <span className="thumb" aria-hidden="true" />
+              <span
+                className={`option label en ${language === "en" ? "active" : ""}`}
+                onClick={(e) => { e.stopPropagation(); setLanguage("en"); }}
+              >
+                {t("header.langEN", "EN")}
+              </span>
+              <span
+                className={`option label zh ${language === "zh" ? "active" : ""}`}
+                onClick={(e) => { e.stopPropagation(); setLanguage("zh"); }}
+              >
+                {t("header.langZH", "中文")}
+              </span>
             </button>
           </li>
         </ul>
