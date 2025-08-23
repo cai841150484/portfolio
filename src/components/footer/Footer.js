@@ -1,5 +1,4 @@
 import "./Footer.scss";
-import emoji from "react-easy-emoji";
 import { useI18n } from "../../i18n/useI18n";
 
 export default function Footer() {
