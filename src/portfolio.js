@@ -25,6 +25,8 @@ import imgAboveCarmen from "./assets/images/projects/abovethecarmenline.png";
 import imgAboveCarmenThumb from "./assets/images/projects/abovethecarmenline_thumbnail.png";
 import imgEnvMamba from "./assets/images/projects/EnvMAMBA.png";
 import imgEnvMambaThumb from "./assets/images/projects/EnvMAMBA_thumbnail.png";
+import imgChatToCope from "./assets/images/projects/chattocope.svg";
+
 
 
 // Splash Screen
@@ -200,6 +202,38 @@ const bigProjects = {
   title: "Big Projects",
   subtitle: "Selected case studies & design works",
   projects: [
+    {
+      imageKey: "chattocope",
+      image: imgChatToCope,
+      thumbnail: imgChatToCope,
+      projectName: "Chat to Cope",
+      projectDesc:
+        "Clinically grounded, context‑aware conversational AI for early psychosis recovery with symptom recognition, coping skill recommendations, and crisis escalation.",
+      category: "AI · UX · Mental Health",
+      tools: ["Streamlit", "Python", "OpenAI GPT‑4.1", "DSM‑5 data"],
+      duration: "2025 Spring",
+      sections: [
+        {
+          title: "Overview",
+          paragraphs: [
+            "Built an AI‑powered mental health assistant that delivers empathetic, context‑aware conversations.",
+            "It recognizes symptoms with a DSM‑5 backed ontology, recommends coping skills from the EPPIC Recovery Handbook, and escalates to hotlines/warm lines when risk is detected."
+          ]
+        },
+        {
+          title: "Goals",
+          bullets: [
+            "Provide accessible self‑help support with empathetic AI",
+            "Structure domain knowledge (DSM‑5, coping skills, glossary) for reliable reasoning",
+            "Detect crisis and route to the right resources"
+          ]
+        }
+      ],
+      footerLink: [
+        { name: "Live Demo", url: "https://chatbot-template.streamlit.app/" },
+        { name: "GitHub Repository", url: "https://github.com/cai841150484/ChatToCope" }
+      ]
+    },
     {
       imageKey: "shein",
       image: imgShein,
