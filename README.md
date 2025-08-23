@@ -1,4 +1,4 @@
-<div align="right">English | <a href="./README.zh.md">中文</a></div>
+<div align="right"><a href="./README.md">English</a> | <a href="./README.zh.md">中文</a></div>
 
 # Hao Cai – Portfolio (Vite + React)
 

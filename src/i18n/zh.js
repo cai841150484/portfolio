@@ -4,6 +4,7 @@ const zh = {
     langSwitcherAria: "切换语言",
     langEN: "EN",
     langZH: "中文",
+    skipToContent: "跳到主要内容",
   },
   buttons: {
     contactMe: "联系我",

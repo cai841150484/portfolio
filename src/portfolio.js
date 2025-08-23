@@ -50,7 +50,7 @@ const greeting = {
   subTitleText:
     "I design intuitive, elegant digital experiences — turning research and wireframes into clear, usable interfaces.",
   resumeLink:
-    "https://drive.google.com/file/d/1rcpwgvxRR3mSJxWO0F18UbKA8vkAFI_H/view?usp=sharing", // Replace with your actual resume link
+    import.meta.env.VITE_RESUME_LINK || "https://drive.google.com/file/d/1rcpwgvxRR3mSJxWO0F18UbKA8vkAFI_H/view?usp=sharing", // configurable via .env
   displayGreeting: true
 };
 

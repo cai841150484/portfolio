@@ -10,21 +10,24 @@ function Header() {
 
   return (
     <Headroom>
-      <header className="header">
+      <header className="header" role="banner">
+        <a href="#main" className="skip-link">{t("header.skipToContent", "Skip to content")}</a>
         <Link to="/" className="logo">
           <span className="grey-color"> &lt;</span>
           <span className="logo-name">{greeting.username}</span>
           <span className="grey-color">/&gt;</span>
         </Link>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <input className="menu-btn" type="checkbox" id="menu-btn" aria-label="Toggle navigation" />
         <label
           className="menu-icon"
           htmlFor="menu-btn"
           style={{color: "white"}}
+          aria-controls="site-menu"
+          aria-expanded="false"
         >
           <span className="navicon"></span>
         </label>
-        <ul className="menu">
+        <ul className="menu" id="site-menu" role="navigation" aria-label="Primary">
           <li>
             <Link to="/projects">{t("header.projects", "Projects")}</Link>
           </li>

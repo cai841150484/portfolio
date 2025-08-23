@@ -5,6 +5,7 @@ import { usePortfolio } from "./portfolio.index";
 import { useI18n } from "./i18n/useI18n";
 import LazyImage from "./components/lazyImage/LazyImage";
 import {ProjectCardSkeleton, useLoadingState} from "./components/loading/LoadingSpinner";
+import { Helmet } from "react-helmet-async";
 
 const slugify = s =>
   s
@@ -58,6 +59,26 @@ function ProjectPage() {
     if (project) {
       return (
         <div className="project-page-container">
+          <Helmet>
+            <title>{`${project.projectName} | Hao Cai Portfolio`}</title>
+            {project.projectDesc && (
+              <meta name="description" content={project.projectDesc} />
+            )}
+            <link rel="canonical" href={typeof window !== 'undefined' ? window.location.origin + `${import.meta.env.BASE_URL}projects/${slugify(project.projectName)}` : ''} />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={`${project.projectName} | Hao Cai Portfolio`} />
+            {project.projectDesc && (
+              <meta property="og:description" content={project.projectDesc} />
+            )}
+            {project.thumbnail || project.image ? (
+              <meta
+                property="og:image"
+                content={typeof window !== 'undefined'
+                  ? new URL(project.thumbnail || project.image, window.location.origin).toString()
+                  : (project.thumbnail || project.image)}
+              />
+            ) : null}
+          </Helmet>
           <nav className="project-breadcrumb">
             <Link to="/projects">{t("projectPage.breadcrumbProjects", "Projects")}</Link>
             <span className="sep">/</span>
@@ -148,7 +169,7 @@ function ProjectPage() {
                   className="project-image contain-fit"
                   src={project.image}
                   alt={project.projectName}
-                  placeholder="/api/placeholder/1720/1080"
+                  
                 />
               </div>
             )}
@@ -201,6 +222,14 @@ function ProjectPage() {
 
   return (
     <div className="project-page-container">
+      <Helmet>
+        <title>{t("projectPage.listTitle", "Case Studies & Technical Projects")} | Hao Cai Portfolio</title>
+        <meta name="description" content={t("projectPage.listSubtitle", "Deep dives into my design process, research methodologies, and technical implementations")} />
+        <link rel="canonical" href={typeof window !== 'undefined' ? window.location.origin + `${import.meta.env.BASE_URL}projects` : ''} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={t("projectPage.listTitle", "Case Studies & Technical Projects")} />
+        <meta property="og:description" content={t("projectPage.listSubtitle", "Deep dives into my design process, research methodologies, and technical implementations")} />
+      </Helmet>
       <div className="project-hero">
         <h1 className="project-main-title">
           {t("projectPage.listTitle", "Case Studies & Technical Projects")}
@@ -227,7 +256,7 @@ function ProjectPage() {
                     className="project-image contain-fit"
                     src={project.thumbnail || project.image}
                     alt={project.projectName}
-                    placeholder="/api/placeholder/1720/1080"
+                    
                   />
                   {project.category && (
                     <div className="project-category">{project.category}</div>

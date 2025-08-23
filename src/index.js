@@ -1,16 +1,17 @@
 import React from "react";
-import {createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import { HelmetProvider } from "react-helmet-async";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-import { LanguageProvider } from "./i18n/LanguageContext";
-root.render(
-  <LanguageProvider>
-    <App />
-  </LanguageProvider>
-);
 
-serviceWorker.unregister();
+root.render(
+  <HelmetProvider>
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
+  </HelmetProvider>
+);

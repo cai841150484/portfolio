@@ -20,6 +20,13 @@ export function LanguageProvider({ children }) {
     try { localStorage.setItem(STORAGE_KEY, lang); } catch {}
   };
 
+  // keep <html lang> in sync for a11y & SEO
+  useEffect(() => {
+    try {
+      document.documentElement.setAttribute('lang', language);
+    } catch {}
+  }, [language]);
+
   const value = useMemo(() => ({ language, setLanguage }), [language]);
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }

@@ -1,3 +1,6 @@
+<div align="right"><a href="./README.md">English</a> | <a href="./README.zh.md">中文</a></div>
+
+
 # 个人作品集（Vite + React）
 
 线上地址：https://cai841150484.github.io/portfolio/

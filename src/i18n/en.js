@@ -4,6 +4,7 @@ const en = {
     langSwitcherAria: "Switch language",
     langEN: "EN",
     langZH: "中文",
+    skipToContent: "Skip to content",
   },
   buttons: {
     contactMe: "Contact me",

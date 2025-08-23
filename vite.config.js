@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
 import { transform } from "esbuild";
 
 export default defineConfig(({ command }) => ({
@@ -17,6 +18,33 @@ export default defineConfig(({ command }) => ({
       },
     },
     react({ jsxRuntime: 'automatic' }),
+    // PWA service worker (keep using existing manifest.json in public)
+    VitePWA({
+      registerType: 'autoUpdate',
+      injectRegister: 'auto',
+      manifest: false,
+      workbox: {
+        globPatterns: [
+          '**/*.{js,css,html,svg,ico,json,xml,webp,avif,woff,woff2,ttf}'
+        ],
+        navigateFallback: '/portfolio/index.html',
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.destination === 'image',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images',
+              expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+          },
+          {
+            urlPattern: ({ request }) => request.destination === 'script' || request.destination === 'style',
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'assets' },
+          }
+        ]
+      }
+    })
   ],
   // Use root base in dev, GitHub Pages base in build
   base: command === 'build' ? "/portfolio/" : "/",
@@ -27,7 +55,7 @@ export default defineConfig(({ command }) => ({
     jsx: 'automatic',
   },
   optimizeDeps: {
-  entries: ["index.html"],
+    entries: ["index.html"],
     esbuildOptions: {
       loader: {
         '.js': 'jsx',
@@ -57,11 +85,11 @@ export default defineConfig(({ command }) => ({
     }
   },
   server: {
-  // Bind to all interfaces to avoid IPv6 (::1) vs IPv4 (127.0.0.1) localhost issues
-  host: true,
-  // Use standard React dev port
-  port: 3000,
-  strictPort: true,
-  open: false,
+    // Bind to all interfaces to avoid IPv6 (::1) vs IPv4 (127.0.0.1) localhost issues
+    host: true,
+    // Use standard React dev port
+    port: 3000,
+    strictPort: true,
+    open: false,
   },
 }));

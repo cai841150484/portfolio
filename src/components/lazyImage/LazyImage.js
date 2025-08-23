@@ -1,12 +1,13 @@
 import {useState, useRef, useEffect} from "react";
 import "./LazyImage.scss";
 import {SmallSpinner} from "../loading/LoadingSpinner";
+import placeholderImage from "../../assets/images/placeholder-350x200.svg?url";
 
 const LazyImage = ({
   src,
   alt,
   className = "",
-  placeholder = "/api/placeholder/350/200",
+  placeholder = placeholderImage,
   // keep only PNG/JPG display per request; leave props for future but unused
   webpSrc = null,
   avifSrc = null,
