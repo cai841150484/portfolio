@@ -7,9 +7,6 @@ export default function Footer() {
   return (
     <div className="footer-div">
       <p className="footer-text">
-        {emoji(t("footer.madeWith", "Made with ❤️ by DeveloperFolio Team"))}
-      </p>
-      <p className="footer-text">
         {t("footer.themeBy", "Theme by")}{" "}
         <a
           href="https://github.com/saadpasta/developerFolio"
