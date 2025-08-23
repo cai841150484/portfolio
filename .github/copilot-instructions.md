@@ -22,11 +22,6 @@ Goal: Enable AI coding agents to be productive quickly in this Vite + React port
 - Preview: `npm run preview` (serves production build locally).
 - Deploy: CI auto-deploys on push to `main` via `.github/workflows/deploy.yml`. Manual `npm run deploy` uses `gh-pages` but CI is preferred.
 
-## CI/CD specifics
-- Node 20.x; steps: install → `npm run build` → upload `./build` → `actions/deploy-pages`.
-- Env: `CI=false`, `USE_GITHUB_DATA=false` to keep builds deterministic without tokens.
-- Pages base path is `/portfolio/`; keep app/router/base aligned.
-
 ## Conventions and gotchas
 - Env vars: Use Vite style `VITE_*` via `import.meta.env` (README’s `REACT_APP_*` is legacy).
 - Routing/base: Keep `App.js` basename logic and Vite `base` in sync; test both locally and on Pages.

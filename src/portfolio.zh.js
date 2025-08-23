@@ -132,7 +132,7 @@ bigProjects.projects = bigProjects.projects.map((p) => {
   if (n.projectName === "EnvMAMBA") {
     n.category = "交互式数据可视化 · 严肃游戏 · AI 叙事";
     n.projectDesc =
-      "在本项目中，我们开发了 EnvMAMBA——一款可视化纽约市真实环境数据的交互式严肃游戏。它结合植被、空气质量、温度等自然指标与噪音投诉等人本数据，通过交互式地理地图，用户可探索各社区的空间模式，发现环境要素之间的关系。为增强参与度，我们集成大语言模型（LLMs），让环境要素拟人化并叙述数据故事，激发好奇与共情。通过地理空间可视化、游戏化探索与 AI 驱动叙事相结合，我们的目标是让复杂的环境数据更易理解、更具关联性并更可行动。";
+      "在本项目中，我们开发了 EnvMAMBA——一款可视化纽约市真实环境数据的交互式严肃游戏。它结合植被、空气质量、温度等自然指标与噪音投诉等人本数据，通过交互式地理地图，用户可探索各社区的空间模式，发现环境要素之间的关系。为增强参与度，我们集成大语言模型（LLMs），让环境要素拟人化并叙述数据故事，激发好奇与共情。通过地理空间可视化、游戏化探索与 AI 驱动叙事相结合，我们的目标是让复杂的环境数据更易理解、更具参与性并更可行动。";
 
     if (Array.isArray(n.sections)) {
       n.sections = n.sections.map((sec) => {
@@ -145,6 +145,52 @@ bigProjects.projects = bigProjects.projects.map((p) => {
           ];
         }
         return s2;
+      });
+    }
+  }
+
+  // Chat to Cope 专项翻译（中文站详情）
+  if (n.projectName === "Chat to Cope") {
+    n.category = "AI · 心理健康";
+    n.projectDesc =
+      "一款面向首发精神病（FEP）的应对技能聊天助手。基于 Streamlit 与多份结构化数据集，依据用户描述的症状推荐循证应对策略，并在识别风险时提供热线/暖线资源。";
+
+    if (Array.isArray(n.sections)) {
+      n.sections = n.sections.map((sec) => {
+        const s = clone(sec);
+        if (s.title === "Abstract") {
+          s.title = "摘要";
+          s.paragraphs = [
+            "Chat to Cope 旨在帮助首发精神病（First Episode Psychosis）人群进行自助应对。我们采用 Streamlit 并整合多来源数据库，依据用户描述的症状推荐对应的应对技能；当识别到潜在风险时，提供可以求助的热线（hotline）或暖线（warmline）电话号码。"
+          ];
+        } else if (s.title === "Implementation") {
+          s.title = "实现流程";
+          s.bullets = [
+            "用户输入：用户以自由文本描述当前困扰。",
+            "症状抽取：将输入与 DSM‑5 及症状本体进行比对，识别匹配的症状。",
+            "症状标注：为症状关联语义标签（如“焦虑”“情绪”），以便后续匹配。",
+            "LLM 危机识别（第一次调用）：使用结构化提示让 GPT‑4.1 判断是否为危机场景，返回 ‘hotline’/‘warmline’/‘none’。",
+            "资源准备：若为 ‘hotline’ 或 ‘warmline’，从 CSV 中检索资源名称、电话与简介。",
+            "应对技能匹配：基于语义标签，从技能数据集中挑选最多三条应对技能，并生成描述。",
+            "LLM 文本生成（第二次调用）：综合用户输入、DSM‑5 定义的症状、匹配技能与资源信息，生成富有同理心且结构化的回复。",
+            "输出：返回一段完整、个性化的建议与转介信息。"
+          ];
+        } else if (s.title === "Dataset") {
+          s.title = "数据集";
+          s.paragraphs = [
+            "DSM‑5 诊断数据（final_DSM‑5_data.json）：提供标准化的症状/障碍定义与描述，确保识别与解释的一致性与临床有效性。",
+            "症状本体（symptom_ontology.json）：将症状映射到语义标签，覆盖认知、情绪、行为等相关分类，支持精确的症状抽取。",
+            "应对技能库（coping_skills.json）：源自 EPPIC Recovery Handbook，包含循证策略及详细描述，并附语义标签以便匹配。",
+            "技术术语表（glossary_of_technical_terms.json）：汇集 DSM‑5 相关术语的简明定义，用于支撑对话式 AI 的专业与清晰表达。",
+            "热线与暖线（Hotline_Warmline_Data.csv）：收录来自官方渠道的危机支持资源，提供可靠的转介信息。"
+          ];
+        } else if (s.title === "Conclusion") {
+          s.title = "结论";
+          s.paragraphs = [
+            "与多数心理健康状况类似，个体需要与专业人士协作并进行自我管理来寻找适合的方案。Chat to Cope 通过整合多数据源，提供与症状相关的应对建议与风险转介支持。它并非治疗师或精神科医生，而是面向首发精神病个体的辅助工具。"
+          ];
+        }
+        return s;
       });
     }
   }

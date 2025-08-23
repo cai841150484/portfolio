@@ -25,8 +25,8 @@ import imgAboveCarmen from "./assets/images/projects/abovethecarmenline.png";
 import imgAboveCarmenThumb from "./assets/images/projects/abovethecarmenline_thumbnail.png";
 import imgEnvMamba from "./assets/images/projects/EnvMAMBA.png";
 import imgEnvMambaThumb from "./assets/images/projects/EnvMAMBA_thumbnail.png";
-import imgChatToCope from "./assets/images/projects/chattocope.svg";
-
+import imgChatToCope from "./assets/images/projects/chattocope.png";
+import imgChatToCopeThumb from "./assets/images/projects/chattocope_thumbnail.svg";
 
 
 // Splash Screen
@@ -205,32 +205,52 @@ const bigProjects = {
     {
       imageKey: "chattocope",
       image: imgChatToCope,
-      thumbnail: imgChatToCope,
+      thumbnail: imgChatToCopeThumb,
       projectName: "Chat to Cope",
       projectDesc:
-        "Clinically grounded, context‑aware conversational AI for early psychosis recovery with symptom recognition, coping skill recommendations, and crisis escalation.",
-      category: "AI · UX · Mental Health",
+        "A coping skills chatbot for first‑episode psychosis. Built with Streamlit and multiple structured datasets, it recommends evidence‑based coping strategies from user‑reported symptoms and includes hotline/warmline routing when risk is detected.",
+      category: "AI · Mental Health",
       tools: ["Streamlit", "Python", "OpenAI GPT‑4.1", "DSM‑5 data"],
       duration: "2025 Spring",
       sections: [
         {
-          title: "Overview",
+          title: "Abstract",
           paragraphs: [
-            "Built an AI‑powered mental health assistant that delivers empathetic, context‑aware conversations.",
-            "It recognizes symptoms with a DSM‑5 backed ontology, recommends coping skills from the EPPIC Recovery Handbook, and escalates to hotlines/warm lines when risk is detected."
+            "Chat to Cope is a coping skills chatbot meant to help people experiencing first episode psychosis. First episode psychosis is characterized by delusions and hallucinations. We created this chatbot using Streamlit and a combination of three different databases. The chatbot makes a recommendation for a coping skill based on the symptom the user is experiencing and a phone number (hotline or warmline) to call when more help is needed."
           ]
         },
         {
-          title: "Goals",
+          title: "Implementation",
           bullets: [
-            "Provide accessible self‑help support with empathetic AI",
-            "Structure domain knowledge (DSM‑5, coping skills, glossary) for reliable reasoning",
-            "Detect crisis and route to the right resources"
+            "User Input: The user submits a free‑text message articulating their current concerns.",
+            "Symptom Extraction: The system compares the input against a comprehensive list of symptoms derived from the DSM‑5 and relevant ontological frameworks to identify matched symptoms.",
+            "Tagging Symptoms: Identified symptoms are associated with semantic tags (e.g., ‘anxiety’, ‘mood’) through the ontology, which facilitates filtering of relevant coping strategies.",
+            "Crisis Detection via LLM (First Call): A structured prompt asks GPT‑4.1 to evaluate whether the message indicates crisis. The model returns one of: ‘hotline’, ‘warmline’, or ‘none’.",
+            "Resource Preparation: If ‘hotline’/‘warmline’, the respective resource (name, phone number, description) is retrieved from the hotline CSV file.",
+            "Coping Skill Matching: Using the semantic tags, the system selects up to three coping skills from the skills dataset and prepares their descriptions.",
+            "Response Generation via LLM (Second Call): A second prompt to GPT‑4.1 integrates the user input, identified symptoms with DSM‑5 definitions, matched coping strategies, and resource information (if any).",
+            "Output Response: The final output is a comprehensive, empathetic reply tailored to the user’s needs."
+          ]
+        },
+        {
+          title: "Dataset",
+          paragraphs: [
+            "DSM‑5 Diagnostic Data: final_DSM‑5_data.json provides standardized definitions and descriptions of symptoms and disorders for consistent identification and interpretation.",
+            "Symptom Ontology: symptom_ontology.json maps symptoms to semantic tags across cognitive, affective, behavioral, and clinically relevant classes.",
+            "Coping Skills Database: coping_skills.json (from EPPIC Recovery Handbook) contains evidence‑based strategies with semantic tagging for symptom matching.",
+            "Technical Glossary: glossary_of_technical_terms.json offers concise definitions of DSM‑5 clinical terminology to ground responses.",
+            "Hotline & Warmline: Hotline_Warmline_Data.csv lists verified crisis support resources collected from official sources."
+          ]
+        },
+        {
+          title: "Conclusion",
+          paragraphs: [
+            "Like most mental health conditions, people experiencing these symptoms should work with professionals and themselves to find a treatment plan that works. Chat to Cope can support self‑management and coping by combining multiple datasets to make relevant recommendations. It is not a therapist or psychiatrist, but an aid for individuals experiencing a first episode of psychosis."
           ]
         }
       ],
       footerLink: [
-        { name: "Live Demo", url: "https://chatbot-template.streamlit.app/" },
+        { name: "View Case Study", url: "/projects/chat-to-cope" },
         { name: "GitHub Repository", url: "https://github.com/cai841150484/ChatToCope" }
       ]
     },

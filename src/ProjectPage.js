@@ -248,7 +248,7 @@ function ProjectPage() {
           [...bigProjects.projects]
             .sort((a, b) => parseDurationScore(b.duration) - parseDurationScore(a.duration))
             .map((project, idx) => {
-            const slug = project.footerLink?.[0]?.url || `/projects/${slugify(project.projectName)}`;
+            const slug = `/projects/${slugify(project.projectName)}`; // Always go to internal detail page
             return (
               <div className="project-card clickable" key={idx}>
                 <Link to={slug} className="project-image-container">
@@ -256,7 +256,7 @@ function ProjectPage() {
                     className="project-image contain-fit"
                     src={project.thumbnail || project.image}
                     alt={project.projectName}
-                    
+
                   />
                   {project.category && (
                     <div className="project-category">{project.category}</div>
